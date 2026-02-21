@@ -1,8 +1,12 @@
 {
   "slug": "cr-a-eu-rozpocet",
   "title": "Mýtus o EU: Platíme víc, než dostáváme?",
-  "perex": "„Česká republika do rozpočtu EU přispívá více, než z něj dostává. Jsme čistý plátce." — opakované tvrzení politiků a komentátorů. Co ale skutečně říkají čísla Ministerstva financí a Eurostatu?",
-  "topics": ["mýty", "ekonomika", "česko"],
+  "perex": "Jsme cisty platce — opakovane tvrzeni politiku. Co ale skutecne rikaji cisla Ministerstva financi a Eurostatu?",
+  "topics": [
+    "mýty",
+    "ekonomika",
+    "česko"
+  ],
   "date": "2026-02-17",
   "dateStr": "17. 2. 2026",
   "status": "published",
@@ -24,22 +28,49 @@
       "color": "blue"
     }
   ],
-  "content": "<h2>Tvrzení k ověření</h2><p>„Česká republika do rozpočtu EU přispívá více, než z něj dostává. Jsme čistý plátce." Tato věta se opakuje v politických debatách, na sociálních sítích i v komentářích médií. Tomio Okamura (SPD) ji použil opakovaně v letech 2020–2026, podobná rétorika se objevuje u ANO, Trikolory i části ODS.</p><p>Problém je jediný: <strong>není pravdivá.</strong> Data z Ministerstva financí ČR, Eurostatu i nezávislých analýz ukazují přesný opak.</p><div class=\"highlight-box hb-blue\"><strong>Klíčový kontext:</strong> Česká republika je od vstupu do EU v roce 2004 <em>čistým příjemcem</em> — tedy zemí, která z evropských fondů čerpá více, než do společného rozpočtu odvádí. Toto platí pro každé rozpočtové období bez výjimky.</div><h2>Co říkají čísla</h2><p>V rozpočtovém období 2014–2020 ČR odvedla do rozpočtu EU celkem přibližně 310 miliard korun. Z fondů EU přijala zpět přes 555 miliard korun. Čistý zisk: <strong>+245 miliard Kč</strong>. Zdroj: Eurostat, Zpráva o výsledcích hospodaření ČR v EU 2021.</p><p>V samotném roce 2023 byl čistý přínos <strong>+65,5 miliardy korun</strong>. I v tomto roce, navzdory zpomalení čerpání strukturálních fondů, ČR z EU výrazně profitovala. Zdroj: Ministerstvo financí ČR, Zpráva o hospodaření ČR v EU za rok 2023.</p><div class=\"highlight-box hb-green\"><strong>Ekonomický multiplikátor:</strong> Studie NKÚ a ČSÚ z roku 2022 ukázala, že každá koruna přijatá z EU fondů generuje v české ekonomice průměrně 2,4 Kč hodnoty — skrze výstavbu infrastruktury, podporu firem, vzdělávání a výzkum. Přímý příjem tedy není celý příběh.</div><h2>Proč tento mýtus funguje</h2><p>Příspěvky ČR do rozpočtu EU jsou viditelné a pravidelné — každý rok odchází konkrétní částka. Čerpání fondů je naopak nepravidelné, technicky složité a výsledky jsou rozptýleny v tisících projektů po celé republice. Dálnice, čistírny odpadních vod, vědecké laboratoře, školní počítače — to vše je spolufinancováno z EU, ale málokdy se to takto komunikuje.</p><p>Druhý faktor: čísla se politicky zneužívají selektivně. Mluvit pouze o příspěvcích a zamlčet čerpání je technicky pravdivé, ale záměrně zavádějící.</p><div class=\"data-table-wrap\"><table><thead><tr><th>Období</th><th>Příspěvky do EU</th><th>Čerpání z EU</th><th>Čistý přínos</th></tr></thead><tbody><tr><td>2004–2006</td><td class=\"td-num\">~30 mld. Kč</td><td class=\"td-num\">~55 mld. Kč</td><td class=\"td-good\">+25 mld. Kč</td></tr><tr><td>2007–2013</td><td class=\"td-num\">~180 mld. Kč</td><td class=\"td-num\">~580 mld. Kč</td><td class=\"td-good\">+400 mld. Kč</td></tr><tr><td>2014–2020</td><td class=\"td-num\">~310 mld. Kč</td><td class=\"td-num\">~555 mld. Kč</td><td class=\"td-good\">+245 mld. Kč</td></tr><tr><td>2023 (rok)</td><td class=\"td-num\">~47 mld. Kč</td><td class=\"td-num\">~112 mld. Kč</td><td class=\"td-good\">+65,5 mld. Kč</td></tr></tbody></table></div><h2>Závěr</h2><p>ČR není čistý plátce do EU. Od roku 2004 do dnes ČR z EU fondů získala čistý přínos přesahující <strong>1 bilion korun</strong>. Toto číslo zahrnuje pouze přímé finanční toky — nezahrnuje obchodní výhody jednotného trhu, volný pohyb pracovníků a kapitálu ani bezpečnostní a diplomatické výhody členství.</p><p>Tvrzení „jsme čistý plátce" je prokazatelně nepravdivé a jeho opakování — ať vědomé nebo nevědomé — deformuje veřejnou debatu o evropské integraci.</p>",
+  "content": "<h2>Tvrzení k ověření</h2><p>Česká republika do rozpočtu EU přispívá více, než z něj dostává. Jsme čistý plátce. Tato věta se opakuje v politických debatách, na sociálních sítích i v komentářích médií. Tomio Okamura (SPD) ji použil opakovaně v letech 2020–2026, podobná rétorika se objevuje u ANO, Trikolory i části ODS.</p><p>Problém je jediný: <strong>není pravdivá.</strong> Data z Ministerstva financí ČR, Eurostatu i nezávislých analýz ukazují přesný opak.</p><div class=\"highlight-box hb-blue\"><strong>Klíčový kontext:</strong> Česká republika je od vstupu do EU v roce 2004 čistým příjemcem — tedy zemí, která z evropských fondů čerpá více, než do společného rozpočtu odvádí. Toto platí pro každé rozpočtové období bez výjimky.</div><h2>Co říkají čísla</h2><p>V rozpočtovém období 2014–2020 ČR odvedla do rozpočtu EU celkem přibližně 310 miliard korun. Z fondů EU přijala zpět přes 555 miliard korun. Čistý zisk: <strong>+245 miliard Kč</strong>. Zdroj: Eurostat, Zpráva o výsledcích hospodaření ČR v EU 2021.</p><p>V samotném roce 2023 byl čistý přínos <strong>+65,5 miliardy korun</strong>. I v tomto roce, navzdory zpomalení čerpání strukturálních fondů, ČR z EU výrazně profitovala.</p><div class=\"highlight-box hb-green\"><strong>Ekonomický multiplikátor:</strong> Studie NKÚ a ČSÚ z roku 2022 ukázala, že každá koruna přijatá z EU fondů generuje v české ekonomice průměrně 2,4 Kč hodnoty — skrze výstavbu infrastruktury, podporu firem, vzdělávání a výzkum.</div><h2>Přehled čerpání ČR z EU</h2><div class=\"data-table-wrap\"><table><thead><tr><th>Období</th><th>Příspěvky do EU</th><th>Čerpání z EU</th><th>Čistý přínos</th></tr></thead><tbody><tr><td>2004–2006</td><td class=\"td-num\">~30 mld. Kč</td><td class=\"td-num\">~55 mld. Kč</td><td class=\"td-good\">+25 mld. Kč</td></tr><tr><td>2007–2013</td><td class=\"td-num\">~180 mld. Kč</td><td class=\"td-num\">~580 mld. Kč</td><td class=\"td-good\">+400 mld. Kč</td></tr><tr><td>2014–2020</td><td class=\"td-num\">~310 mld. Kč</td><td class=\"td-num\">~555 mld. Kč</td><td class=\"td-good\">+245 mld. Kč</td></tr><tr><td>2023 (rok)</td><td class=\"td-num\">~47 mld. Kč</td><td class=\"td-num\">~112 mld. Kč</td><td class=\"td-good\">+65,5 mld. Kč</td></tr></tbody></table></div><h2>Proč tento mýtus funguje</h2><p>Příspěvky ČR do rozpočtu EU jsou viditelné a pravidelné. Čerpání fondů je naopak nepravidelné, technicky složité a výsledky jsou rozptýleny v tisících projektů — dálnice, čistírny odpadních vod, vědecké laboratoře, školní počítače. To vše je spolufinancováno z EU, ale málokdy se to takto komunikuje.</p><h2>Závěr</h2><p>ČR není čistý plátce do EU. Od roku 2004 do dnes ČR z EU fondů získala čistý přínos přesahující <strong>1 bilion korun</strong>. Tvrzení o čistém plátci je prokazatelně nepravdivé a jeho opakování deformuje veřejnou debatu o evropské integraci.</p>",
   "sources": [
-    { "label": "Eurostat — EU Budget Financial Report 2021", "url": "https://ec.europa.eu/eurostat" },
-    { "label": "Ministerstvo financí ČR — Zpráva o hospodaření ČR v EU 2023", "url": "https://www.mfcr.cz" },
-    { "label": "ČSÚ & NKÚ — Studie ekonomického multiplikátoru EU fondů 2022", "url": "https://www.czso.cz" },
-    { "label": "Evropská komise — MFF 2014–2020 implementační zpráva", "url": "https://ec.europa.eu" }
+    {
+      "label": "Eurostat — EU Budget Financial Report 2021",
+      "url": "https://ec.europa.eu/eurostat"
+    },
+    {
+      "label": "Ministerstvo financí ČR — Zpráva o hospodaření ČR v EU 2023",
+      "url": "https://www.mfcr.cz"
+    },
+    {
+      "label": "ČSÚ a NKÚ — Studie ekonomického multiplikátoru EU fondů 2022",
+      "url": "https://www.czso.cz"
+    },
+    {
+      "label": "Evropská komise — MFF 2014–2020 implementační zpráva",
+      "url": "https://ec.europa.eu"
+    }
   ],
   "share_card": {
     "type": "mytus_vs_pravda",
-    "myth_quote": "„Česká republika do rozpočtu EU přispívá více, než z něj dostává. Jsme čistý plátce."",
+    "myth_quote": "Česká republika do rozpočtu EU přispívá více, než z něj dostává. Jsme čistý plátce.",
     "myth_attribution": "Tomio Okamura (SPD), opakovaně 2020–2026; podobná rétorika ANO, Trikolora",
     "download_filename": "svet-v-perspektive-cr-a-eu.png",
     "stats": [
-      { "value": "+245 mld. Kč", "label": "čistý přínos z EU v rozpočtovém období 2014–2020", "source_text": "Zdroj: Eurostat", "color": "green" },
-      { "value": "+65,5 mld. Kč", "label": "čistý přínos pouze v roce 2023", "source_text": "Zdroj: Ministerstvo financí ČR", "color": "green" },
-      { "value": "2,4×", "label": "ekonomický multiplikátor každé vrácené koruny", "source_text": "Zdroj: ČSÚ, studie NKÚ 2022", "color": "green" }
+      {
+        "value": "+245 mld. Kč",
+        "label": "čistý přínos z EU v rozpočtovém období 2014–2020",
+        "source_text": "Zdroj: Eurostat",
+        "color": "green"
+      },
+      {
+        "value": "+65,5 mld. Kč",
+        "label": "čistý přínos pouze v roce 2023",
+        "source_text": "Zdroj: Ministerstvo financí ČR",
+        "color": "green"
+      },
+      {
+        "value": "2,4×",
+        "label": "ekonomický multiplikátor každé vrácené koruny",
+        "source_text": "Zdroj: ČSÚ, studie NKÚ 2022",
+        "color": "green"
+      }
     ]
   }
 }
