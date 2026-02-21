@@ -1,0 +1,374 @@
+/* =============================================================
+   perspektiva-theme.css
+   Svět v perspektivě – Barevné proměnné (světlý + tmavý režim)
+   Přidat do každé stránky:
+     <link rel="stylesheet" href="perspektiva-theme.css">
+   ============================================================= */
+
+/* ── SVĚTLÝ REŽIM (výchozí) ── */
+:root {
+  /* Základní barvy */
+  --color-bg:           #f0f9ff;
+  --color-surface:      #ffffff;
+  --color-text:         #1a1a1a;
+  --color-text-muted:   #64748b;
+  --color-text-body:    #475569;
+  --color-text-strong:  #1e293b;
+  --color-text-heading: #0f172a;
+
+  /* Primární a sekundární */
+  --color-primary:       #0ea5e9;
+  --color-primary-hover: #0284c7;
+  --color-secondary:     #0f766e;
+  --color-accent:        #06b6d4;
+
+  /* Ohraničení a pozadí */
+  --color-border:        #e0f2fe;
+  --color-border-input:  #bfdbfe;
+
+  /* Gradient hero (hero sekce, page-hero) */
+  --color-hero-start:   #dbeafe;
+  --color-hero-mid:     #bfdbfe;
+  --color-hero-end:     #e0f2fe;
+
+  /* Formuláře */
+  --color-input-bg:          #ffffff;
+  --color-input-placeholder: #94a3b8;
+
+  /* Stíny */
+  --shadow-sm: 0 1px 2px 0 rgba(14, 165, 233, 0.10);
+  --shadow-md: 0 4px 6px -1px rgba(14, 165, 233, 0.15);
+  --shadow-lg: 0 10px 15px -3px rgba(14, 165, 233, 0.20);
+
+  /* Fonty */
+  --font-serif: 'IBM Plex Serif', serif;
+  --font-sans:  'IBM Plex Sans', sans-serif;
+  --font-mono:  'IBM Plex Mono', monospace;
+
+  /* Přepínač */
+  --theme-toggle-bg:     #e0f2fe;
+  --theme-toggle-color:  #0369a1;
+  --theme-toggle-border: #bfdbfe;
+}
+
+/* ── TMAVÝ REŽIM ── */
+html.dark {
+  --color-bg:           #0d1117;
+  --color-surface:      #161b22;
+  --color-text:         #e2e8f0;
+  --color-text-muted:   #8b949e;
+  --color-text-body:    #c9d1d9;
+  --color-text-strong:  #e2e8f0;
+  --color-text-heading: #f1f5f9;
+
+  --color-primary:       #38bdf8;
+  --color-primary-hover: #0ea5e9;
+  --color-secondary:     #14b8a6;
+  --color-accent:        #22d3ee;
+
+  --color-border:       #21262d;
+  --color-border-input: #30363d;
+
+  --color-hero-start:   #0f1f35;
+  --color-hero-mid:     #0a1929;
+  --color-hero-end:     #0d1f33;
+
+  --color-input-bg:          #0d1117;
+  --color-input-placeholder: #6e7681;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
+
+  --theme-toggle-bg:     #21262d;
+  --theme-toggle-color:  #e2e8f0;
+  --theme-toggle-border: #30363d;
+}
+
+/* ── PŘEPÍNAČ (tlačítko v záhlaví) ── */
+.theme-toggle {
+  background: var(--theme-toggle-bg);
+  border: 1.5px solid var(--theme-toggle-border);
+  color: var(--theme-toggle-color);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  flex-shrink: 0;
+}
+.theme-toggle:hover {
+  transform: rotate(15deg) scale(1.08);
+}
+
+/* ── PLYNULÝ PŘECHOD barev při přepínání ── */
+*, *::before, *::after {
+  transition:
+    background-color 0.25s ease,
+    border-color     0.25s ease,
+    color            0.18s ease,
+    box-shadow       0.25s ease;
+}
+/* Výjimky – přechody, které nechceme zpomalovat */
+.theme-toggle,
+nav a,
+button,
+a {
+  transition:
+    background-color 0.2s,
+    border-color     0.2s,
+    color            0.2s,
+    transform        0.15s,
+    box-shadow       0.2s;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   DARK MODE – přepisy konkrétních komponent
+   Vše ostatní jde přes CSS proměnné výše.
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Kartičky článků ── */
+html.dark .article-card {
+  background: #161b22;
+  border-color: #30363d;
+}
+html.dark .article-card:hover {
+  background: #1c2128;
+  border-left-color: var(--color-primary);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+html.dark .article-card-header { background: #0d1117; }
+html.dark .article-title { color: #e2e8f0; }
+html.dark .article-perex { color: #8b949e; }
+
+/* ── Statistiky – boxy ── */
+html.dark .stat-box {
+  background: #161b22;
+  border-color: #3a424d;
+}
+html.dark .stat-box:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  background: #1c2128;
+}
+html.dark .stat-box.active {
+  background: linear-gradient(135deg, #162032 0%, #0d1f33 100%);
+  border-color: var(--color-primary);
+  box-shadow: 0 6px 16px rgba(56, 189, 248, 0.2);
+}
+
+/* ── Graf kontejner ── */
+html.dark .chart-container {
+  background: #161b22;
+  border-color: #30363d;
+}
+html.dark .chart-title { color: #e2e8f0; }
+html.dark .chart-source { color: #8b949e; }
+
+/* ── Vyhledávání zemí ── */
+html.dark .country-selector {
+  background: #161b22;
+  border-color: #30363d;
+}
+html.dark #countrySearch {
+  background: #0d1117;
+  color: #e2e8f0;
+  border-color: #30363d;
+}
+html.dark #countrySearch:focus { border-color: var(--color-primary); }
+html.dark .country-dropdown {
+  background: #161b22;
+  border-color: var(--color-primary);
+}
+html.dark .country-option:hover { background: #21262d; }
+html.dark .country-option.selected { background: #162032; color: var(--color-primary); }
+html.dark .country-divider { border-color: #21262d; }
+
+/* ── Hero karty: Mýtus vs. Data ── */
+html.dark .card-myth {
+  background: linear-gradient(135deg, #3d1a1a 0%, #521f1f 100%);
+  border-color: #8b3333;
+}
+html.dark .myth-quote { color: #fca5a5; }
+html.dark .myth-source { color: #f87171; opacity: 0.9; }
+html.dark .card-label-myth { color: #f87171; }
+
+html.dark .card-data {
+  background: linear-gradient(135deg, #112d1e 0%, #163d28 100%);
+  border-color: #236b44;
+}
+html.dark .data-number { color: #6ee7b7; }
+html.dark .data-desc { color: #a7f3d0; }
+html.dark .data-source { color: #6ee7b7; opacity: 0.9; }
+html.dark .card-label-data { color: #34d399; }
+
+/* ── Kontext note pod kartami ── */
+html.dark .context-note {
+  background: #0d1117;
+  border-color: #21262d;
+  color: #8b949e;
+}
+
+/* ── Cislo týdne karta ── */
+html.dark .cislo-tydne-card {
+  background: linear-gradient(135deg, #161b22 0%, #0f1f35 100%);
+}
+
+/* ── Debunker hero sekce ── */
+html.dark .hero {
+  background: linear-gradient(135deg, #0a1929 0%, #0d1f35 50%, #0a1929 100%);
+}
+
+/* ── Témata – topic cards ── */
+html.dark .topic-card {
+  background: #1c2128;
+  border-color: #3a424d;
+  color: #e2e8f0;
+}
+html.dark .topic-card:hover,
+html.dark .topic-card.active-category {
+  background: #212830;
+  border-color: var(--color-primary);
+}
+
+/* ── Sekce Státy v datech – pozadí ── */
+html.dark .data-section {
+  background: linear-gradient(135deg, #0d1f35 0%, #0a1929 100%);
+}
+
+/* ── Brand sekce (logo uprostřed) ── */
+html.dark .brand-section {
+  background: #0d1117;
+}
+html.dark .brand-title { color: #e2e8f0; }
+html.dark .brand-subtitle { color: #8b949e; }
+
+/* ── O projektu – kontaktní formulář ── */
+html.dark .contact-box {
+  background: linear-gradient(135deg, #161b22 0%, #0d1f35 100%);
+  border-color: #21262d;
+}
+html.dark .form-group input,
+html.dark .form-group textarea {
+  background: #0d1117;
+  border-color: #30363d;
+  color: #e2e8f0;
+}
+html.dark .form-group input:focus,
+html.dark .form-group textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+}
+html.dark .form-group label { color: #8b949e; }
+
+/* ── Page hero (O projektu, články) ── */
+html.dark .page-hero {
+  background: linear-gradient(135deg, #0a1929 0%, #0d1f35 50%, #0a1929 100%);
+}
+
+/* ── Artikel – highlight boxy ── */
+html.dark .highlight-box {
+  background: #161b22 !important;
+  border-color: #30363d !important;
+  color: #c9d1d9 !important;
+}
+html.dark .highlight-box strong { color: #e2e8f0 !important; }
+
+/* ── Source box v článku ── */
+html.dark .article-source {
+  background: #161b22;
+  border-color: #21262d;
+}
+html.dark .article-source a { color: var(--color-primary); }
+
+/* ── VS kruh mezi mýtus/data kartami ── */
+html.dark .vs-circle {
+  background: #e2e8f0;
+  color: #0f172a;
+  font-size: 0.85rem;
+}
+
+/* ── Highlight boxy v článcích – odlišené barvy ── */
+html.dark .highlight-box.hb-blue {
+  background: #0d1f35 !important;
+  border-color: var(--color-primary) !important;
+  color: #c9d1d9 !important;
+}
+html.dark .highlight-box.hb-blue strong { color: #7dd3fc !important; }
+
+html.dark .highlight-box.hb-green {
+  background: #0d2318 !important;
+  border-color: #059669 !important;
+  color: #c9d1d9 !important;
+}
+html.dark .highlight-box.hb-green strong { color: #6ee7b7 !important; }
+
+/* ── Tabulka v článku ── */
+html.dark table th {
+  background: #21262d;
+  color: #e2e8f0;
+}
+html.dark table td {
+  border-bottom-color: #30363d;
+  color: #c9d1d9;
+}
+html.dark table tr:nth-child(even) td {
+  background: #161b22;
+}
+html.dark table tr:nth-child(odd) td {
+  background: transparent;
+}
+html.dark table tr:hover td {
+  background: #1c2128;
+}
+
+/* ── Share kartička – vždy světlá (exportuje se jako PNG, nesmí reagovat na dark mode) ── */
+html.dark .share-card {
+  --color-bg:           #f0f9ff;
+  --color-surface:      #ffffff;
+  --color-text:         #1a1a1a;
+  --color-text-muted:   #64748b;
+  --color-text-body:    #475569;
+  --color-text-strong:  #1e293b;
+  --color-text-heading: #0f172a;
+  --color-primary:       #0ea5e9;
+  --color-primary-hover: #0284c7;
+  --color-secondary:     #0f766e;
+  --color-border:       #e0f2fe;
+  --color-border-input: #bfdbfe;
+  --color-hero-start:   #dbeafe;
+  --color-input-placeholder: #94a3b8;
+}
+
+/* ── Source tagy na stránce O projektu ── */
+html.dark .source-tag {
+  background: #21262d;
+  color: #7dd3fc;
+  border: 1px solid #30363d;
+}
+
+/* ── Podtitulek loga "Data · Kontext · Souvislosti" ── */
+html.dark .logo-subtitle {
+  color: #94a3b8;
+}
+
+/* ── Tlačítka — ztlumená modrá pouze v dark mode ── */
+html.dark .analysis-btn {
+  background: #1a6fa8 !important;
+  box-shadow: 0 2px 8px rgba(14,165,233,0.15) !important;
+}
+html.dark .analysis-btn:hover {
+  background: #1560a0 !important;
+  box-shadow: 0 4px 12px rgba(14,165,233,0.2) !important;
+}
+html.dark .show-all-btn {
+  background: #1a6fa8 !important;
+  box-shadow: 0 1px 3px rgba(14,165,233,0.15) !important;
+}
+html.dark .show-all-btn:hover {
+  background: #1560a0 !important;
+}

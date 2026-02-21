@@ -1,0 +1,14 @@
+{
+  "topics": [
+    { "slug": "zdraví",     "label": "Zdraví",        "color": "#059669", "geo": false },
+    { "slug": "ekonomika",  "label": "Ekonomika",      "color": "#1d4ed8", "geo": false },
+    { "slug": "inovace",    "label": "Inovace",        "color": "#0ea5e9", "geo": false },
+    { "slug": "energie",    "label": "Energie",        "color": "#d97706", "geo": false },
+    { "slug": "bezpečnost", "label": "Bezpečnost",     "color": "#7c3aed", "geo": false },
+    { "slug": "demokracie", "label": "Demokracie",     "color": "#0f766e", "geo": false },
+    { "slug": "výzvy",      "label": "Výzvy",          "color": "#ea580c", "geo": false },
+    { "slug": "mýty",       "label": "Mýty vs fakta",  "color": "#991b1b", "geo": false },
+    { "slug": "česko",      "label": "Česko",          "color": "#1d4ed8", "geo": true  },
+    { "slug": "svět",       "label": "Svět",           "color": "#0f766e", "geo": true  }
+  ]
+}

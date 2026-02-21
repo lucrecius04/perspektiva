@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archiv článků | Svět v perspektivě</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="perspektiva-theme.css">
+  <!-- Anti-flash: tmavý režim se aplikuje před renderováním -->
+  <script>
+    (function(){
+      var t = localStorage.getItem('svp-theme');
+      var dark = t === 'dark' || (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (dark) document.documentElement.classList.add('dark');
+    })();
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font-sans); background: var(--color-bg); color: var(--color-text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      background: linear-gradient(135deg, var(--color-hero-start) 0%, var(--color-hero-mid) 50%, var(--color-hero-end) 100%);
+      border-bottom: 1px solid var(--color-border);
+      padding: 3rem 2rem 2.5rem;
+    }
+    .page-hero-inner { max-width: 1100px; margin: 0 auto; }
+    .page-hero h1 {
+      font-family: var(--font-serif);
+      font-size: 2.4rem; font-weight: 700; line-height: 1.1;
+      letter-spacing: -0.02em; margin-bottom: 0.5rem;
+    }
+    .page-hero p { font-size: 1rem; color: var(--color-text-muted); }
+
+    /* ── CONTROLS BAR ── */
+    .controls-bar {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      position: sticky;
+      top: 84px;
+      z-index: 50;
+    }
+    .controls-row {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .controls-top {
+      padding-top: 0.7rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .controls-chips {
+      padding-top: 0.55rem;
+      padding-bottom: 0.6rem;
+    }
+
+    /* Search */
+    .search-wrap {
+      position: relative;
+      flex: 1;
+      min-width: 200px;
+      max-width: 320px;
+    }
+    .search-wrap svg {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--color-text-muted);
+      pointer-events: none;
+    }
+    #searchInput {
+      width: 100%;
+      padding: 0.6rem 1rem 0.6rem 2.4rem;
+      border: 1.5px solid var(--color-border-input);
+      border-radius: 8px;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      background: var(--color-bg);
+      color: var(--color-text);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    #searchInput:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(14,165,233,0.12);
+    }
+    #searchInput::placeholder { color: var(--color-input-placeholder); }
+
+    /* Filter chips */
+    .filter-chips {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+    .chip {
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+      border: 1.5px solid var(--color-border-input);
+      background: transparent;
+      color: var(--color-text-muted);
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .chip:hover { border-color: var(--color-primary); color: var(--color-primary); }
+    .chip.active {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+      color: white;
+    }
+    .chip.active:hover { background: var(--color-primary-hover); border-color: var(--color-primary-hover); }
+
+    /* "Vše" chip – výraznější vždy */
+    .chip-all {
+      padding: 0.35rem 1.2rem;
+      font-weight: 800;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      border-color: var(--color-text-strong);
+      color: var(--color-text-strong);
+      border-width: 2px;
+      text-transform: uppercase;
+    }
+    .chip-all:hover {
+      background: var(--color-text-strong);
+      border-color: var(--color-text-strong);
+      color: white;
+    }
+    .chip-all.active {
+      background: var(--color-text-strong);
+      border-color: var(--color-text-strong);
+      color: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    html.dark .chip-all {
+      border-color: #cbd5e1;
+      color: #cbd5e1;
+    }
+    html.dark .chip-all:hover,
+    html.dark .chip-all.active {
+      background: #e2e8f0;
+      border-color: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .chip-divider {
+      width: 1.5px;
+      background: var(--color-border-input);
+      align-self: stretch;
+      margin: 2px 4px;
+      flex-shrink: 0;
+    }
+    html.dark .chip-divider { background: #30363d; }
+    .chip-geo {
+      font-size: 0.78rem;
+      border-style: dashed;
+      font-weight: 600;
+    }
+    .chip-geo.active {
+      border-style: solid;
+    }
+
+    /* Sort + count */
+    .controls-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+    .results-count {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      font-family: var(--font-mono);
+      white-space: nowrap;
+    }
+    .sort-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .sort-select {
+      appearance: none;
+      -webkit-appearance: none;
+      padding: 0.4rem 2rem 0.4rem 0.75rem;
+      border: 1.5px solid var(--color-border-input);
+      border-radius: 8px;
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      background: var(--color-bg);
+      color: var(--color-text);
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .sort-select:hover, .sort-select:focus { border-color: var(--color-primary); }
+    .sort-arrow {
+      position: absolute;
+      right: 0.6rem;
+      color: var(--color-text-muted);
+      pointer-events: none;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .page-body {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+
+    /* ── ARTICLE GRID ── */
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    /* ── ARTICLE CARD ── */
+    .arc-card {
+      background: var(--color-surface);
+      border: 1.5px solid var(--color-border);
+      border-radius: 12px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .arc-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--color-primary);
+    }
+
+    /* Thumbnail */
+    .arc-thumb {
+      height: 90px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .thumb-inner {
+      height: 100%;
+      background: linear-gradient(135deg, var(--tc, #0ea5e9) / 12% , transparent);
+      background: linear-gradient(120deg, var(--bg1, rgba(14,165,233,0.12)) 0%, var(--bg2, rgba(14,165,233,0.04)) 100%);
+      display: flex;
+      align-items: center;
+      padding: 0 1.25rem;
+      position: relative;
+    }
+    .thumb-number {
+      font-family: var(--font-mono);
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--tc, var(--color-primary));
+      line-height: 1;
+      letter-spacing: -0.02em;
+      position: relative;
+      z-index: 1;
+    }
+    .thumb-accent-line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--tc, var(--color-primary));
+      opacity: 0.4;
+    }
+    /* Decorative large number echo in background */
+    .thumb-inner::after {
+      content: attr(data-num);
+      position: absolute;
+      right: -0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-mono);
+      font-size: 4.5rem;
+      font-weight: 900;
+      color: var(--tc, var(--color-primary));
+      opacity: 0.06;
+      line-height: 1;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    /* Card body */
+    .arc-body {
+      padding: 0.9rem 1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .arc-meta {
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      margin-bottom: 0.55rem;
+      flex-wrap: wrap;
+    }
+    .arc-tag {
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: white;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+    }
+    .arc-date {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--color-text-muted);
+      margin-left: auto;
+    }
+    .arc-title {
+      font-family: var(--font-serif);
+      font-size: 0.97rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--color-text);
+      margin-bottom: 0.5rem;
+      flex: 1;
+    }
+    .arc-stat {
+      font-size: 0.75rem;
+      margin-top: auto;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--color-border);
+      font-weight: 600;
+    }
+
+    /* ── EMPTY STATE ── */
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--color-text-muted);
+    }
+    .empty-state svg { opacity: 0.3; margin-bottom: 1rem; }
+    .empty-state h3 { font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 0.4rem; color: var(--color-text); }
+    .empty-state p { font-size: 0.9rem; }
+
+    /* ── DARK MODE ── */
+    html.dark .arc-card { background: #161b22; border-color: #30363d; }
+    html.dark .arc-card:hover { border-color: var(--color-primary); background: #1c2128; }
+    html.dark .arc-thumb { background: linear-gradient(135deg, #0d1f35 0%, #0a1929 100%); }
+    html.dark .controls-bar { background: #161b22; border-color: #30363d; }
+    html.dark .controls-top { border-bottom-color: #21262d; }
+    html.dark #searchInput { background: #0d1117; border-color: #30363d; }
+    html.dark .sort-select { background: #0d1117; border-color: #30363d; color: #e2e8f0; }
+    html.dark .chip { border-color: #30363d; }
+    html.dark .arc-stat { border-color: #21262d; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) { .article-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 580px) {
+      .article-grid { grid-template-columns: 1fr; }
+      .controls-inner { gap: 0.75rem; }
+      .page-hero h1 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header></header>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <h1>Archiv článků</h1>
+    <p>Všechny analýzy a data na jednom místě.</p>
+  </div>
+</div>
+
+<!-- ── STICKY CONTROLS ── -->
+<div class="controls-bar">
+  <!-- Row 1: Search + Sort -->
+  <div class="controls-row controls-top">
+    <div class="search-wrap">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input type="text" id="searchInput" placeholder="Hledat v článcích…" autocomplete="off">
+    </div>
+    <div class="controls-right">
+      <span class="results-count" id="resultsCount">21 článků</span>
+      <div class="sort-wrap">
+        <select class="sort-select" id="sortSelect">
+          <option value="newest">Nejnovější</option>
+          <option value="oldest">Nejstarší</option>
+          <option value="az">A–Z</option>
+        </select>
+        <svg class="sort-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <!-- Row 2: Filter chips -->
+  <div class="controls-row controls-chips">
+    <div class="filter-chips" id="filterChips">
+      <!-- Chips se generují z data/categories.json -->
+    </div>
+  </div>
+</div>
+
+<!-- ── ARTICLE GRID ── -->
+<div class="page-body">
+  <div class="article-grid" id="articleGrid"></div>
+</div>
+
+<footer></footer>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────────
+let ARTICLES = [];
+
+// ── TAG COLORS ──────────────────────────────────────────────
+const TAG_COLORS = {
+  'mýty':         '#991b1b',
+  'ekonomika':  '#1d4ed8',
+  'zdraví':     '#059669',
+  'inovace':    '#0ea5e9',
+  'energie':    '#d97706',
+  'bezpečnost': '#7c3aed',
+  'demokracie': '#0f766e',
+  'výzvy':      '#ea580c',
+  'česko':      '#1d4ed8',
+  'svět':       '#0f766e',
+};
+
+// ── THUMBNAIL – čisté typografické číslo ───────────────────
+// Žádné grafy. Číslo samo je vizuál.
+function makeThumbnail(article) {
+  const c = statColor(article.sentiment);
+  const num = article.statNum;
+  const r = parseInt(c.slice(1,3),16);
+  const g = parseInt(c.slice(3,5),16);
+  const b = parseInt(c.slice(5,7),16);
+  const bg  = 'rgba('+r+','+g+','+b+',0.13)';
+  const bg2 = 'rgba('+r+','+g+','+b+',0.04)';
+  return '<div class="thumb-inner" style="--tc:'+c+';--bg1:'+bg+';--bg2:'+bg2+'" data-num="'+num+'">'
+       + '<div class="thumb-number">'+num+'</div>'
+       + '<div class="thumb-accent-line"></div>'
+       + '</div>';
+}
+
+// ── STAT COLOR ──────────────────────────────────────────────
+function statColor(sentiment) {
+  if (sentiment === 'good')    return '#059669';
+  if (sentiment === 'bad')     return '#dc2626';
+  if (sentiment === 'warning') return '#d97706';
+  return '#0ea5e9'; // neutral
+}
+
+// ── RENDER ───────────────────────────────────────────────────
+function renderCards(list) {
+  const grid = document.getElementById('articleGrid');
+  const count = document.getElementById('resultsCount');
+  const n = list.length;
+  const word = n === 1 ? 'článek' : (n >= 2 && n <= 4) ? 'články' : 'článků';
+  count.textContent = n + ' ' + word;
+
+  if (list.length === 0) {
+    grid.innerHTML = `
+      <div class="empty-state">
+        <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <h3>Žádné články nenalezeny</h3>
+        <p>Zkuste jiný výraz nebo zrušte filtr.</p>
+      </div>`;
+    return;
+  }
+
+  grid.innerHTML = list.map(a => {
+    const TAG_LABELS = {
+      'mýty': 'Mýty vs fakta',
+      'ekonomika': 'Ekonomika',
+      'zdraví': 'Zdraví',
+      'inovace': 'Inovace',
+      'energie': 'Energie',
+      'bezpečnost': 'Bezpečnost',
+      'demokracie': 'Demokracie',
+      'výzvy': 'Výzvy',
+      'česko': 'Česko',
+      'svět': 'Svět',
+    };
+    const tags = a.topics.map(t =>
+      '<span class="arc-tag" style="background:'+(TAG_COLORS[t] || '#64748b')+'">'+(TAG_LABELS[t] || t.toUpperCase())+'</span>'
+    ).join('');
+
+    return `
+      <a href="${a.url}" class="arc-card">
+        <div class="arc-thumb">
+          ${makeThumbnail(a)}
+        </div>
+        <div class="arc-body">
+          <div class="arc-meta">
+            ${tags}
+            <span class="arc-date">${a.dateStr}</span>
+          </div>
+          <h3 class="arc-title">${a.title}</h3>
+          <div class="arc-stat" style="color:${statColor(a.sentiment)}">${a.stat}</div>
+        </div>
+      </a>`;
+  }).join('');
+}
+
+// ── FILTER + SORT + SEARCH ───────────────────────────────────
+let activeTopic = 'vše';
+let searchTerm  = '';
+let sortOrder   = 'newest';
+
+function getFiltered() {
+  let list = [...ARTICLES];
+
+  // Topic filter
+  if (activeTopic !== 'vše') {
+    list = list.filter(a => a.topics.includes(activeTopic));
+  }
+
+  // Search
+  if (searchTerm) {
+    const q = searchTerm.toLowerCase();
+    list = list.filter(a =>
+      a.title.toLowerCase().includes(q) ||
+      a.stat.toLowerCase().includes(q) ||
+      a.topics.join(' ').toLowerCase().includes(q)
+    );
+  }
+
+  // Sort
+  if (sortOrder === 'newest') list.sort((a, b) => b.date.localeCompare(a.date));
+  if (sortOrder === 'oldest') list.sort((a, b) => a.date.localeCompare(b.date));
+  if (sortOrder === 'az')     list.sort((a, b) => a.title.localeCompare(b.title, 'cs'));
+
+  return list;
+}
+
+function update() { renderCards(getFiltered()); }
+
+// Chips
+document.getElementById('filterChips').addEventListener('click', e => {
+  const chip = e.target.closest('.chip');
+  if (!chip) return;
+  activeTopic = chip.dataset.topic;
+  document.querySelectorAll('.chip').forEach(c => c.classList.toggle('active', c === chip));
+    // Keep chip-all class on the Vše button
+    const allChip = document.querySelector('.chip-all');
+    if (allChip && chip !== allChip) allChip.classList.remove('active');
+  update();
+});
+
+// Search — debounced
+let searchTimer;
+document.getElementById('searchInput').addEventListener('input', e => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    searchTerm = e.target.value.trim();
+    update();
+  }, 220);
+});
+
+// Sort
+document.getElementById('sortSelect').addEventListener('change', e => {
+  sortOrder = e.target.value;
+  update();
+});
+
+// URL parametr se zpracovává v renderChips()
+
+// ── Načtení kategorií + článků z JSON ───────────────────────
+(async function () {
+  try {
+    const [catRes, artRes] = await Promise.all([
+      fetch('data/categories.json'),
+      fetch('data/articles-index.json')
+    ]);
+    if (!catRes.ok) throw new Error('categories.json nenalezen');
+    if (!artRes.ok) throw new Error('articles-index.json nenalezen');
+
+    const catData = await catRes.json();
+    ARTICLES = await artRes.json();
+
+    // Vyrenderuj chips dynamicky
+    renderChips(catData.topics);
+  } catch (e) {
+    console.error('Chyba při načítání dat:', e.message);
+  }
+  update();
+})();
+
+function renderChips(topics) {
+  const container = document.getElementById('filterChips');
+  const regular = topics.filter(t => !t.geo);
+  const geo     = topics.filter(t =>  t.geo);
+
+  let html = '<button class="chip chip-all active" data-topic="vše">Vše</button>';
+  regular.forEach(t => {
+    html += `<button class="chip" data-topic="${t.slug}">${t.label}</button>`;
+  });
+  html += '<span class="chip-divider"></span>';
+  geo.forEach(t => {
+    html += `<button class="chip chip-geo" data-topic="${t.slug}">${t.label}</button>`;
+  });
+  container.innerHTML = html;
+
+  // Přečti URL parametr a nastavit aktivní chip
+  const params = new URLSearchParams(window.location.search);
+  const topicParam = params.get('topic');
+  if (topicParam) {
+    const chip = container.querySelector(`.chip[data-topic="${topicParam}"]`);
+    if (chip) {
+      activeTopic = topicParam;
+      container.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+    }
+  }
+}
+</script>
+
+<script src="components.js"></script>
+</body>
+</html>

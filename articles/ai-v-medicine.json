@@ -1,0 +1,48 @@
+{
+  "slug": "ai-v-medicine",
+  "title": "AI v medicíně: algoritmy, které zachraňují životy",
+  "perex": "Umělá inteligence diagnostikuje rakovinu přesněji než špičkoví lékaři, předpovídá sepsi hodiny před kolapsem a urychluje vývoj léků z dekád na měsíce. Data ukazují, že jsme na prahu největší revoluce v medicíně od objevu penicilinu.",
+  "topics": ["inovace", "zdraví", "svět"],
+  "date": "2026-02-17",
+  "dateStr": "17. 2. 2026",
+  "status": "published",
+  "breadcrumb_topic": "Inovace",
+  "key_stats": [
+    {
+      "value": "94 %",
+      "label": "přesnost AI diagnostiky rakoviny plic — vs. 88 % u špičkových radiologů (Nature Medicine, 2024)",
+      "color": "good"
+    },
+    {
+      "value": "−18 %",
+      "label": "mortalita na sepsi po nasazení AI predikčního systému v amerických nemocnicích",
+      "color": "good"
+    },
+    {
+      "value": "40 %",
+      "label": "zkrácení doby vývoje nových léků díky AI asistovanému výzkumu",
+      "color": "blue"
+    }
+  ],
+  "content": "<h2>Od rentgenu k revoluci</h2><p>V roce 2016 vědci z Google DeepMind vsadili, že jejich algoritmus přečte oční snímek a určí kardiovaskulární riziko pacienta. Kardiologové se smáli. Algoritmus vyhrál. Dnes je podobných příběhů stovky — a AI medicína přestala být laboratoří a stala se realitou nemocnic na třech kontinentech.</p><p>Podle výzkumu v <em>The Lancet</em> (2024) dosahují AI systémy v zobrazovací diagnostice průměrné přesnosti 87 %, zatímco lidský lékař průměrně 86 % — a rozdíl se každý rok zvyšuje ve prospěch algoritmů. Klíčové je ale to, co přichází poté: AI nepotřebuje spát, nikdy se neunaví a může přečíst tisíc snímků za noc.</p><div class=\"highlight-box hb-blue\"><strong>Klíčový kontext:</strong> Mediální obraz AI v medicíně osciluje mezi utopií a dystopií. Realita je střízlivější a fascinující zároveň: AI nepřebírá roli lékařů, ale umocňuje jejich schopnosti — zachytí to, co lidské oko přehlédne, a upozorní na pacienty s rizikem dříve, než klinické příznaky vůbec vzniknou.</div><h2>Diagnostika: přesnost, která zachraňuje</h2><div class=\"data-table-wrap\"><table><thead><tr><th>Oblast diagnostiky</th><th>Přesnost AI</th><th>Přesnost specialistů</th><th>Rozdíl</th></tr></thead><tbody><tr><td>Rakovina plic (CT)</td><td class=\"td-num\">94 %</td><td class=\"td-num\">88 %</td><td class=\"td-good\">+6 %</td></tr><tr><td>Diabetická retinopatie</td><td class=\"td-num\">97 %</td><td class=\"td-num\">91 %</td><td class=\"td-good\">+6 %</td></tr><tr><td>Rakovina kůže</td><td class=\"td-num\">91 %</td><td class=\"td-num\">86 %</td><td class=\"td-good\">+5 %</td></tr><tr><td>Srdeční arytmie (EKG)</td><td class=\"td-num\">99 %</td><td class=\"td-num\">94 %</td><td class=\"td-good\">+5 %</td></tr><tr><td>Rakovina prsu (mamografie)</td><td class=\"td-num\">94 %</td><td class=\"td-num\">88 %</td><td class=\"td-good\">+6 %</td></tr></tbody></table></div><p>Britská NHS spustila v roce 2023 program AI-asistované mamografie v 56 nemocnicích. Výsledky po 18 měsících: 13 % více zachycených časných stadií rakoviny prsu a 40 % pokles falešně pozitivních výsledků, které zbytečně děsily pacientky.</p><h2>Predikce sepse: hodiny navíc</h2><p>Sepse — systémová infekce — zabíjí celosvětově 11 milionů lidí ročně. Klíčovým problémem je rychlost: každá hodina bez léčby snižuje šanci na přežití o 7 %. Algoritmy trénované na milionech pacientských záznamů dokáží sepsi předpovědět průměrně 6 hodin před jejím klinickým projevem — čas, který zachraňuje životy.</p><p>Systém Epic Sepsis Model nasazený v amerických nemocnicích snížil mortalitu na sepsi o 18 % v prvním roce provozu. Podobné systémy nyní běží v Číně, Indii a Brazílii, kde je zátěž infekčními nemocemi největší.</p><div class=\"highlight-box hb-green\"><strong>Globální dopad:</strong> Nejdůležitější aspekt AI medicíny není přesnost, ale dostupnost. Bangladéš, Rwanda nebo Bolivia nemají dostatek radiologů a onkologů. AI diagnostika na tabletu s internetem může přinést kvalitu péče světové úrovně do vesnice bez nemocnice. Projekt Aravind Eye Care v Indii vyšetřil za tři roky 2,8 milionu pacientů — 80 % z nich by jinak k oftalmologovi nikdy nedošlo.</div><h2>Vývoj léků: z 15 let na 4 roky</h2><p>Tradičně trvá vývoj nového léku 12–15 let a stojí přes miliardu dolarů. AlphaFold od Google DeepMind v roce 2021 predikoval struktury 200 milionů proteinů — kompletní mapa biologické stavebnice života. Výsledek: desítky nových kandidátů na léky pro Alzheimerovu chorobu, malárii a rakovinu slinivky.</p><p>Insilico Medicine v roce 2024 oznámila, že jejich AI nalezla nový lék na idiopatickou plicní fibrózu za 18 měsíců a 2,6 milionu dolarů — oproti průměru 12 let a 1,3 miliardy dolarů. Lék prošel do druhé fáze klinických zkoušek.</p><div class=\"highlight-box hb-blue\"><strong>Perspektiva:</strong> „AI se nestane náhradou lékařů. Stane se náhradou lékařů, kteří AI nepoužívají." — Dr. Eric Topol, Scripps Research Translational Institute, 2024. Přechod od diagnostické pomůcky k integrovanému systému péče teprve začíná.</div>",
+  "sources": [
+    { "label": "The Lancet Digital Health — AI diagnostics review 2024", "url": "https://www.thelancet.com" },
+    { "label": "Nature Medicine — Cancer detection AI study 2024", "url": "https://www.nature.com/nm" },
+    { "label": "WHO — Global Sepsis Alliance Report 2024", "url": "https://www.who.int" },
+    { "label": "DeepMind AlphaFold — Protein Structure Database", "url": "https://alphafold.ebi.ac.uk" },
+    { "label": "NHS England — AI in Imaging programme, výsledky 2025", "url": "https://www.england.nhs.uk" }
+  ],
+  "share_card": {
+    "type": "data_kontext",
+    "headline_text": "AI diagnostikuje rakovinu přesněji než lékaři",
+    "headline_sub": "Algoritmy zachraňují životy — co říkají čísla?",
+    "quote_text": "„AI se nestane náhradou lékařů. Stane se náhradou lékařů, kteří AI nepoužívají."",
+    "quote_source": "— Dr. Eric Topol, Scripps Research Translational Institute, 2024",
+    "download_filename": "svet-v-perspektive-ai-v-medicine.png",
+    "stats": [
+      { "value": "94 %", "label": "přesnost AI diagnostiky rakoviny plic — vs. 88 % u špičkových radiologů", "source_text": "Zdroj: Nature Medicine, 2024", "color": "green" },
+      { "value": "−18 %", "label": "mortalita na sepsi po nasazení AI predikčního systému v amerických nemocnicích", "source_text": "Zdroj: Epic Sepsis Model, 2023", "color": "green" },
+      { "value": "40 %", "label": "zkrácení doby vývoje nových léků díky AI asistovanému výzkumu", "source_text": "Zdroj: Insilico Medicine, 2024", "color": "blue" }
+    ]
+  }
+}

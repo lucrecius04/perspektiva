@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svět v perspektivě – Data o globálním pokroku</title>
+    <link rel="stylesheet" href="perspektiva-theme.css">
+  <!-- Anti-flash: tmavý režim se aplikuje před renderováním -->
+  <script>
+    (function(){
+      var t = localStorage.getItem('svp-theme');
+      var dark = t === 'dark' || (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (dark) document.documentElement.classList.add('dark');
+    })();
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-padding-top: 90px; }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+       /* HEADER */
+.hero {
+            background: linear-gradient(135deg, var(--color-hero-start) 0%, var(--color-border-input) 50%, var(--color-border) 100%);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 2rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 3rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-family: var(--font-serif);
+            font-size: 2.75rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 0.75rem;
+            color: var(--color-text);
+            letter-spacing: -0.02em;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .hero-right {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .cisla-tydne-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .cisla-tydne-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .cislo-tydne-card {
+            background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-hero-start) 100%);
+            border: 2px solid var(--color-primary);
+            border-radius: 0.75rem;
+            padding: 1rem 1rem;
+            text-align: center;
+            min-width: 130px;
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15);
+        }
+
+        .cislo-number {
+            font-family: var(--font-mono);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .cislo-desc {
+            font-size: 0.72rem;
+            color: var(--color-text);
+            line-height: 1.35;
+            font-weight: 500;
+        }
+            background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-hero-start) 100%);
+            border: 2px solid var(--color-primary);
+            border-radius: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
+            text-align: center;
+            min-width: 200px;
+        }
+
+        /* Quick fact strip below stat */
+        .quick-facts {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .quick-fact {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-left: 3px solid var(--color-primary);
+            border-radius: 0.4rem;
+            padding: 0.5rem 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            min-width: 200px;
+        }
+
+        .quick-fact-icon {
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .quick-fact-text {
+            font-size: 0.78rem;
+            line-height: 1.3;
+            color: var(--color-text);
+        }
+
+        .quick-fact-number {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .stat-week-label-mini {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-week-number-mini {
+            font-family: var(--font-mono);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-week-desc-mini {
+            font-size: 0.75rem;
+            color: var(--color-text);
+            line-height: 1.3;
+            font-weight: 500;
+        }
+
+        /* MAIN CONTENT - Articles LEFT, Data RIGHT */
+        /* main-content removed — now separate full-width sections */
+        .topics-fullwidth {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 2rem 1rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .data-fullwidth {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 2rem;
+        }
+
+        /* Fix scroll offset for sticky header */
+        #home, #temata, #klicove-statistiky, #o-nas, #data {
+            scroll-margin-top: 90px;
+        }
+
+        .topics-header {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .topics-header h2 {
+            margin-bottom: 0;
+        }
+
+        .topics-hint {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            font-style: italic;
+        }
+
+        .show-all-btn {
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1.25rem;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+            box-shadow: 0 1px 3px rgba(14,165,233,0.3);
+        }
+
+        .show-all-btn:hover {
+            background: var(--color-primary-hover);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* TOPICS SECTION (LEFT) - replaces articles-section */
+        .topics-section {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .topics-section h2 {
+            display: inline;
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 0.25rem;
+            align-items: stretch;
+            gap: 0.25rem;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 0.6rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 4px rgba(14,165,233,0.08);
+        }
+        .topic-card.featured {
+            border-radius: 50%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg) 100%);
+            border: 1.5px solid rgba(14,165,233,0.35);
+            box-shadow: 0 3px 12px rgba(14,165,233,0.15);
+            margin-left: 0.5rem;
+            width: 70%;
+            justify-self: center;
+            flex-direction: column;
+            gap: 0.1rem;
+            padding: 0.2rem;
+        }
+        .topic-card.featured::before {
+            display: none;
+        }
+        .topic-card.featured:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(14,165,233,0.22);
+            border-color: rgba(14,165,233,0.6);
+        }
+
+
+        
+        .topic-card.special {
+            border-left: 2px solid rgba(14,165,233,0.5);
+            margin-left: 0.6rem;
+        }
+
+        a.topic-card { text-decoration: none; }
+        /* Geo karty (Česko, Svět) — pill tvar, odlišné od obdélníků */
+        .topic-card.topic-geo {
+            border-radius: 999px;
+            padding: 0 1rem;
+            font-weight: 700;
+        }
+ 
+        .topic-grid a[data-topic="česko"] {
+            margin-left: 2.5rem;
+        }
+       /* Prázdná buňka v gridu pro vizuální mezeru */
+        .topic-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 0.4rem;
+            padding: 0 0.5rem;
+            cursor: pointer;
+            transition: all 0.25s;
+            position: relative;
+            overflow: visible;
+            text-align: left;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            height: 48px;
+        }
+        
+        @media (max-width: 1000px) { .topic-grid { grid-template-columns: repeat(8, 1fr) 1rem repeat(2, 1fr); } }
+
+        .topic-badge {
+            position: absolute;
+            top: -6px;
+            right: -2px;
+            background: var(--category-color, var(--color-primary));
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            font-family: var(--font-mono);
+            padding: 0.15rem 0.4rem;
+            border-radius: 999px;
+            box-shadow: var(--shadow-md);
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .topic-card .category-icon {
+            margin-bottom: 0;
+            display: block;
+        }
+
+        .topic-card .category-name {
+            font-size: 0.72rem;
+            font-weight: 600;
+            margin: 0;
+            line-height: 1.2;
+            white-space: nowrap;
+            text-align: left;
+            color: var(--color-text);
+        }
+
+        .topic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--category-color, var(--color-primary));
+            transform: scaleY(0);
+            transition: transform 0.3s;
+        }
+
+        .topic-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .topic-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--category-color, var(--color-primary));
+        }
+
+        .topic-card.active-category {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--category-color, var(--color-primary));
+            border-width: 2px;
+            background: linear-gradient(to bottom, white, var(--color-bg));
+        }
+
+        /* Articles container - fixed height to prevent jumping */
+        /* Latest articles section — below hero, full width */
+        .latest-articles-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 2rem 2.5rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .latest-articles-section .articles-header h2 {
+            font-size: 1.4rem;
+        }
+        .articles-container {
+            margin-top: 0;
+        }
+        .articles-container.hidden {
+            display: none;
+        }
+
+        .articles-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-shrink: 0;
+        }
+
+        .articles-container h2 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .article-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+        }
+        @media (max-width: 1024px) { .article-list { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 640px) { .article-list { grid-template-columns: 1fr; } }
+
+        .article-list::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .article-list::-webkit-scrollbar-track {
+            background: var(--color-border);
+            border-radius: 99px;
+        }
+
+        .article-list::-webkit-scrollbar-thumb {
+            background: var(--color-primary);
+            border-radius: 99px;
+        }
+
+        .article-list::-webkit-scrollbar-thumb:hover {
+            background: var(--color-primary-hover);
+        }
+
+        .article-list::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .article-list::-webkit-scrollbar-track {
+            background: var(--color-border);
+            border-radius: 99px;
+        }
+
+        .article-list::-webkit-scrollbar-thumb {
+            background: var(--color-primary);
+            border-radius: 99px;
+        }
+
+        .article-list::-webkit-scrollbar-thumb:hover {
+            background: var(--color-primary-hover);
+        }
+
+        .article-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-left: 4px solid var(--color-border);
+            border-radius: 0.5rem;
+            transition: all 0.25s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .article-card:hover {
+            transform: translateX(3px);
+            border-left-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .article-card-header {
+            padding: 1rem 1.25rem 0.75rem;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+            margin-bottom: 0.6rem;
+            flex-wrap: wrap;
+            row-gap: 0.35rem;
+        }
+
+        .article-tag {
+            background: var(--color-primary);
+            color: white;
+            padding: 0.15rem 0.45rem;
+            border-radius: 0.2rem;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        .article-tag.danger { background: #dc2626; }
+
+        .article-date {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--color-text-muted);
+            margin-left: auto;
+            white-space: nowrap;
+        }
+
+        .article-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1.35;
+            margin-bottom: 0.4rem;
+            color: var(--color-text);
+        }
+
+        .article-excerpt {
+            font-size: 0.83rem;
+            line-height: 1.5;
+            color: var(--color-text-muted);
+        }
+
+        .article-stats {
+            justify-content: space-between;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.55rem 1.25rem;
+            background: var(--color-bg);
+            border-top: 1px solid var(--color-border);
+            border-radius: 0 0 0.5rem 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .article-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: var(--color-text-muted);
+            font-size: 0.8rem;
+        }
+
+        .article-read-more {
+            font-size: 0.8rem;
+            color: var(--color-primary);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: gap 0.2s;
+        }
+
+        .article-card:hover .article-read-more {
+            gap: 0.5rem;
+        }
+
+        /* DATA SECTION (RIGHT) */
+        .data-section {
+            background: linear-gradient(135deg, var(--color-hero-start) 0%, var(--color-border-input) 100%);
+            padding: 0.9rem;
+            border-radius: 1rem;
+        }
+
+        .data-section h2 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .country-selector {
+            background: var(--color-surface);
+            padding: 1rem 1.25rem;
+            border-radius: 0.5rem;
+            border: 2px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 0.6rem;
+            position: relative;
+        }
+
+        .country-selector label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--color-text-muted);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        #countrySearch {
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            padding: 0.625rem 0.875rem;
+            border: 2px solid var(--color-border);
+            border-radius: 0.5rem;
+            width: 100%;
+            outline: none;
+        }
+
+        #countrySearch:focus { border-color: var(--color-primary); }
+
+        .country-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            max-height: 300px;
+            overflow-y: auto;
+            background: var(--color-surface);
+            border: 2px solid var(--color-primary);
+            border-radius: 0.5rem;
+            margin-top: 0.5rem;
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+        }
+
+        .country-dropdown.active { display: block; }
+
+        .country-option {
+            padding: 0.625rem 0.875rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .country-option:hover { background: #f0fdfa; }
+        .country-option.selected {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .country-flag { margin-right: 0.5rem; }
+        
+        .country-divider {
+            border-top: 1px solid var(--color-border);
+            margin: 0.5rem 0;
+        }
+
+        /* Stats grid - 2x2 compact */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .stat-box {
+            background: var(--color-surface);
+            padding: 0.6rem 0.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .stat-box:hover {
+            border-color: rgba(14, 165, 233, 0.3);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-box.active {
+            border-color: var(--color-primary);
+            border-width: 2px;
+            background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-hero-start) 100%);
+            box-shadow: 0 6px 16px rgba(14, 165, 233, 0.3);
+            transform: scale(1.02);
+        }
+
+        .stat-number {
+            font-family: var(--font-mono);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            display: block;
+            margin-bottom: 0.1rem;
+        }
+
+        .stat-box.active .stat-number {
+            color: var(--color-primary-hover);
+            font-size: 1.4rem;
+        }
+
+        .stat-label {
+            font-size: 0.72rem;
+            color: var(--color-text-muted);
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .stat-year {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--color-primary);
+            margin-top: 0.25rem;
+            font-weight: 600;
+        }
+
+        /* Chart */
+        .chart-container {
+            background: var(--color-surface);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--color-border);
+        }
+
+        .chart-title {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        #dataChart {
+            width: 100%;
+            height: 340px;
+        }
+
+        .chart-source {
+            font-size: 0.72rem;
+            color: var(--color-text-muted);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+        /* Disclaimer */
+        .poverty-disclaimer {
+            max-width: 1400px;
+            margin: 0 auto 3rem;
+            padding: 0 2rem;
+        }
+
+        .disclaimer-box {
+            background: #fef3c7;
+            border-left: 4px solid var(--color-accent);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .disclaimer-icon { font-size: 1.25rem; flex-shrink: 0; }
+
+        .disclaimer-content h3 {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .disclaimer-content p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+
+        .disclaimer-content .source {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+        }
+
+        .disclaimer-content .source a {
+            color: var(--color-primary);
+            text-decoration: underline;
+        }
+
+        /* TOPICS */
+        .categories {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .category-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 0.5rem;
+            padding: 1.75rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--category-color, var(--color-primary));
+            transform: scaleY(0);
+            transition: transform 0.3s;
+        }
+
+        .category-card:hover::before { transform: scaleY(1); }
+
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--category-color, var(--color-primary));
+        }
+
+        .category-card.active-category {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--category-color, var(--color-primary));
+            border-width: 3px;
+            background: linear-gradient(to bottom, white, var(--color-bg));
+        }
+
+        .category-icon {
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-bottom: 0;
+            display: block;
+            flex-shrink: 0;
+            color: var(--category-color, var(--color-primary));
+        }
+        .category-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.75;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .category-name {
+            font-family: var(--font-serif);
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-stat {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+        }
+
+        /* BRAND SECTION */
+        .brand-section-wrap {
+            border-top: 1px solid var(--color-border);
+            background: var(--color-bg);
+        }
+        .brand-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem 0.8rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .brand-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0rem;
+        }
+
+        .brand-logo {
+            width: 120px;
+            height: 120px;
+        }
+
+        .brand-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+			margin-top: 0.02rem;
+            font-weight: 700;
+            color: var(--color-text);
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .brand-subtitle {
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            font-weight: 400;
+            margin: 0;
+        }
+
+        /* FOOTER */@media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                flex-direction: column;
+            }
+
+            .stat-of-week-mini {
+                align-self: flex-start;
+            }
+
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+        /* ══ DEBUNKER HERO ══ */
+        .hero-outer {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: stretch;
+            gap: 1.75rem;
+        }
+        .cislo-panel {
+            flex-shrink: 0;
+            width: 210px;
+            display: flex;
+            flex-direction: column;
+            padding-top: 2.2rem;
+        }
+        .cislo-panel-card {
+            flex: 1;
+            background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-hero-start) 100%);
+            border: 2px solid var(--color-primary);
+            border-radius: 16px;
+            padding: 1.25rem 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(14,165,233,0.15);
+            gap: 0.5rem;
+        }
+        .cislo-panel-source {
+            font-size: 0.68rem;
+            color: var(--color-primary-hover);
+            font-weight: 600;
+            background: rgba(14,165,233,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 20px;
+            margin-top: auto;
+        }
+        /* ══ DEBUNKER HERO ══ (cont) */
+        .hero { padding: 0; }
+        .hero-outer {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: stretch;
+            gap: 1.75rem;
+            padding: 1.5rem 2rem 1.75rem;
+        }
+        .debunker-inner { flex: 1; min-width: 0; }
+        .debunker-label {
+            display: flex; align-items: center; gap: 0.5rem;
+            font-size: 0.85rem; font-weight: 800; text-transform: uppercase;
+            letter-spacing: 0.14em; color: var(--color-primary); margin-bottom: 1.2rem;
+        }
+        .debunker-label::before {
+            content: ''; display: inline-block; width: 8px; height: 8px;
+            background: var(--color-primary); border-radius: 50%; animation: dbpulse 2s infinite;
+        }
+        @keyframes dbpulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.4); }
+        }
+        .debunker-cards {
+            display: grid; grid-template-columns: 1fr auto 1fr;
+            gap: 0; align-items: stretch; min-height: 155px;
+        }
+        .card-myth {
+            background: linear-gradient(135deg, #fff5f5 0%, #fee2e2 100%);
+            border: 1.5px solid #fca5a5; border-radius: 20px;
+            padding: 1.1rem 1.4rem; position: relative; overflow: hidden;
+            transition: opacity 0.35s ease; margin-right: -14px;
+            padding-right: calc(1.4rem + 14px); z-index: 1;
+            height: 185px;
+            display: flex; flex-direction: column;
+        }
+        .card-myth::before {
+            content: ''; position: absolute; top: -20px; right: -20px;
+            width: 100px; height: 100px;
+            background: radial-gradient(circle, rgba(239,68,68,0.1) 0%, transparent 70%);
+        }
+        .card-vs {
+            display: flex; align-items: center; justify-content: center;
+            width: 60px; flex-shrink: 0; position: relative; z-index: 2;
+        }
+        .vs-circle {
+            width: 44px; height: 44px; background: var(--color-text-strong); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.7rem; font-weight: 700; color: white; letter-spacing: 0.05em;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+        }
+        .card-data {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 60%, #d1fae5 100%);
+            border: 1.5px solid #6ee7b7; border-radius: 20px;
+            padding: 1.1rem 1.4rem; position: relative; overflow: hidden;
+            transition: opacity 0.35s ease; margin-left: -14px;
+            padding-left: calc(1.4rem + 14px); z-index: 1;
+            height: 185px;
+            display: flex; flex-direction: column;
+        }
+        .card-data::before {
+            content: ''; position: absolute; top: -20px; left: -20px;
+            width: 100px; height: 100px;
+            background: radial-gradient(circle, rgba(16,185,129,0.14) 0%, transparent 70%);
+        }
+        .card-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.6rem; }
+        .card-icon { font-size: 1.05rem; line-height: 1; }
+        .card-label-myth { font-size: 0.67rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #dc2626; }
+        .card-label-data { font-size: 0.67rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-primary-hover); }
+        .myth-quote {
+            font-family: var(--font-serif); font-style: italic;
+            font-size: 1.35rem; line-height: 1.4; color: #991b1b; margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        .myth-quote-wrap { flex: 1; }
+        .myth-source { font-size: 0.77rem; color: #b91c1c; opacity: 0.75; margin-top: auto; }
+        .data-number {
+            font-family: var(--font-serif); font-size: 2.4rem; font-weight: 700;
+            line-height: 1; color: #065f46; margin-bottom: 0.3rem; letter-spacing: -0.02em;
+        }
+        .data-number.negative { color: #b45309; }
+        .data-desc { font-size: 0.82rem; line-height: 1.4; color: #064e3b; margin-bottom: 0.6rem; }
+        .data-source {
+            display: inline-flex; align-items: center; gap: 0.35rem;
+            font-size: 0.71rem; font-weight: 600; color: var(--color-primary-hover);
+            background: rgba(14,165,233,0.1); padding: 0.25rem 0.6rem; border-radius: 20px;
+            max-width: 100%; white-space: normal; word-break: break-word;
+            margin-top: auto; align-self: flex-start;
+        }
+        .context-note {
+            background: var(--color-surface); border-left: 3px solid var(--color-primary);
+            padding: 0.55rem 1rem; font-size: 0.8rem; color: var(--color-text-body);
+            border-radius: 0 8px 8px 0; margin-top: 0.7rem; font-style: italic;
+            transition: opacity 0.35s ease;
+        }
+        .debunker-footer {
+            display: flex; align-items: center;
+            justify-content: space-between; margin-top: 1rem; gap: 1rem;
+        }
+        .analysis-btn {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            background: var(--color-primary); color: white; text-decoration: none;
+            padding: 0.6rem 1.3rem; border-radius: 9px;
+            font-size: 0.875rem; font-weight: 600;
+            transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+            box-shadow: 0 2px 10px rgba(14,165,233,0.3);
+        }
+        .analysis-btn:hover { background: var(--color-primary-hover); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(14,165,233,0.4); }
+        .btn-meta { display: flex; flex-direction: column; gap: 0.1rem; }
+        .btn-action { font-size: 0.7rem; opacity: 0.85; font-weight: 400; }
+        .btn-title-text { font-size: 0.875rem; font-weight: 600; }
+        .carousel-nav { display: flex; align-items: center; gap: 0.6rem; }
+        .carousel-dots { display: flex; gap: 0.4rem; }
+        .dot {
+            width: 8px; height: 8px; border-radius: 50%; background: var(--color-border-input);
+            cursor: pointer; transition: all 0.3s; border: none; padding: 0;
+        }
+        .dot.active { background: var(--color-primary); width: 24px; border-radius: 4px; }
+        .carousel-btn {
+            width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid var(--color-border-input);
+            background: var(--color-surface); cursor: pointer; display: flex; align-items: center;
+            justify-content: center; font-size: 0.9rem; color: var(--color-text-muted); transition: all 0.2s;
+        }
+        .carousel-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+        .pause-btn {
+            width: 32px; height: 32px; border-radius: 50%;
+            border: 1.5px solid var(--color-border-input); background: var(--color-surface); cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.8rem; color: var(--color-text-muted); transition: all 0.2s;
+        }
+        .pause-btn:hover, .pause-btn.paused { border-color: var(--color-primary); color: var(--color-primary); background: var(--color-bg); }
+        .progress-wrap { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.7rem; }
+        .progress-bar { flex: 1; height: 3px; background: var(--color-border); border-radius: 2px; overflow: hidden; }
+        .progress-fill { height: 100%; background: var(--color-primary); border-radius: 2px; }
+
+    </style>
+</head>
+<body>
+    <header></header>
+
+    <!-- DEBUNKER HERO -->
+    <section class="hero" id="home">
+      <div class="hero-outer">
+        <div class="debunker-inner">
+
+          <div class="debunker-label">Témata týdne</div>
+
+        <div class="debunker-cards">
+          <div class="card-myth" id="mythCard">
+            <div class="card-header">
+              <span class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6z"/></svg></span>
+              <span class="card-label-myth">Slyšíte v médiích</span>
+            </div>
+            <p class="myth-quote" id="mythText">„Do rozpočtu EU posíláme víc, než dostáváme zpátky."</p>
+            <p class="myth-source" id="mythSource">Běžný narativ na sociálních sítích</p>
+          </div>
+
+          <div class="card-vs">
+            <div class="vs-circle">VS</div>
+          </div>
+
+          <div class="card-data" id="dataCard">
+            <div class="card-header">
+              <span class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-hover)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></span>
+              <span class="card-label-data">Co říkají data</span>
+            </div>
+            <div class="data-number" id="dataNumber">+1,06 bil.</div>
+            <p class="data-desc" id="dataDesc">Čistý zisk ČR z EU od roku 2004 do dnes — v korunách. Jsme čistý příjemce.</p>
+            <span class="data-source" id="dataSource">📁 Ministerstvo financí ČR</span>
+          </div>
+        </div>
+
+        <p class="context-note" id="contextNote">ČR od vstupu do EU v roce 2004 čerpala z fondů EU výrazně více, než kolik odváděla do společného rozpočtu. Podrobná čísla jsou dostupná ve Zprávě o výsledcích hospodaření ČR v EU.</p>
+
+        <div class="debunker-footer">
+          <a href="kontext-clanek-eu-myth.html" class="analysis-btn" id="analysisBtn">
+            <div class="btn-meta">
+              <span class="btn-action">Číst celou analýzu →</span>
+              <span class="btn-title" id="btnTitle">Mýtus o EU: Platíme víc, než dostáváme?</span>
+            </div>
+          </a>
+          <div class="carousel-nav">
+            <button class="pause-btn" id="pauseBtn" onclick="togglePause()" title="Pozastavit">⏸</button>
+            <button class="carousel-btn" onclick="prevSlide()" title="Předchozí">‹</button>
+            <div class="carousel-dots">
+              <button class="dot active" onclick="goToSlide(0)"></button>
+              <button class="dot" onclick="goToSlide(1)"></button>
+              <button class="dot" onclick="goToSlide(2)"></button>
+            </div>
+            <button class="carousel-btn" onclick="nextSlide()" title="Další">›</button>
+          </div>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill" style="width:0%"></div>
+          </div>
+        </div>
+
+        </div><!-- /debunker-inner -->
+
+        <!-- ČÍSLO TÝDNE — vpravo, přes celou výšku -->
+        <div class="cislo-panel">
+          <div class="cislo-panel-card">
+            <div class="cisla-tydne-label" style="font-size:0.62rem; letter-spacing:0.12em; font-weight:700; text-transform:uppercase; color:var(--color-primary); margin-bottom:0.5rem;">Číslo týdne</div>
+            <div class="cislo-number" id="heroLifeExp" style="font-size:2.6rem; color:var(--color-primary);">73.3</div>
+            <div class="cislo-desc" style="font-size:0.82rem; color:var(--color-text-strong); font-weight:500; line-height:1.35; margin-top:0.35rem;">let — průměrná délka života ve světě</div>
+            <div class="cislo-desc" style="font-size:0.75rem; color:var(--color-text-muted); margin-top:0.5rem; line-height:1.4;">Hodnota vzrostla z 67 let v roce 2000 o více než 6 let. Historicky nejlepší výsledek.</div>
+            <div class="cislo-panel-source">📁 WHO / World Bank 2023</div>
+          </div>
+        </div>
+
+      </div><!-- /hero-outer -->
+    </section>
+
+    <!-- NEJNOVĚJŠÍ ČLÁNKY -->
+    <section class="latest-articles-section">
+        <div class="articles-container">
+                <div class="articles-header">
+                    <h2>Nejnovější články</h2>
+                    <a href="archiv.html" class="show-all-btn">Archiv →</a>
+                </div>
+                
+                <div class="article-list">
+                    <a href="kontext-clanek-eu-myth.html" class="article-card" data-topic="mýty česko">
+                        <div class="article-card-header">
+                            <div class="article-meta">
+                                <span class="article-tag" style="background: #7c3aed;">ČESKO</span>
+                                <span class="article-tag" style="background: #d97706;">MÝTUS</span>
+                                <span class="article-date">17. 2. 2026</span>
+                            </div>
+                            <h3 class="article-title">"Česko platí do EU víc než dostává" — opravdu?</h3>
+                            <p class="article-excerpt">
+                                Tvrzení od SPD a dalších: ČR je "čistý plátce" do EU rozpočtu. Data z Eurostatu a ČSÚ ukazují opak — každá koruna vrácená z EU se vrátí 2,4× v ekonomickém růstu.
+                            </p>
+                        </div>
+                        <div class="article-stats">
+                            <span class="article-stat" style="color: #dc2626; font-weight: 700;">❌ NEPRAVDA</span>
+                            <span class="article-read-more">Číst více →</span>
+                        </div>
+                    </a>
+                    <a href="kontext-clanek-migrace-myth.html" class="article-card" data-topic="mýty svět">
+                        <div class="article-card-header">
+                            <div class="article-meta">
+                                <span class="article-tag" style="background: var(--color-secondary);">SVĚT</span>
+                                <span class="article-tag" style="background: #d97706;">MÝTUS</span>
+                                <span class="article-date">17. 2. 2026</span>
+                            </div>
+                            <h3 class="article-title">"Migrace zvyšuje kriminalitu" — co říkají data?</h3>
+                            <p class="article-excerpt">
+                                Populární narativ napříč Evropou. Ale policie ČR, BKA Německo i švédská statistika ukazují: migrace ≠ kriminalita. Korelace ano, kauzalita ne.
+                            </p>
+                        </div>
+                        <div class="article-stats">
+                            <span class="article-stat" style="color: #d97706; font-weight: 700;">⚠️ ZAVÁDĚJÍCÍ</span>
+                            <span class="article-read-more">Číst více →</span>
+                        </div>
+                    </a>
+                    <a href="kontext-clanek-oze-myth.html" class="article-card" data-topic="mýty svět">
+                        <div class="article-card-header">
+                            <div class="article-meta">
+                                <span class="article-tag" style="background: var(--color-secondary);">SVĚT</span>
+                                <span class="article-tag" style="background: #d97706;">MÝTUS</span>
+                                <span class="article-date">17. 2. 2026</span>
+                            </div>
+                            <h3 class="article-title">"Obnovitelná energie nemůže být stabilní" — je to pravda?</h3>
+                            <p class="article-excerpt">
+                                Klasický argument fosilní lobby. Grid data z Dánska (80 % OZE), Německa a Kalifornie ukazují: stabilita je možná. Problém není technický — je ekonomický.
+                            </p>
+                        </div>
+                        <div class="article-stats">
+                            <span class="article-stat" style="color: #dc2626; font-weight: 700;">❌ NEPRAVDA</span>
+                            <span class="article-read-more">Číst více →</span>
+                        </div>
+                    </a>
+                    <a href="kontext-clanek-mentalni-zdravi.html" class="article-card" data-topic="výzvy svět">
+                        <div class="article-card-header">
+                            <div class="article-meta">
+                                <span class="article-tag" style="background: var(--color-secondary);">SVĚT</span>
+                                <span class="article-tag" style="background: #991b1b;">VÝZVY</span>
+                                <span class="article-date">17. 2. 2026</span>
+                            </div>
+                            <h3 class="article-title">Mentální zdraví mladých: krize, o které se příliš nemluví</h3>
+                            <p class="article-excerpt">
+                                Deprese u teenagerů vzrostla o 50 % za dekádu, sebevraždy mladých lidí jsou na historickém maximu. Sociální média, izolace a ekonomický tlak vytvořily toxickou kombinaci.
+                            </p>
+                        </div>
+                        <div class="article-stats">
+                            <span class="article-stat" style="color: #dc2626; font-weight: 700;">📈 +50 % deprese u teenagerů za 10 let</span>
+                            <span class="article-read-more">Číst více →</span>
+                        </div>
+                    </a>
+                    <a href="kontext-clanek-krize-bydleni.html" class="article-card" data-topic="výzvy svět">
+                        <div class="article-card-header">
+                            <div class="article-meta">
+                                <span class="article-tag" style="background: var(--color-secondary);">SVĚT</span>
+                                <span class="article-tag" style="background: #991b1b;">VÝZVY</span>
+                                <span class="article-date">17. 2. 2026</span>
+                            </div>
+                            <h3 class="article-title">Krize bydlení: generace, která si nikdy nekoupí byt</h3>
+                            <p class="article-excerpt">
+                                V Londýně stojí průměrný byt 14 ročních mezd. V Praze 12. Generace Mileniálů a Z vlastní domy mnohem méně než jejich rodiče ve stejném věku — a trend se zhoršuje.
+                            </p>
+                        </div>
+                        <div class="article-stats">
+                            <span class="article-stat" style="color: #dc2626; font-weight: 700;">🏠 14× roční mzda = cena bytu v Londýně</span>
+                            <span class="article-read-more">Číst více →</span>
+                        </div>
+                    </a>
+                    <a href="kontext-clanek-nerovnost.html" class="article-card" data-topic="výzvy svět">
+                        <div class="article-card-header">
+                            <div class="article-meta">
+                                <span class="article-tag" style="background: var(--color-secondary);">SVĚT</span>
+                                <span class="article-tag" style="background: #991b1b;">VÝZVY</span>
+                                <span class="article-date">17. 2. 2026</span>
+                            </div>
+                            <h3 class="article-title">Ekonomická nerovnost: propast se dál prohlubuje</h3>
+                            <p class="article-excerpt">
+                                Top 1 % světové populace vlastní 45 % globálního bohatství. Střední třída v rozvinutých zemích stagnuje, zatímco miliardářů přibývá rychleji než kdykoliv předtím.
+                            </p>
+                        </div>
+                        <div class="article-stats">
+                            <span class="article-stat" style="color: #dc2626; font-weight: 700;">💸 45 % bohatství vlastní top 1 %</span>
+                            <span class="article-read-more">Číst více →</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+    </section>
+
+    <!-- TÉMATA: full-width rozcestník -->
+    <div class="topics-fullwidth" id="temata">
+<section class="topics-section" id="temata">
+            <div class="topics-header">
+                <h2>Témata <span class="topics-hint">→ rozcestník do archivu</span></h2>
+            </div>
+            
+            <div class="topic-grid">
+                <a href="archiv.html?topic=zdraví" class="topic-card" style="--category-color: #059669;" data-topic="zdraví">
+                    <span class="category-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+                    <h3 class="category-name">Zdraví</h3>
+                
+                    <span class="topic-badge">3</span>
+                </a>
+                <a href="archiv.html?topic=ekonomika" class="topic-card" style="--category-color: #2563eb;" data-topic="ekonomika">
+                    <span class="category-icon"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
+                    <h3 class="category-name">Ekonomika</h3>
+                
+                    <span class="topic-badge">2</span>
+                </a>
+                <a href="archiv.html?topic=inovace" class="topic-card" style="--category-color: #f59e0b;" data-topic="inovace">
+                    <span class="category-icon"><svg viewBox="0 0 24 24"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg></span>
+                    <h3 class="category-name">Inovace</h3>
+                
+                    <span class="topic-badge">4</span>
+                </a>
+                <a href="archiv.html?topic=energie" class="topic-card" style="--category-color: #059669;" data-topic="energie">
+                    <span class="category-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+                    <h3 class="category-name">Energie</h3>
+                
+                    <span class="topic-badge">2</span>
+                </a>
+                <a href="archiv.html?topic=bezpečnost" class="topic-card" style="--category-color: #dc2626;" data-topic="bezpečnost">
+                    <span class="category-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+                    <h3 class="category-name">Bezpečnost</h3>
+                
+                    <span class="topic-badge">2</span>
+                </a>
+                <a href="archiv.html?topic=demokracie" class="topic-card" style="--category-color: #7c3aed;" data-topic="demokracie">
+                    <span class="category-icon"><svg viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></span>
+                    <h3 class="category-name">Dem. & právo</h3>
+                
+                    <span class="topic-badge">3</span>
+                </a>
+                <a href="archiv.html?topic=výzvy" class="topic-card" style="--category-color: #991b1b;" data-topic="výzvy">
+                    <span class="category-icon"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+                    <h3 class="category-name">Výzvy</h3>
+                
+                    <span class="topic-badge">3</span>
+                </a>
+                <a href="archiv.html?topic=mýty" class="topic-card" style="--category-color: #d97706;" data-topic="mýty">
+                    <span class="category-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+                    <h3 class="category-name">Mýty vs. fakta</h3>
+                
+                    <span class="topic-badge">3</span>
+                </a>
+                <a href="archiv.html?topic=česko" class="topic-card featured topic-geo" style="--category-color: #38bdf8;" data-topic="česko">
+                    <span class="category-icon"><svg viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></span>
+                    <h3 class="category-name">Česko</h3>
+                
+                    <span class="topic-badge">6</span>
+                </a>
+                <a href="archiv.html?topic=svět" class="topic-card featured topic-geo" style="--category-color: var(--color-secondary);" data-topic="svět">
+                    <span class="category-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+                    <h3 class="category-name">Svět</h3>
+                
+                    <span class="topic-badge">14</span>
+                </a>
+                </div>
+
+
+        </section>
+    </div>
+
+    <!-- STATISTIKY: full-width -->
+    <div class="data-fullwidth">
+<section class="data-section" id="klicove-statistiky">
+            <h2 id="statsTitle">Státy v datech – Svět</h2>
+
+            <div class="country-selector">
+                <label for="countrySearch">Vyberte region:</label>
+                <input 
+                    type="text" 
+                    id="countrySearch" 
+                    placeholder="Svět (vyhledejte zemi...)"
+                    autocomplete="off"
+                />
+                <div class="country-dropdown" id="countryDropdown"></div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-box active" onclick="showChart('life')" data-metric="life">
+                    <span class="stat-number" id="lifeExpectancy">73.5</span>
+                    <span class="stat-label">Očekávaná délka života (roky)</span>
+                    <span class="stat-year" id="lifeExpYear">Rok: 2023</span>
+                </div>
+                <div class="stat-box" onclick="showChart('literacy')" data-metric="literacy">
+                    <span class="stat-number" id="literacy">88%</span>
+                    <span class="stat-label">Gramotnost dospělých</span>
+                    <span class="stat-year" id="literacyYear">Rok: 2023</span>
+                </div>
+                <div class="stat-box" onclick="showChart('electricity')" data-metric="electricity">
+                    <span class="stat-number" id="electricity">92%</span>
+                    <span class="stat-label">Přístup k elektřině</span>
+                    <span class="stat-year" id="electricityYear">Rok: 2023</span>
+                </div>
+                <div class="stat-box" onclick="showChart('infant')" data-metric="infant">
+                    <span class="stat-number" id="infantMortality">26</span>
+                    <span class="stat-label">Kojenecká úmrtnost (na 1000)</span>
+                    <span class="stat-year" id="infantMortYear">Rok: 2023</span>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3 class="chart-title" id="chartTitle">Očekávaná délka života (1960-2023)</h3>
+                <svg id="dataChart" viewBox="0 0 700 340"></svg>
+                <p class="chart-source" id="chartSource">Zdroj: World Bank – World Development Indicators (data.worldbank.org)</p>
+            </div>
+        </section>
+    </div>
+
+
+
+    <section class="brand-section-wrap">
+    <div class="brand-section">
+        <div class="brand-content">
+            <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 48 48" class="brand-logo" aria-label="Logo">
+<circle cx="24" cy="24" r="21" fill="#0c1a2e"/><line x1="24" y1="29" x2="7"  y2="46" stroke="#60a5fa" stroke-width="1"/><line x1="24" y1="29" x2="15" y2="46" stroke="#60a5fa" stroke-width="1"/><line x1="24" y1="29" x2="24" y2="46" stroke="#60a5fa" stroke-width="1.1"/><line x1="24" y1="29" x2="33" y2="46" stroke="#60a5fa" stroke-width="1"/><line x1="24" y1="29" x2="41" y2="46" stroke="#60a5fa" stroke-width="1"/><circle cx="24" cy="24" r="21" fill="none" stroke="#60a5fa" stroke-width="1.5"/><line x1="3"  y1="29" x2="45" y2="29" stroke="#60a5fa" stroke-width="1.2"/><rect x="8"    y="18" width="4" height="10" rx="1"   fill="#60a5fa"/><rect x="15"   y="13" width="4" height="15" rx="1"   fill="#60a5fa"/><rect x="21.5" y="8"  width="5" height="20" rx="1.5" fill="#ffffff"/><rect x="29"   y="15" width="4" height="13" rx="1"   fill="#60a5fa"/><rect x="36"   y="20" width="4" height="8"  rx="1"   fill="#60a5fa"/>
+            </svg>
+            <h2 class="brand-title">Svět v perspektivě</h2>
+            <p class="brand-subtitle">Data &nbsp;·&nbsp; Kontext &nbsp;·&nbsp; Souvislosti</p>
+        </div>
+    </section>
+    
+
+    <footer></footer>
+
+    <script>
+    /* ── DEBUNKER KARUSEL ── */
+    let DB_SLIDES = [];
+
+    const DB_DURATION = 10000;
+    let dbCurrent = 0, dbPaused = false, dbStartTime = null, dbElapsed = 0, dbRafId = null;
+
+    function dbRender(idx, animate) {
+      const s = DB_SLIDES[idx];
+      const m = document.getElementById('mythCard');
+      const d = document.getElementById('dataCard');
+      const c = document.getElementById('contextNote');
+      if (animate) { m.style.opacity='0'; d.style.opacity='0'; c.style.opacity='0'; }
+      setTimeout(() => {
+        document.getElementById('mythText').textContent = s.myth;
+        document.getElementById('mythSource').textContent = s.mythSource;
+        const n = document.getElementById('dataNumber');
+        n.textContent = s.number;
+        n.className = 'data-number' + (s.numberClass ? ' '+s.numberClass : '');
+        document.getElementById('dataDesc').textContent = s.desc;
+        document.getElementById('dataSource').textContent = s.source;
+        c.textContent = s.context;
+        document.getElementById('analysisBtn').href = s.link;
+        document.getElementById('btnTitle').textContent = s.btnTitle;
+        document.querySelectorAll('.dot').forEach((dot, i) => dot.classList.toggle('active', i === idx));
+        if (animate) { m.style.opacity='1'; d.style.opacity='1'; c.style.opacity='1'; }
+      }, animate ? 300 : 0);
+    }
+
+    function dbUpdate() {
+      if (dbPaused) return;
+      const total = dbElapsed + (Date.now() - dbStartTime);
+      const pct = Math.min((total / DB_DURATION) * 100, 100);
+      document.getElementById('progressFill').style.width = pct + '%';
+
+      if (total >= DB_DURATION) {
+        dbCurrent = (dbCurrent + 1) % DB_SLIDES.length;
+        dbRender(dbCurrent, true);
+        dbReset();
+      } else {
+        dbRafId = requestAnimationFrame(dbUpdate);
+      }
+    }
+
+    function dbReset() {
+      cancelAnimationFrame(dbRafId);
+      dbElapsed = 0; dbStartTime = Date.now();
+      document.getElementById('progressFill').style.width = '0%';
+      if (!dbPaused) dbRafId = requestAnimationFrame(dbUpdate);
+    }
+
+    function togglePause() {
+      const btn = document.getElementById('pauseBtn');
+      if (dbPaused) {
+        dbPaused = false; dbStartTime = Date.now();
+        btn.textContent = '⏸'; btn.classList.remove('paused'); btn.title = 'Pozastavit';
+        dbRafId = requestAnimationFrame(dbUpdate);
+      } else {
+        dbPaused = true; dbElapsed += Date.now() - dbStartTime;
+        cancelAnimationFrame(dbRafId);
+        btn.textContent = '▶'; btn.classList.add('paused'); btn.title = 'Spustit';
+      }
+    }
+
+    function goToSlide(idx) { dbCurrent = idx; dbRender(dbCurrent, true); dbReset(); }
+    function nextSlide() { goToSlide((dbCurrent + 1) % DB_SLIDES.length); }
+    function prevSlide() { goToSlide((dbCurrent - 1 + DB_SLIDES.length) % DB_SLIDES.length); }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const res = await fetch('data/debunker.json');
+        if (!res.ok) throw new Error('debunker.json nenalezen');
+        DB_SLIDES = await res.json();
+      } catch (e) {
+        console.error('Nepodařilo se načíst debunker data:', e.message);
+      }
+      if (DB_SLIDES.length > 0) {
+        dbRender(0, false);
+        dbStartTime = Date.now();
+        dbRafId = requestAnimationFrame(dbUpdate);
+      }
+    });
+    </script>
+
+    <script src="perspektiva-data.js"></script>
+    <script src="perspektiva-stats.js"></script>
+    <script src="components.js"></script>
+</body>
+</html>
