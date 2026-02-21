@@ -1207,7 +1207,7 @@
                 <a href="archiv.html" class="show-all-btn">Archiv →</a>
             </div>
             <div class="article-list" id="latestArticlesList">
-                <!-- Načítá se z data/articles-index.json -->
+                <!-- Načítá se z data/manifest.json + articles/*.json -->
             </div>
         </div>
     </section>
@@ -1356,13 +1356,12 @@
     function prevSlide() { goToSlide((dbCurrent - 1 + DB_SLIDES.length) % DB_SLIDES.length); }
 
     document.addEventListener('DOMContentLoaded', async () => {
-
-      // ── Načtení všech dat paralelně ─────────────────────────
       try {
-        const [debRes, artRes, catRes] = await Promise.all([
-          fetch('data/debunker.json'),
-          fetch('data/articles-index.json'),
-          fetch('data/categories.json')
+        // Načti manifest, categories a debunker paralelně
+        const [manRes, catRes, debRes] = await Promise.all([
+          fetch('data/manifest.json'),
+          fetch('data/categories.json'),
+          fetch('data/debunker.json')
         ]);
 
         // Debunker karusel
@@ -1375,92 +1374,74 @@
           }
         }
 
-        // Nejnovější články — seřazené dle datumu, zobrazíme 6
-        if (artRes.ok) {
-          const articles = await artRes.json();
-          articles.sort((a, b) => b.date.localeCompare(a.date));
+        // Články z manifestu
+        let articles = [];
+        if (manRes.ok) {
+          const slugs = await manRes.json();
+          const results = await Promise.all(
+            slugs.map(slug => fetch(`articles/${slug}.json`).then(r => r.ok ? r.json() : null))
+          );
+          articles = results
+            .filter(Boolean)
+            .filter(a => a.status === 'published')
+            .sort((a, b) => b.date.localeCompare(a.date));
+
           renderLatestArticles(articles.slice(0, 6));
         }
 
-        // Témata — z categories.json, počty spočítáme z articles
+        // Témata s počty
         if (catRes.ok) {
           const catData = await catRes.json();
-          const artAll = artRes.ok ? (await fetch('data/articles-index.json').then(r => r.json())) : [];
-          renderTopics(catData.topics, artAll);
+          renderTopics(catData.topics, articles);
         }
 
       } catch (e) {
         console.error('Chyba při načítání dat:', e.message);
       }
-    });
 
-    // ── Kategorie: SVG ikony ──────────────────────────────────
-    const CATEGORY_ICONS = {
-      'zdraví':     '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>',
-      'ekonomika':  '<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>',
-      'inovace':    '<line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>',
-      'energie':    '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
-      'bezpečnost': '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
-      'demokracie': '<path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>',
-      'výzvy':      '<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>',
-      'mýty':       '<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>',
-      'česko':      '<line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/>',
-      'svět':       '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
-    };
-
+    // ── Helper funkce ─────────────────────────────────────────
     const TAG_LABELS_HOME = {
-      'mýty': 'Mýty vs fakta', 'ekonomika': 'Ekonomika', 'zdraví': 'Zdraví',
-      'inovace': 'Inovace', 'energie': 'Energie', 'bezpečnost': 'Bezpečnost',
-      'demokracie': 'Demokracie', 'výzvy': 'Výzvy', 'česko': 'Česko', 'svět': 'Svět',
+      'myty':'Myty vs fakta','ekonomika':'Ekonomika','zdravi':'Zdravi',
+      'inovace':'Inovace','energie':'Energie','bezpecnost':'Bezpecnost',
+      'demokracie':'Dem. & pravo','vyzvy':'Vyzvy','cesko':'Cesko','svet':'Svet',
     };
-
-    function statColor(sentiment) {
-      if (sentiment === 'good')    return '#059669';
-      if (sentiment === 'bad')     return '#dc2626';
-      if (sentiment === 'warning') return '#d97706';
-      return '#0ea5e9';
+    function statColor(s) {
+      return s==='good'?'#059669':s==='bad'?'#dc2626':s==='warning'?'#d97706':'#0ea5e9';
     }
-
     function renderLatestArticles(articles) {
       const list = document.getElementById('latestArticlesList');
       if (!list) return;
       list.innerHTML = articles.map(a => {
-        const tags = a.topics.slice(0, 2).map(t =>
-          `<span class="article-tag" style="background:${a.color || '#64748b'}">${(TAG_LABELS_HOME[t] || t).toUpperCase()}</span>`
+        const stat0 = a.key_stats && a.key_stats[0];
+        const sentiment = stat0 ? stat0.color : 'neutral';
+        const statVal   = stat0 ? stat0.value + ' ' + stat0.label : '';
+        const color     = statColor(sentiment);
+        const tags = (a.topics||[]).slice(0,2).map(t =>
+          '<span class="article-tag" style="background:' + color + '">' + t.toUpperCase() + '</span>'
         ).join('');
-        return `
-          <a href="${a.url}" class="article-card" data-topic="${a.topics.join(' ')}">
-            <div class="article-card-header">
-              <div class="article-meta">
-                ${tags}
-                <span class="article-date">${a.dateStr}</span>
-              </div>
-              <h3 class="article-title">${a.title}</h3>
-              <p class="article-excerpt">${a.perex || ''}</p>
-            </div>
-            <div class="article-stats">
-              <span class="article-stat" style="color:${statColor(a.sentiment)};font-weight:700">${a.stat}</span>
-              <span class="article-read-more">Číst více →</span>
-            </div>
-          </a>`;
+        return '<a href="clanek.html?slug=' + a.slug + '" class="article-card" data-topic="' + (a.topics||[]).join(' ') + '">'
+          + '<div class="article-card-header">'
+          + '<div class="article-meta">' + tags + '<span class="article-date">' + a.dateStr + '</span></div>'
+          + '<h3 class="article-title">' + a.title + '</h3>'
+          + '<p class="article-excerpt">' + (a.perex||'') + '</p>'
+          + '</div>'
+          + '<div class="article-stats">'
+          + '<span class="article-stat" style="color:' + color + ';font-weight:700">' + statVal + '</span>'
+          + '<span class="article-read-more">Cist vice &#x2192;</span>'
+          + '</div></a>';
       }).join('');
     }
-
     function renderTopics(topics, articles) {
       const grid = document.getElementById('topicGrid');
       if (!grid) return;
-      grid.innerHTML = topics.map(t => {
-        const count = articles.filter(a => a.topics && a.topics.includes(t.slug)).length;
-        const icon = CATEGORY_ICONS[t.slug] || '';
-        const isGeo = t.geo;
-        const cls = isGeo ? 'topic-card featured topic-geo' : 'topic-card';
-        return `
-          <a href="archiv.html?topic=${encodeURIComponent(t.slug)}" class="${cls}"
-             style="--category-color: ${t.color}" data-topic="${t.slug}">
-            <span class="category-icon"><svg viewBox="0 0 24 24">${icon}</svg></span>
-            <h3 class="category-name">${t.label}</h3>
-            <span class="topic-badge">${count}</span>
-          </a>`;
+      grid.innerHTML = topics.map(function(t) {
+        const count = articles.filter(a => (a.topics||[]).includes(t.slug)).length;
+        const cls = t.geo ? 'topic-card featured topic-geo' : 'topic-card';
+        return '<a href="archiv.html?topic=' + encodeURIComponent(t.slug) + '" class="' + cls + '" style="--category-color:' + t.color + '" data-topic="' + t.slug + '">'
+          + '<span class="category-icon"><svg viewBox="0 0 24 24">' + (t.icon||'') + '</svg></span>'
+          + '<h3 class="category-name">' + t.label + '</h3>'
+          + '<span class="topic-badge">' + count + '</span>'
+          + '</a>';
       }).join('');
     }
 

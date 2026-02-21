@@ -584,18 +584,43 @@ document.getElementById('sortSelect').addEventListener('change', e => {
 // ── Načtení kategorií + článků z JSON ───────────────────────
 (async function () {
   try {
-    const [catRes, artRes] = await Promise.all([
-      fetch('data/categories.json'),
-      fetch('data/articles-index.json')
+    // 1. Načti manifest a categories paralelně
+    const [manRes, catRes] = await Promise.all([
+      fetch('data/manifest.json'),
+      fetch('data/categories.json')
     ]);
-    if (!catRes.ok) throw new Error('categories.json nenalezen');
-    if (!artRes.ok) throw new Error('articles-index.json nenalezen');
+    if (!manRes.ok) throw new Error('manifest.json nenalezen');
 
-    const catData = await catRes.json();
-    ARTICLES = await artRes.json();
+    const slugs = await manRes.json();
 
-    // Vyrenderuj chips dynamicky
-    renderChips(catData.topics);
+    // 2. Načti všechny články paralelně
+    const articleResults = await Promise.all(
+      slugs.map(slug => fetch(`articles/${slug}.json`).then(r => r.ok ? r.json() : null))
+    );
+
+    // 3. Převeď na formát pro archiv, vyfiltruj null a seřaď dle datumu
+    ARTICLES = articleResults
+      .filter(Boolean)
+      .filter(a => a.status === 'published')
+      .sort((a, b) => b.date.localeCompare(a.date))
+      .map(a => ({
+        url:       `clanek.html?slug=${a.slug}`,
+        topics:    a.topics || [],
+        date:      a.date,
+        dateStr:   a.dateStr,
+        title:     a.title,
+        stat:      a.key_stats && a.key_stats[0] ? a.key_stats[0].value + ' ' + a.key_stats[0].label : '',
+        statNum:   a.key_stats && a.key_stats[0] ? a.key_stats[0].value : '',
+        sentiment: a.key_stats && a.key_stats[0] ? (a.key_stats[0].color === 'good' ? 'good' : a.key_stats[0].color === 'bad' ? 'bad' : 'neutral') : 'neutral',
+        color:     a.key_stats && a.key_stats[0] && a.key_stats[0].color === 'good' ? '#059669' : a.key_stats && a.key_stats[0] && a.key_stats[0].color === 'bad' ? '#dc2626' : '#0ea5e9',
+      }));
+
+    // 4. Vyrenderuj kategorie
+    if (catRes.ok) {
+      const catData = await catRes.json();
+      renderChips(catData.topics);
+    }
+
   } catch (e) {
     console.error('Chyba při načítání dat:', e.message);
   }
