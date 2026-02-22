@@ -1,0 +1,94 @@
+{
+  "slug": "ceska-kriminalita-transformace",
+  "title": "Z divokých devadesátek do bezpečí sítí: Jak se v Česku transformoval zločin",
+  "title_short": "Z divokých devadesátek do bezpečí sítí",
+  "perex": "Televizní noviny a sociální sítě nás denně zásobují obrazy násilí a nehod, což v mnoha lidech vyvolává pocit, že žijeme ve stále nebezpečnější době. Tvrdá policejní a demografická data však ukazují výrazně odlišnou realitu: fyzické ulice českých měst nebyly za posledních třicet let nikdy bezpečnější. V mezinárodních žebříčcích se Česko stabilně drží v první desítce nejmírumilovnějších států světa. Zločin však nezmizel — pouze změnil svou podobu a přesunul se z fyzického světa do kyberprostoru. Jaká je skutečná anatomie české kriminality dnes?",
+  "topics": [
+    "bezpečnost",
+    "česko"
+  ],
+  "date": "2026-02-22",
+  "dateStr": "22. 2. 2026",
+  "status": "published",
+  "breadcrumb_topic": "Česko",
+  "key_stats": [
+    {
+      "value": "−57,5 %",
+      "label": "pokles kriminality v ČR od r. 1999",
+      "color": "good"
+    },
+    {
+      "value": "−90 %",
+      "label": "pokles krádeží aut od r. 1997",
+      "color": "good"
+    },
+    {
+      "value": "10,8 %",
+      "label": "podíl kyberkriminality na zločinu",
+      "color": "blue"
+    }
+  ],
+  "content": "<h2>Konec divokých let a pacifikace ulic</h2><p>Kdo si pamatuje devadesátá léta v Česku, pamatuje si éru organizovaného zločinu, masivních kapesních krádeží a každodenních zpráv o ukradených autech. Od té doby prošla česká společnost hlubokou strukturální proměnou. Zlepšení ekonomické situace a dlouhodobě nízká nezaměstnanost výrazně omezily podhoubí pro drobnou majetkovou kriminalitu.</p><p>Ruku v ruce s tím šel technologický vývoj. Rozšíření kamerových systémů ve městech, imobilizéry ve vozidlech a přechod od hotovosti k platebním kartám učinily z klasického pouličního zločinu vysoce rizikový a málo výnosný způsob obživy. Výsledek je v datech jednoznačný: v rekordním roce 1999 evidovala Policie ČR 426 626 trestných činů. V roce 2023 to bylo 181 417 — pokles o 57,5 %. Dnes patří Česká republika s mírou vražd přibližně 0,8 na 100 000 obyvatel k nejbezpečnějším státům nejen v Evropě, ale i celosvětově.</p><h2>Kde se bere pocit ohrožení? Fenomén dostupné heuristiky</h2><p>Pokud jsou data tak pozitivní, proč se ve výzkumech veřejného mínění lidé stále obávají o svou bezpečnost? Zde do hry vstupuje psychologický mechanismus zvaný dostupná heuristika (availability heuristic). Zatímco v 90. letech jste se o přepadení v jiném městě často ani nedozvěděli, dnes díky sociálním sítím a algoritmům, které preferují negativní a šokující obsah, vidíme záběr každé potyčky z celé republiky téměř v reálném čase. Mozek si na základě této záplavy vizuálních vjemů vytvoří obraz, že je násilí všudypřítomné — i když data říkají přesný opak.</p><div class=\"highlight-box hb-blue\"><strong>Krádeže aut jako ilustrace trendu:</strong> Rekordní rok byl 1997 s 29 422 odcizenými vozidly. Dnes se roční počet pohybuje pod 3 000 — pokles o přibližně 90 %. Kombinace imobilizérů, GPS sledování a kamerových systémů proměnila krádež automobilu z běžné události v relativní raritu.</div><h2>Kyberzločin přebírá štafetu</h2><p>Zločinci nevymřeli, jen změnili způsob práce. Phishingové útoky, podvodné investiční nabídky nebo volající „bankéři\" na telefonu představují novou tvář majetkové kriminality — provozovanou z bezpečí zahraniční kanceláře, bez rizika fyzického zatčení na místě činu.</p><p>Po dramatickém nárůstu kyberkriminality o téměř 100 % v roce 2022 se situace v roce 2023 stabilizovala: meziroční nárůst činil necelých 6 % a samotný policejní prezident to označil za „zastavení rapidního nárůstu\". V roce 2024 pak kyberkriminalita podle dat ČSÚ mírně poklesla. Podíl na celkové kriminalitě přesto zůstává stabilně nad 10 %. Podle Národního úřadu pro kybernetickou a informační bezpečnost (NÚKIB) se celkové škody z kybernetické kriminality šplhají do miliard korun ročně. Obrana dnes nespočívá v lepším zámku na dveřích, ale v digitální gramotnosti.</p><div class=\"highlight-box hb-green\"><strong>Česko v mezinárodním kontextu:</strong> Podle Global Peace Indexu 2024 se Česká republika umístila na 12. místě z 163 hodnocených zemí — v roce 2023 to bylo 7. místo, v roce 2025 opět 11. místo. Jde o konzistentní umístění v globální špičce. Pro srovnání: USA se pohybují okolo 130. místa.</div><h2>Závěr: bezpečnost se redefinuje</h2><p>Česká republika je z pohledu dat bezpečnostním úspěchem. Mýtus o zhoršující se situaci na ulicích data přesvědčivě vyvracejí. Jako společnost však čelíme nové, méně viditelné hrozbě. Přesunuli jsme naše životy i úspory na internet a zločin nás tam logicky následoval. Bezpečnost státu tak dnes nedefinuje jen počet policistů na ulicích, ale také odolnost digitálních infrastruktur a kritické myšlení každého uživatele chytrého telefonu.</p>",
+  "sources": [
+    {
+      "label": "Policie ČR — Statistické přehledy kriminality za rok 2023.",
+      "url": "https://policie.gov.cz/clanek/statisticke-prehledy-kriminality-za-rok-2023.aspx"
+    },
+    {
+      "label": "Policie ČR — Vývoj registrované kriminality v roce 2023.",
+      "url": "https://policie.gov.cz/clanek/vyvoj-registrovane-kriminality-v-roce-2023.aspx"
+    },
+    {
+      "label": "Policie ČR — Archiv statistických přehledů kriminality od roku 2000.",
+      "url": "https://www.policie.cz/clanek/archiv-statistiky-statisticke-prehledy-kriminality.aspx"
+    },
+    {
+      "label": "Český statistický úřad (ČSÚ) — Kriminalita.",
+      "url": "https://csu.gov.cz/kriminalita"
+    },
+    {
+      "label": "Institut pro kriminologii a sociální prevenci (IKSP) — Trendy kriminality v ČR v roce 2023.",
+      "url": "https://iksp.gov.cz/trendy-kriminality-v-ceske-republice-v-roce-2023"
+    },
+    {
+      "label": "UNODC — Homicide data. Mezinárodní srovnání míry vražd.",
+      "url": "https://dataunodc.un.org/"
+    },
+    {
+      "label": "Institute for Economics & Peace — Global Peace Index 2024.",
+      "url": "https://www.visionofhumanity.org/maps/"
+    },
+    {
+      "label": "Národní úřad pro kybernetickou a informační bezpečnost (NÚKIB) — Zprávy o stavu kybernetické bezpečnosti ČR.",
+      "url": "https://nukib.gov.cz/cs/kategorie-zprav/zpravy-o-stavu-kyberneticke-bezpecnosti/"
+    }
+  ],
+  "share_card": {
+    "type": "data_kontext",
+    "headline_text": "Je Česko bezpečné? Data vs. dojmy",
+    "headline_sub": "Ulice nikdy nebyly bezpečnější. Zločin se přesunul na sítě.",
+    "quote_text": "Bezpečnost státu dnes nedefinuje jen počet policistů na ulicích, ale odolnost digitálních infrastruktur a kritické myšlení každého uživatele.",
+    "quote_source": "— Svět v perspektivě, analýza 2026",
+    "download_filename": "svet-v-perspektive-ceska-kriminalita.png",
+    "stats": [
+      {
+        "value": "−57,5 %",
+        "label": "pokles celkové kriminality v ČR od roku 1999 do roku 2023",
+        "source_text": "Zdroj: Policie ČR, 2023",
+        "color": "green"
+      },
+      {
+        "value": "12. místo",
+        "label": "ČR v Global Peace Indexu 2024 ze 163 hodnocených zemí",
+        "source_text": "Zdroj: Institute for Economics & Peace, 2024",
+        "color": "green"
+      },
+      {
+        "value": "10,8 %",
+        "label": "podíl kyberkriminality na celkové registrované kriminalitě",
+        "source_text": "Zdroj: Policie ČR, 2023",
+        "color": "blue"
+      }
+    ]
+  }
+}

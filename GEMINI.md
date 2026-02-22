@@ -41,3 +41,38 @@ Tento soubor slouží jako hlavní kontext pro AI asistenty (Gemini CLI) při pr
 *   Jazyk obsahu: **Čeština**.
 *   Kód a komentáře: Míchané (většinou české názvy proměnných v datech, anglické v logice).
 *   Při opravách chyb vždy nejprve ověř integritu JSON dat v `/data/`.
+
+### 🚨 KRITICKÉ VAROVÁNÍ: ŽÁDNÉ NEVYŽÁDANÉ ZMĚNY
+*   **ZÁKAZ MAZÁNÍ DAT:** Smazání jediného slova, odstavce nebo zdroje bez výslovného příkazu je kritické selhání.
+*   **POZOR NA TRUNCATED OUTPUT:** Pokud nástroj `read_file` nahlásí, že je obsah "truncated" (uříznutý), **NESMÍŠ** tento text použít pro zápis (`write_file`). Musíš soubor dočíst do konce pomocí parametrů `offset` a `limit`.
+*   **KONTROLA PŘED ZÁPISEM:** Před každým uložením JSONu porovnej počet řádků/znaků. Pokud se soubor nápadně zmenšil, aniž by to bylo v zadání, **ZASTAV PRÁCI** a oprav chybu.
+*   **NEDĚLAT ŽÁDNÉ ZMĚNY NAD PLÁN:** Prováděj pouze ty úpravy, které byly výslovně zadány.
+*   **OCHRANA ZDROJŮ:** Seznamy zdrojů (`sources`) a tabulky v obsahu jsou nedotknutelné.
+*   **ŽÁDNÉ "AUTOMATICKÉ" VYLEPŠOVÁNÍ:** Neprováděj žádná designová vylepšení bez povolení.
+
+### 5. Standard pro nové články (vzor: paradox-globalni-bezpecnosti.json)
+*   **Vzor:** Pro strukturu používej soubor `articles/paradox-globalni-bezpecnosti.json` jako **Master Template**.
+*   **Kódování:** Soubory `.json` musí být VŽDY uloženy v kódování **UTF-8**. Pozor na diakritiku.
+*   **Titulek:** 
+    *   `title`: Plný, popisný název pro detail článku.
+    *   `title_short`: **Povinný**, pokud je `title` příliš dlouhý. Obsahuje úderný, gramaticky ukončený název pro titulní stranu (bez tří teček). Pokud chybí, použije se `title`.
+*   **Statistiky (Key Stats):**
+    *   **Pravidlo pro titulku:** V prvním slotu (`key_stats[0]`) musí být VŽDY jen jeden konkrétní údaj a stručný popis, co znamená.
+    *   **Výjimka pro Mýty:** Pokud má článek tag „mýty“, první slot obsahuje verdikt: **Pravda** (zelená), **Nepravda** (červená) nebo **Zavádějící** (oranžová/neutral).
+    *   **Formát:** „[Číslo] [Stručný význam]“ (např. „96,7 % úspěšnost léčby“).
+    *   `label`: Musí být extrémně stručný, aby se na kartě na titulce vešel na 1–2 řádky (max. 42px výška lišty).
+    *   `color`: Explicitně používej `good` (zelená), `bad` (červená) nebo `neutral` (modrá/oranžová).
+*   **Share Card:**
+    *   Objekt `share_card` je povinný.
+    *   `quote_text`: Musí být úderný a krátký, aby se vešel do grafiky.
+    *   `stats` na kartičce: Explicitně definuj barvu čísel pomocí `"color": "red"` nebo `"green"`.
+*   **Tagy (Topics):**
+    *   **ZÁKAZ VYMÝŠLENÍ TAGŮ:** Používej výhradně existujících 10 tagů z `data/categories.json`. Žádné jiné tagy (`data`, `finance`, atd.) nejsou povoleny.
+    *   Seznam povolených: `zdraví`, `ekonomika`, `inovace`, `energie`, `bezpečnost`, `demokracie`, `výzvy`, `mýty`, `česko`, `svět`.
+    *   Musí přesně odpovídat (včetně diakritiky), jinak se nenačtou barvy.
+*   **Zdroje (Sources):**
+    *   Seznam zdrojů uváděj **POUZE** v poli `sources`.
+    *   **ZÁKAZ DUPLIKACE:** Nevkládej zdroje do HTML obsahu (`content`), pokud to není výslovně vyžádáno. Komponenta je vykresluje automaticky.
+*   **Proces přidání:**
+    1.  Vytvořit JSON v `articles/`.
+    2.  Přidat `slug` (název souboru bez přípony) do `data/manifest.json`.
