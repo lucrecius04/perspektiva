@@ -1,0 +1,87 @@
+{
+  "slug": "globalni-emise-zpomaleni",
+  "title": "Tempo růstu emisí dramaticky brzdí. Věda ale zatím odmítá mluvit o historickém vrcholu",
+  "title_short": "Emise CO₂: Tempo růstu brzdí",
+  "perex": "Titulky novin hlásají, že globální emise skleníkových plynů lámou nové rekordy — a je to pravda. Tento pohled však skrývá podstatnější příběh: tempo jejich růstu se dramaticky zpomaluje. Bezprecedentní boom solární energie a masivní přesun investic do čistých technologií mění strukturu světové energetiky rychlostí, jakou nikdo nepředpokládal. Zda už jsme dosáhli historického vrcholu emisí, ale autoři nejautoritativnější světové klimatické studie výslovně odmítají tvrdit. Jaká data tedy máme a co z nich skutečně plyne?",
+  "topics": [
+    "výzvy",
+    "energie",
+    "svět"
+  ],
+  "date": "2026-02-22",
+  "dateStr": "22. 2. 2026",
+  "status": "published",
+  "breadcrumb_topic": "Svět",
+  "key_stats": [
+    {
+      "value": "+0,8 %",
+      "label": "růst emisí CO₂ v roce 2024",
+      "color": "blue"
+    },
+    {
+      "value": "2 : 1",
+      "label": "investice do čisté energie vs. fosilní",
+      "color": "good"
+    },
+    {
+      "value": "40,9 %",
+      "label": "elektřiny je z nízkoemisních zdrojů",
+      "color": "good"
+    }
+  ],
+  "content": "<h2>Co data říkají — a co ne</h2><p>Abychom správně porozuměli aktuální situaci, je důležité rozlišit dvě odlišné věci: co data <em>ukazují</em> a co z nich lze <em>vyvozovat</em>. Global Carbon Budget 2024 — nejautoritativnější vědecká studie monitorující globální emise, publikovaná v recenzovaném časopise Earth System Science Data — uvádí fosilní emise CO₂ za rok 2024 na úrovni 37,4 miliardy tun, což je nárůst o 0,8 % oproti roku 2023. Celkové antropogenní emise (včetně odlesňování a změn využití půdy) pak dosáhly absolutního rekordu 41,6 Gt.</p><p>Ve stejné studii vedoucí autor prof. Pierre Friedlingstein z University of Exeter explicitně uvádí: „Přes naléhavou potřebu emise snižovat, stále <strong>nevidíme žádný signál</strong>, že by svět dosáhl vrcholu fosilních emisí CO₂.\" Toto rozlišení — mezi zpomalením růstu a dosažením vrcholu — je vědecky zásadní.</p><div class=\"highlight-box hb-blue\"><strong>Klíčový kontext:</strong> Zpomalení tempa růstu emisí z průměru ~2,1 % ročně (dekáda 2005–2014) na 0,8 % v roce 2024 je reálné a strukturálně významné. Neznamená ale dosažení vrcholu. Pro naplnění cílů Pařížské dohody nestačí, aby emise stagnovaly nebo rostly pomalu — potřebný je strmý a rychlý pokles, přibližně o 50 % do roku 2030 oproti úrovním roku 2019.</div><h2>Zpomalení je reálné: co za ním stojí</h2><p>I přesto jsou data za rok 2024 z hlediska strukturálních trendů pozoruhodná. Klíčovým faktorem je bezprecedentní přesun kapitálu. Mezinárodní energetická agentura (IEA) ve svém reportu World Energy Investment 2024 dokumentuje, že poprvé v historii směřují do čistých technologií — obnovitelných zdrojů, baterií, elektromobility a energetických sítí — dvakrát více peněz než do ropy, uhlí a zemního plynu. Jen do solární energetiky dnes teče více kapitálu než do všech ostatních technologií výroby elektřiny dohromady.</p><p>Nová poptávka po elektřině — tažená nástupem umělé inteligence, datovými centry a elektrifikací dopravy — je tak z velké části absorbována bezemisními zdroji. Podle analytického think-tanku Ember tvořily v roce 2024 nízkoemisní zdroje (obnovitelné zdroje a jaderná energie) rekordních <strong>40,9 %</strong> celosvětové výroby elektřiny. Samotná solární energie pokryla přibližně 40 % veškerého nárůstu poptávky po elektřině v jediném roce.</p><div style=\"background:#f8f9fa; border-radius:8px; padding:1.2rem 1.5rem; margin:1.5rem 0; border:1px solid #e9ecef;\"><p style=\"font-weight:700; font-size:0.87rem; margin:0 0 1rem 0; color:#333; letter-spacing:0.02em;\">INVESTICE DO ENERGETIKY 2024 — ČISTÁ ENERGIE VS. FOSILNÍ PALIVA (USD, biliony)</p><div style=\"display:flex; align-items:center; margin-bottom:0.55rem;\"><div style=\"width:150px; font-size:0.83rem; text-align:right; padding-right:10px; color:#27ae60; flex-shrink:0; font-weight:700;\">Čistá energie celkem</div><div style=\"flex:1; background:#dee2e6; border-radius:4px; height:28px; overflow:hidden;\"><div style=\"width:100%; background:#27ae60; height:100%; display:flex; align-items:center; padding-left:10px; box-sizing:border-box;\"><span style=\"color:white; font-size:0.82rem; font-weight:700;\">~ 2,0 bil. USD</span></div></div></div><div style=\"display:flex; align-items:center; margin-bottom:0.55rem;\"><div style=\"width:150px; font-size:0.83rem; text-align:right; padding-right:10px; color:#2980b9; flex-shrink:0;\">z toho: solární energie</div><div style=\"flex:1; background:#dee2e6; border-radius:4px; height:22px; overflow:hidden;\"><div style=\"width:38%; background:#2980b9; height:100%; display:flex; align-items:center; padding-left:10px; box-sizing:border-box;\"><span style=\"color:white; font-size:0.78rem; font-weight:700;\">~ 0,5 bil. USD</span></div></div></div><div style=\"display:flex; align-items:center; margin-bottom:0.55rem;\"><div style=\"width:150px; font-size:0.83rem; text-align:right; padding-right:10px; color:#e74c3c; flex-shrink:0;\">Fosilní paliva celkem</div><div style=\"flex:1; background:#dee2e6; border-radius:4px; height:28px; overflow:hidden;\"><div style=\"width:52%; background:#e74c3c; height:100%; display:flex; align-items:center; padding-left:10px; box-sizing:border-box;\"><span style=\"color:white; font-size:0.82rem; font-weight:700;\">~ 1,0 bil. USD</span></div></div></div><p style=\"font-size:0.76rem; color:#888; margin:0.8rem 0 0 0;\">Zdroj: IEA World Energy Investment 2024. Do čisté energie jsou zahrnuty obnovitelné zdroje, sítě, bateriová úložiště, elektromobilita a energetická účinnost.</p></div><h2>Geografická propast: výsledky se velmi liší</h2><p>Za globálním průměrem se skrývají dramaticky odlišné národní trajektorie. Vyspělé ekonomiky mají svůj emisní vrchol prokazatelně za sebou a pokračují v poklesu. Emise Evropské unie klesly v roce 2024 o <strong>3,8 %</strong> a dostaly se přibližně na úroveň šedesátých let minulého století. Emise Spojených států poklesly o <strong>0,6 %</strong> a zůstávají hluboko pod svým vrcholem z roku 2007.</p><p>Absolutně klíčovým hráčem je Čína, která odpovídá za přibližně <strong>32 %</strong> světových emisí. Její raketový růst z předchozích dekád se prakticky zastavil — emise vzrostly v roce 2024 o pouhých <strong>0,2 %</strong>, přičemž autoři GCB 2024 uvádějí, že výsledek leží v rozmezí statistické nejistoty (−0,3 % až +1,9 %), tedy čínský vrchol emisí je blízko. Naopak hlavním tahounem aktuálního globálního růstu emisí je rychle se rozvíjející Indie, jejíž emise vzrostly o <strong>4,6 %</strong>, jak mohutně buduje energetickou a průmyslovou infrastrukturu.</p><div style=\"background:#f8f9fa; border-radius:8px; padding:1.2rem 1.5rem; margin:1.5rem 0; border:1px solid #e9ecef;\"><p style=\"font-weight:700; font-size:0.87rem; margin:0 0 1rem 0; color:#333; letter-spacing:0.02em;\">MEZIROČNÍ ZMĚNA FOSILNÍCH EMISÍ CO₂ V ROCE 2024 DLE REGIONŮ (%)</p><div style=\"display:flex; align-items:center; margin-bottom:0.45rem;\"><div style=\"width:80px; font-size:0.83rem; text-align:right; padding-right:10px; color:#27ae60; flex-shrink:0; font-weight:700;\">EU</div><div style=\"flex:1; display:flex; align-items:center;\"><div style=\"width:50%; display:flex; justify-content:flex-end;\"><div style=\"background:#27ae60; height:22px; width:76%; border-radius:4px 0 0 4px; display:flex; align-items:center; justify-content:flex-end; padding-right:8px;\"><span style=\"color:white; font-size:0.8rem; font-weight:700;\">−3,8 %</span></div></div><div style=\"width:2px; background:#aaa; height:30px;\"></div><div style=\"width:50%;\"></div></div></div><div style=\"display:flex; align-items:center; margin-bottom:0.45rem;\"><div style=\"width:80px; font-size:0.83rem; text-align:right; padding-right:10px; color:#2ecc71; flex-shrink:0;\">USA</div><div style=\"flex:1; display:flex; align-items:center;\"><div style=\"width:50%; display:flex; justify-content:flex-end;\"><div style=\"background:#2ecc71; height:22px; width:12%; border-radius:4px 0 0 4px; display:flex; align-items:center; justify-content:flex-end; padding-right:6px;\"><span style=\"color:white; font-size:0.78rem; font-weight:700;\">−0,6 %</span></div></div><div style=\"width:2px; background:#aaa; height:30px;\"></div><div style=\"width:50%;\"></div></div></div><div style=\"display:flex; align-items:center; margin-bottom:0.45rem;\"><div style=\"width:80px; font-size:0.83rem; text-align:right; padding-right:10px; color:#888; flex-shrink:0;\">Čína</div><div style=\"flex:1; display:flex; align-items:center;\"><div style=\"width:50%; display:flex; justify-content:flex-end;\"></div><div style=\"width:2px; background:#aaa; height:30px;\"></div><div style=\"width:50%;\"><div style=\"background:#e67e22; height:22px; width:4%; border-radius:0 4px 4px 0; display:flex; align-items:center; padding-left:6px; margin-left:2px;\"><span style=\"color:white; font-size:0.78rem; font-weight:700; white-space:nowrap;\">+0,2 %</span></div></div></div></div><div style=\"display:flex; align-items:center; margin-bottom:0.45rem;\"><div style=\"width:80px; font-size:0.83rem; text-align:right; padding-right:10px; color:#888; flex-shrink:0;\">Svět</div><div style=\"flex:1; display:flex; align-items:center;\"><div style=\"width:50%;\"></div><div style=\"width:2px; background:#aaa; height:30px;\"></div><div style=\"width:50%;\"><div style=\"background:#e67e22; height:22px; width:16%; border-radius:0 4px 4px 0; display:flex; align-items:center; padding-left:6px; margin-left:2px;\"><span style=\"color:white; font-size:0.78rem; font-weight:700;\">+0,8 %</span></div></div></div></div><div style=\"display:flex; align-items:center;\"><div style=\"width:80px; font-size:0.83rem; text-align:right; padding-right:10px; color:#e74c3c; flex-shrink:0; font-weight:700;\">Indie</div><div style=\"flex:1; display:flex; align-items:center;\"><div style=\"width:50%;\"></div><div style=\"width:2px; background:#aaa; height:30px;\"></div><div style=\"width:50%;\"><div style=\"background:#e74c3c; height:22px; width:92%; border-radius:0 4px 4px 0; display:flex; align-items:center; padding-left:8px;\"><span style=\"color:white; font-size:0.8rem; font-weight:700;\">+4,6 %</span></div></div></div></div><p style=\"font-size:0.76rem; color:#888; margin:0.8rem 0 0 0;\">Zdroj: Global Carbon Budget 2024 (Friedlingstein et al., Earth System Science Data, 2025). Svislá čára označuje nulovou změnu.</p></div><div class=\"highlight-box hb-orange\"><strong>Proč je Čína klíčová:</strong> Čína sama odpovídá za přibližně 32 % světových fosilních emisí. Pro srovnání: celá Evropská unie za přibližně 7 %. Jakmile čínská křivka přejde do poklesu, stáhne s sebou celosvětový součet výrazněji než jakýkoli jiný hráč — i při pokračujícím růstu Indie.</div><h2>Oddělení hospodářského růstu od emisí: kde funguje a kde ne</h2><p>V případě Evropy a USA je takzvaný <em>decoupling</em> — oddělení hospodářského růstu od růstu emisí — prokazatelnou realitou. Obě ekonomiky rostou a jejich emise přitom klesají. Globálně je situace složitější: světové HDP roste, tempo růstu emisí se snižuje, ale emise stále rostou v absolutních číslech. O globálním decouplingu tedy nelze zatím hovořit — spíše o deceleraci, tedy zpomalení tempo.</p><h2>Závěr: strukturální podmínky se vytvářejí, vrchol ještě nebyl potvrzen</h2><p>Dostupná data jsou interpretovatelná dvěma způsoby, záleží na zvoleném referenčním rámci. Z hlediska strukturálních trendů — přesunu investic, tempa rozvoje solární energie a stagnace čínských emisí — jde o bezprecedentní změnu oproti situaci před deseti lety. Svět vypadá jinak, než si klimatičtí pesimisté před desetiletím představovali. Z hlediska klimatické fyziky je nicméně situace stále kritická: emise rostou a atmosferická koncentrace CO₂ dosahuje každý rok nových rekordů. Vědecká komunita proto explicitně odmítá mluvit o dosažení vrcholu a připomíná, že potřebný není vrchol, ale strmý pokles.</p>",
+  "sources": [
+    {
+      "label": "Friedlingstein, P. et al. — Global Carbon Budget 2024. Earth System Science Data, 17(3), 965–1039, 2025. DOI: 10.5194/essd-17-965-2025. Veškerá emisní data v článku.",
+      "url": "https://essd.copernicus.org/articles/17/965/2025/"
+    },
+    {
+      "label": "Global Carbon Project — GCP-2024 dataset. DOI: 10.18160/GCP-2024. Úplné časové řady národních a globálních emisí od roku 1959.",
+      "url": "https://doi.org/10.18160/GCP-2024"
+    },
+    {
+      "label": "IEA — World Energy Investment 2024. Investice: ~2 bil. USD čistá energie vs. ~1 bil. USD fosilní paliva. Solární energie překonala ostatní zdroje.",
+      "url": "https://www.iea.org/reports/world-energy-investment-2024"
+    },
+    {
+      "label": "Ember — Global Electricity Review 2025 (data za rok 2024). Podíl nízkoemisních zdrojů 40,9 %; solár pokryl ~40 % nárůstu poptávky po elektřině.",
+      "url": "https://ember-climate.org/insights/research/global-electricity-review-2025/"
+    },
+    {
+      "label": "IEA — World Energy Outlook 2024. Projekce vrcholu poptávky po fosilních palivech; strategický rámec investičních trendů.",
+      "url": "https://www.iea.org/reports/world-energy-outlook-2024"
+    },
+    {
+      "label": "IPCC — Sixth Assessment Report, Working Group III (2022). Referenční rámec klimatických cílů: pokles emisí ~50 % do roku 2030 oproti roku 2019.",
+      "url": "https://www.ipcc.ch/report/ar6/wg3/"
+    }
+  ],
+  "share_card": {
+    "type": "data_kontext",
+    "headline_text": "Konec fosilní éry — ještě ne, ale blíž než kdy dřív",
+    "headline_sub": "Emise stále rostou. Ale tempo se dramaticky mění.",
+    "quote_text": "Přes naléhavou potřebu emise snižovat, stále nevidíme žádný signál, že by svět dosáhl vrcholu fosilních emisí CO₂.",
+    "quote_source": "— Prof. Pierre Friedlingstein, University of Exeter, vedoucí autor Global Carbon Budget 2024",
+    "download_filename": "svet-v-perspektive-globalni-emise.png",
+    "stats": [
+      {
+        "value": "+0,8 %",
+        "label": "růst emisí CO₂ v roce 2024 (výrazné zpomalení trendu)",
+        "source_text": "Zdroj: Global Carbon Budget 2024",
+        "color": "blue"
+      },
+      {
+        "value": "2 : 1",
+        "label": "investice čistá energie vs. fosilní paliva (poprvé v historii)",
+        "source_text": "Zdroj: IEA World Energy Investment 2024",
+        "color": "green"
+      },
+      {
+        "value": "40,9 %",
+        "label": "podíl čistých zdrojů na světové výrobě elektřiny (historický rekord)",
+        "source_text": "Zdroj: Ember Global Electricity Review 2025",
+        "color": "green"
+      }
+    ]
+  }
+}

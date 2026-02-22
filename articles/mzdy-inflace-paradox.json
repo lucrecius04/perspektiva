@@ -1,0 +1,94 @@
+{
+  "slug": "mzdy-inflace-paradox",
+  "title": "Ztracená dekáda se nekoná: Proč jsme objektivně bohatší, ale připadáme si chudí?",
+  "title_short": "Chudneme? Pohled za horizont inflace",
+  "perex": "Návštěva supermarketu se v posledních letech stala zkouškou nervů. Při pohledu na cenovky másla nebo pečiva má mnoho Čechů pocit, že se jejich životní úroveň vrátila o roky zpět. Co na to říkají tvrdá ekonomická data? Odhalují zajímavý paradox: reálná kupní síla české společnosti je dnes o přibližně pětinu vyšší než před deseti lety a po inflačním šoku se vrátila k reálnému růstu. Proč se tedy čísla ze statistického úřadu tak výrazně rozcházejí s osobní zkušeností z nákupů?",
+  "topics": [
+    "ekonomika",
+    "česko"
+  ],
+  "date": "2026-02-22",
+  "dateStr": "22. 2. 2026",
+  "status": "published",
+  "breadcrumb_topic": "Ekonomika",
+  "key_stats": [
+    {
+      "value": "+20 %",
+      "label": "reálný růst kupní síly za 10 let",
+      "color": "good"
+    },
+    {
+      "value": "+4,6 %",
+      "label": "reálný růst mezd v roce 2024",
+      "color": "good"
+    },
+    {
+      "value": "λ = 2,25",
+      "label": "koeficient averze ke ztrátě",
+      "color": "blue"
+    }
+  ],
+  "content": "<h2>Fakta proti pocitům: dlouhodobý horizont</h2><p>Když inflace v roce 2022 vystřelila na 15,1 % a v roce 2023 přidala dalších 10,7 %, znamenalo to pro české domácnosti nejtvrdší ekonomický náraz od transformačních let. Kumulativně se reálné mzdy v tomto dvouletém období propadly o přibližně 11 %. Z tohoto krátkodobého pohledu jsme skutečně výrazně zchudli — a tato zkušenost je hluboce zakořeněna v kolektivní paměti české společnosti.</p><p>Chyba vnímání spočívá v referenčním bodu srovnání. Ukotvíme-li pohled o dekádu zpět do roku 2014, zjistíme výrazně odlišný obraz. Průměrná hrubá nominální mzda se posunula z tehdejších 25 686 Kč na 46 165 Kč v roce 2024 — nominální nárůst o přibližně 80 %. Spotřebitelské ceny za stejné desetiletí vzrostly kumulativně o přibližně 50 %. Matematický výsledek: za průměrný plat si dnes pořídíme o přibližně 20 % více zboží a služeb než v roce 2014.</p><div style=\"background:#f8f9fa; border-radius:8px; padding:1.2rem 1.5rem; margin:1.5rem 0; border:1px solid #e9ecef;\"><p style=\"font-weight:700; font-size:0.87rem; margin:0 0 1rem 0; color:#333; letter-spacing:0.02em;\">MÍRA INFLACE V ČESKU — ROČNÍ PRŮMĚRY 2015–2024 (%)</p><div style=\"display:flex; align-items:flex-end; height:130px; gap:6px; margin-bottom:0.5rem;\"><div style=\"display:flex; flex-direction:column; align-items:center; flex:1;\"><div style=\"background:#2980b9; width:100%; border-radius:3px 3px 0 0; height:3px;\"></div><span style=\"font-size:0.7rem; color:#555; margin-top:4px;\">0,3</span><span style=\"font-size:0.68rem; color:#888;\">2015</span></div><div style=\"display:flex; flex-direction:column; align-items:center; flex:1;\"><div style=\"background:#2980b9; width:100%; border-radius:3px 3px 0 0; height:4px;\"></div><span style=\"font-size:0.7rem; color:#555; margin-top:4px;\">0,7</span><span style=\"font-size:0.68rem; color:#888;\">2016</span></div><div style=\"display:flex; flex-direction:column; align-items:center; flex:1;\"><div style=\"background:#2980b9; width:100%; border-radius:3px 3px 0 0; height:15px;\"></div><span style=\"font-size:0.7rem; color:#555; margin-top:4px;\">2,5</span><span style=\"font-size:0.68rem; color:#888;\">2017</span></div><div style=\"display:flex; flex-direction:column; align-items:center; flex:1;\"><div style=\"background:#2980b9; width:100%; border-radius:3px 3px 0 0; height:13px;\"></div><span style=\"font-size:0.7rem; color:#555; margin-top:4px;\">2,1</span><span style=\"font-size:0.68rem; color:#888;\">2018</span></div><div style=\"display:flex; flex-direction:column; align-items:center; flex:1;\"><div style=\"background:#2980b9; width:100%; border-radius:3px 3px 0 0; height:17px;\"></div><span style=\"font-size:0.7rem; color:#555; margin-top:4px;\">2,8</span><span style=\"font-size:0.68rem; color:#888;\">2019</span></div><div style=\"display:flex; flex-direction:column; align-items:center; flex:1;\"><div style=\"background:#2980b9; width:100%; border-radius:3px 3px 0 0; height:19px;\"></div><span style=\"font-size:0.7rem; color:#555; margin-top:4px;\">3,2</span><span style=\"font-size:0.68rem; color:#888;\">2020</span></div><div style=\"display:flex; flex-direction:column; align-items:center; flex:1;\"><div style=\"background:#e67e22; width:100%; border-radius:3px 3px 0 0; height:23px;\"></div><span style=\"font-size:0.7rem; color:#555; margin-top:4px;\">3,8</span><span style=\"font-size:0.68rem; color:#888;\">2021</span></div><div style=\"display:flex; flex-direction:column; align-items:center; flex:1;\"><div style=\"background:#c0392b; width:100%; border-radius:3px 3px 0 0; height:100px;\"></div><span style=\"font-size:0.7rem; color:#c0392b; font-weight:700; margin-top:4px;\">15,1</span><span style=\"font-size:0.68rem; color:#888;\">2022</span></div><div style=\"display:flex; flex-direction:column; align-items:center; flex:1;\"><div style=\"background:#e74c3c; width:100%; border-radius:3px 3px 0 0; height:70px;\"></div><span style=\"font-size:0.7rem; color:#e74c3c; font-weight:700; margin-top:4px;\">10,7</span><span style=\"font-size:0.68rem; color:#888;\">2023</span></div><div style=\"display:flex; flex-direction:column; align-items:center; flex:1;\"><div style=\"background:#27ae60; width:100%; border-radius:3px 3px 0 0; height:14px;\"></div><span style=\"font-size:0.7rem; color:#27ae60; font-weight:700; margin-top:4px;\">2,4</span><span style=\"font-size:0.68rem; color:#888;\">2024</span></div></div><p style=\"font-size:0.76rem; color:#888; margin:0.4rem 0 0 0;\">Zdroj: ČSÚ — Indexy spotřebitelských cen (CPI). Roční průměry inflace v ČR.</p></div><h2>Když průměr lže: anatomie potravinového šoku</h2><p>Proč se lidé s příznivými průměrnými statistikami neztotožňují? Odpovědí je struktura spotřebního koše. Agregátní inflace měří vše — od letenek přes elektroniku po rohlíky. Televize a spotřební elektronika v posledních letech dokonce zlevnily. Ty si však nekupujeme každý týden. Naopak ceny základních potravin v určitém období vyletěly skokově o desítky procent.</p><p>Lidé s nižšími příjmy vydávají za jídlo a bydlení drtivou část své výplaty. Pro tyto domácnosti nebyla inflace „průměrných\" 15 %, ale jejich osobní inflace u každodenních výdajů byla výrazně vyšší. ČSÚ navíc logicky operuje s průměrnou mzdou — jenže té průměrné mzdy zhruba dvě třetiny zaměstnanců vůbec nedosáhnou. Relevantnějším ukazatelem je medián, který v roce 2024 ležel přibližně o 7 000 až 8 000 Kč níže než průměr.</p><div style=\"background:#f8f9fa; border-radius:8px; padding:1.2rem 1.5rem; margin:1.5rem 0; border:1px solid #e9ecef;\"><p style=\"font-weight:700; font-size:0.87rem; margin:0 0 1rem 0; color:#333; letter-spacing:0.02em;\">NOMINÁLNÍ MZDA VS. KUPNÍ SÍLA — INDEX 2014 = 100</p><div style=\"display:flex; align-items:center; margin-bottom:0.5rem;\"><div style=\"width:120px; font-size:0.82rem; color:#555; flex-shrink:0;\">Nominální mzda 2024</div><div style=\"flex:1; background:#dee2e6; border-radius:4px; height:24px; overflow:hidden;\"><div style=\"width:100%; background:#2980b9; height:100%; display:flex; align-items:center; padding-left:8px; box-sizing:border-box;\"><span style=\"color:white; font-size:0.8rem; font-weight:700;\">180 (+ 80 %)</span></div></div></div><div style=\"display:flex; align-items:center; margin-bottom:0.5rem;\"><div style=\"width:120px; font-size:0.82rem; color:#555; flex-shrink:0;\">Cenová hladina 2024</div><div style=\"flex:1; background:#dee2e6; border-radius:4px; height:24px; overflow:hidden;\"><div style=\"width:83%; background:#e74c3c; height:100%; display:flex; align-items:center; padding-left:8px; box-sizing:border-box;\"><span style=\"color:white; font-size:0.8rem; font-weight:700;\">150 (+ 50 %)</span></div></div></div><div style=\"display:flex; align-items:center;\"><div style=\"width:120px; font-size:0.82rem; color:#27ae60; flex-shrink:0; font-weight:700;\">Reálná kupní síla</div><div style=\"flex:1; background:#dee2e6; border-radius:4px; height:24px; overflow:hidden;\"><div style=\"width:67%; background:#27ae60; height:100%; display:flex; align-items:center; padding-left:8px; box-sizing:border-box;\"><span style=\"color:white; font-size:0.8rem; font-weight:700;\">120 (+ 20 %)</span></div></div></div><p style=\"font-size:0.76rem; color:#888; margin:0.8rem 0 0 0;\">Zdroj: ČSÚ — Vývoj průměrných mezd a indexy spotřebitelských cen 2014–2024. Výpočet: 180 / 150 = 1,20.</p></div><div class=\"highlight-box hb-blue\"><strong>Proč průměr zkresluje:</strong> Průměrná mzda je citlivá na vysoké příjmy — skupina zaměstnanců s nadprůměrnými výdělky ji tahá nahoru. Medián (hodnota, pod níž i nad níž leží přesně polovina zaměstnanců) je proto lepším měřítkem typické domácnosti. V ČR leží medián v roce 2024 přibližně o 7 000–8 000 Kč pod průměrem. Pro zhruba dvě třetiny zaměstnanců tedy reálná situace vypadá o něco méně příznivě, než průměrná čísla naznačují.</div><h2>Fenomén greedflation: když marže rostou rychleji než náklady</h2><p>Kde se vzaly extrémní ceny potravin? Vedle objektivních příčin — skokový růst cen energií po invazi na Ukrajinu, zdražení hnojiv a přerušení dodavatelských řetězců — upozornili ekonomové na další faktor. V roce 2023 zveřejnil Mezinárodní měnový fond (IMF) pracovní studii, která analyzovala složení inflace v eurozóně za roky 2022–2023. Výsledek byl překvapivý: růst firemních zisků se podílel na inflaci z přibližně 45 %, zatímco mzdové náklady jen z 15 %. Firmy tedy v řadě případů přenášely na zákazníky více, než odpovídalo skutečnému nárůstu jejich vlastních nákladů.</p><p>Tento jev, označovaný jako <em>greedflation</em> nebo přesněji <em>sellers' inflation</em>, potvrdila i ECB. Šéfka ECB Christine Lagardeová v roce 2023 otevřeně uznala, že zisky firem sehrály v inflaci klíčovou roli. Česká národní banka a centrální bankéři Polska a Maďarska varovali před „ziskově-inflační spirálou\" a upozorňovali, že zdražení v řadě sektorů překračovalo reálné nákladové nárůsty. Extrémní zdražení některých komodit tak bylo částečně odrazem oslabené konkurence na oligopolních trzích.</p><h2>Kahneman a psychologie peněženky</h2><p>I ten, komu v roce 2024 reálně vzrostla kupní síla, se může cítit ekonomicky ohrožen. Na scénu vstupuje <em>averze ke ztrátě</em> (loss aversion), kterou empiricky změřili nositel Nobelovy ceny Daniel Kahneman a Amos Tversky. Ve svém klíčovém článku z roku 1992 (Cumulative Prospect Theory) stanovili koeficient averze ke ztrátě na přibližně λ = 2,25 — ztrátu prožíváme zhruba 2,25krát intenzivněji než ekvivalentní zisk.</p><p>Praktický dopad: když zaměstnavatel přidá 5 000 Kč měsíčně, vnímáme to jako spravedlivé ocenění a za několik týdnů si na novou výši přivykneme. Ale když stejných 5 000 Kč navíc odevzdáme u pokladny v supermarketu a na zálohách za energie, vnímáme to jako bolestivou ztrátu, která v mysli přetrvává výrazně déle. Obě události jsou matematicky identické — psychologicky se však vůbec nepodobají.</p><div class=\"highlight-box hb-green\"><strong>Proč se ekonomický optimismus nedostavuje:</strong> Inflační šok 2022–2023 zasáhl domácnosti na místě, kde to bolí nejvíce — v každodenních výdajích na jídlo a energie. Ty jsou psychologicky nejviditelnější. Naopak růst mezd je abstraktnější, přichází postupně a na výplatu si lidé zvykají rychle. Averze ke ztrátě tak způsobuje, že negativní zkušenost z inflace v paměti přetrvává déle, než odpovídá aktuálním datům.</div><h2>Závěr: data a pocity měří jiné reality</h2><p>Ekonomická data nesedí s osobními pocity ne proto, že by statistici lhali, ale proto, že z podstaty věci měří odlišné reality. Makroekonomika chladně ukazuje, že česká ekonomika po masivním inflačním šoku obnovila reálný růst a jako celek je dnes o přibližně pětinu bohatší než před deseti lety. Zároveň platí, že tato dekáda prohloubila příjmové nerovnosti — skupiny s nízkými příjmy prošly výrazně tvrdší osobní inflací než průměr — a psychologická stopa po rychlém zdražování bude náladu české společnosti formovat ještě řadu let.</p>",
+  "sources": [
+    {
+      "label": "ČSÚ — Vývoj průměrných mezd 2014–2024. Nominální mzdy: 25 686 Kč (2014) → 46 165 Kč (2024), nominální růst +79,7 %.",
+      "url": "https://www.czso.cz/csu/czso/prace_a_mzdy_prace"
+    },
+    {
+      "label": "ČSÚ — Indexy spotřebitelských cen (CPI). Roční inflace 2015–2024, výpočet kumulativní inflace ~50 % za dekádu.",
+      "url": "https://www.czso.cz/csu/czso/mira_inflace"
+    },
+    {
+      "label": "ČSÚ — Průměrné mzdy za rok 2024 (tisková zpráva, březen 2025). Reálný růst mezd 4,6 %: nominální +7,1 %, inflace 2,4 %.",
+      "url": "https://www.czso.cz/csu/czso/cri/prumerne-mzdy-4-ctvrtleti-2024"
+    },
+    {
+      "label": "ČSÚ — Strukturální mzdová statistika. Medián mzdy přibližně 7 000–8 000 Kč pod průměrem; dvě třetiny zaměstnanců pod průměrem.",
+      "url": "https://www.czso.cz/csu/czso/struktura-mezd-zamestnancu"
+    },
+    {
+      "label": "IMF Working Paper No. 2023/131 — Euro Area Inflation after the Pandemic and Energy Shock (2023). Firemní zisky odpovídaly za ~45 % inflace v eurozóně 2022–2023.",
+      "url": "https://www.imf.org/en/publications/wp/issues/2023/06/23/euro-area-inflation-after-the-pandemic-and-energy-shock-import-prices-profits-and-wages-534837"
+    },
+    {
+      "label": "ECB — Projevy a vyjádření k inflaci a roli firemních zisků (Lagarde, Schnabel, 2023).",
+      "url": "https://www.ecb.europa.eu/press/key/html/index.en.html"
+    },
+    {
+      "label": "Tversky & Kahneman — Advances in Prospect Theory (Journal of Risk and Uncertainty, 1992). Primární zdroj pro koeficient averze ke ztrátě λ = 2,25.",
+      "url": "https://link.springer.com/article/10.1007/BF00122574"
+    },
+    {
+      "label": "Kahneman, Daniel — Thinking, Fast and Slow (2011). Populárně-vědecký výklad averze ke ztrátě a kognitivních zkresleních.",
+      "url": "https://us.macmillan.com/books/9780374533557/thinkingfastandslow"
+    }
+  ],
+  "share_card": {
+    "type": "data_kontext",
+    "headline_text": "Zchudli jsme? Data vs. pocity",
+    "headline_sub": "Průměrný plat reálně roste. Proč to tak nevnímáme?",
+    "quote_text": "Ztrátu prožíváme přibližně 2,25krát intenzivněji než ekvivalentní zisk. Proto si zdražování pamatujeme déle než přidání k výplatě.",
+    "quote_source": "— Tversky & Kahneman, Cumulative Prospect Theory, 1992",
+    "download_filename": "svet-v-perspektive-mzdy-inflace-paradox.png",
+    "stats": [
+      {
+        "value": "+20 %",
+        "label": "reálný růst kupní síly za 10 let — mzdy +80 %, inflace ~50 %",
+        "source_text": "Zdroj: ČSÚ, výpočet 2024",
+        "color": "green"
+      },
+      {
+        "value": "+4,6 %",
+        "label": "reálný růst mezd v roce 2024 — po dvou letech propadu",
+        "source_text": "Zdroj: ČSÚ, tisková zpráva březen 2025",
+        "color": "green"
+      },
+      {
+        "value": "λ = 2,25",
+        "label": "koeficient averze ke ztrátě — proč zdražení bolí víc než přidání těší",
+        "source_text": "Zdroj: Tversky & Kahneman, 1992",
+        "color": "blue"
+      }
+    ]
+  }
+}

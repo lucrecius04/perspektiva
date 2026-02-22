@@ -29,6 +29,7 @@ Tento soubor slouží jako hlavní kontext pro AI asistenty (Gemini CLI) při pr
 
 ### 2. Styling a design
 *   Nikdy nepiš inline styly, pokud to není nezbytné pro dynamické výpočty (např. grafy).
+*   **Dark Mode pro inline grafy:** Pokud článek obsahuje inline styly (např. barvy v divu pro grafy), musí být v `clanek.html` ošetřena jejich podoba v tmavém režimu (přepsání barev přes `!important`, snížení opacity barevných prvků na `0.8`).
 *   Všechny barvy a fonty čerpej z CSS proměnných definovaných v `perspektiva-theme.css`.
 *   Projekt používá systém **Dark Mode**, který se aplikuje pomocí třídy `.dark` na elementu `<html>`.
 
@@ -44,7 +45,7 @@ Tento soubor slouží jako hlavní kontext pro AI asistenty (Gemini CLI) při pr
 
 ### 🚨 KRITICKÉ VAROVÁNÍ: ŽÁDNÉ NEVYŽÁDANÉ ZMĚNY
 *   **ZÁKAZ MAZÁNÍ DAT:** Smazání jediného slova, odstavce nebo zdroje bez výslovného příkazu je kritické selhání.
-*   **POZOR NA TRUNCATED OUTPUT:** Pokud nástroj `read_file` nahlásí, že je obsah "truncated" (uříznutý), **NESMÍŠ** tento text použít pro zápis (`write_file`). Musíš soubor dočíst do konce pomocí parametrů `offset` a `limit`.
+*   **POZOR NA TRUNCATED OUTPUT:** Pokud nástroj `read_file` nahlásí, že je obsah "truncated" (uříznutý), **NESMÍŠ** tento text použít pro zápis (`write_file`). Musíš soubor dočíst do konce pomocí parametrů `offset` a `limit`, nebo použít shell příkaz `Get-Content` pro získání celého obsahu (zejména u dlouhých řádků s grafy).
 *   **KONTROLA PŘED ZÁPISEM:** Před každým uložením JSONu porovnej počet řádků/znaků. Pokud se soubor nápadně zmenšil, aniž by to bylo v zadání, **ZASTAV PRÁCI** a oprav chybu.
 *   **NEDĚLAT ŽÁDNÉ ZMĚNY NAD PLÁN:** Prováděj pouze ty úpravy, které byly výslovně zadány.
 *   **OCHRANA ZDROJŮ:** Seznamy zdrojů (`sources`) a tabulky v obsahu jsou nedotknutelné.
@@ -56,16 +57,22 @@ Tento soubor slouží jako hlavní kontext pro AI asistenty (Gemini CLI) při pr
 *   **Titulek:** 
     *   `title`: Plný, popisný název pro detail článku.
     *   `title_short`: **Povinný**, pokud je `title` příliš dlouhý. Obsahuje úderný, gramaticky ukončený název pro titulní stranu (bez tří teček). Pokud chybí, použije se `title`.
+    *   **Redakční kontrola:** Před přidáním zkontroluj ostatní články na titulce. Vyhýbej se opakování stejných začátečních slov (např. „Ztracená...“, „Proč...“) u sousedních článků.
 *   **Statistiky (Key Stats):**
     *   **Pravidlo pro titulku:** V prvním slotu (`key_stats[0]`) musí být VŽDY jen jeden konkrétní údaj a stručný popis, co znamená.
-    *   **Výjimka pro Mýty:** Pokud má článek tag „mýty“, první slot obsahuje verdikt: **Pravda** (zelená), **Nepravda** (červená) nebo **Zavádějící** (oranžová/neutral).
+    *   **Výjimka pro Mýty:** Pokud má článek tag „mýty“, první slot obsahuje verdikt: **Pravda** (zelená, ikona ✅), **Nepravda** (červená, ikona ❌) nebo **Zavádějící** (oranžová, ikona ⚠️).
+    *   **Ikony pro Data:** Pro běžné články používej pro první slot tyto ikony:
+        *   `good`: ✅
+        *   `bad`: ❗ (v kódu jako SVG vykřičník v kroužku)
+        *   `neutral`/`warning`: ⚠️ nebo 📈
     *   **Formát:** „[Číslo] [Stručný význam]“ (např. „96,7 % úspěšnost léčby“).
     *   `label`: Musí být extrémně stručný, aby se na kartě na titulce vešel na 1–2 řádky (max. 42px výška lišty).
     *   `color`: Explicitně používej `good` (zelená), `bad` (červená) nebo `neutral` (modrá/oranžová).
 *   **Share Card:**
     *   Objekt `share_card` je povinný.
     *   `quote_text`: Musí být úderný a krátký, aby se vešel do grafiky.
-    *   `stats` na kartičce: Explicitně definuj barvu čísel pomocí `"color": "red"` nebo `"green"`.
+    *   `stats` na kartičce: Explicitně definuj barvu čísel pomocí `"color": "red"`, `"green"` nebo `"blue"`.
+    *   **Layout:** První sloupec statistik má šířku **230px**. Pokud je hodnota delší (např. „2,2 mil. $“), text popisku musí být úměrně zkrácen, aby nedošlo k překryvu.
 *   **Tagy (Topics):**
     *   **ZÁKAZ VYMÝŠLENÍ TAGŮ:** Používej výhradně existujících 10 tagů z `data/categories.json`. Žádné jiné tagy (`data`, `finance`, atd.) nejsou povoleny.
     *   Seznam povolených: `zdraví`, `ekonomika`, `inovace`, `energie`, `bezpečnost`, `demokracie`, `výzvy`, `mýty`, `česko`, `svět`.
