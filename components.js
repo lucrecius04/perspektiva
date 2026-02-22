@@ -6,6 +6,19 @@
 (function () {
 
   var css = `
+    html {
+      height: 100%;
+    }
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      margin: 0;
+    }
     header {
       background: #1e293b;
       border-bottom: 1px solid #334155;
@@ -29,6 +42,7 @@
       align-items: center;
       gap: 1rem;
       text-decoration: none;
+      flex-shrink: 0;
     }
     .logo-icon { height: 78px; width: 78px; flex-shrink: 0; }
     .logo-text { display: flex; flex-direction: column; gap: 0; }
@@ -42,12 +56,28 @@
       line-height: 1; letter-spacing: 0.06em; margin-top: 9px;
     }
     .header-right { display: flex; align-items: center; gap: 2rem; }
-    nav ul { display: flex; gap: 2.5rem; list-style: none; }
+    nav ul { display: flex; gap: 2.5rem; list-style: none; margin: 0; padding: 0; }
     nav a { color: #e2e8f0; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
     nav a:hover { color: #60a5fa; }
     nav a.nav-active { color: #60a5fa; }
 
-    footer { background: #1a1a1a; color: #9ca3af; padding: 3rem 0; margin-top: 6rem; }
+    .theme-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      padding: 0.5rem;
+      border-radius: 50%;
+      transition: background 0.2s;
+    }
+    .theme-toggle:hover { background: rgba(255,255,255,0.1); }
+
+    footer { 
+      background: #1a1a1a; 
+      color: #9ca3af; 
+      padding: 3rem 0; 
+      margin-top: auto;
+    }
     .footer-content {
       max-width: 1400px; margin: 0 auto; padding: 0 2rem;
       display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
@@ -67,17 +97,21 @@
 
   /* --- URL detekce stránky --- */
   var path = window.location.pathname;
-  var isArticle   = path.indexOf('kontext-clanek') !== -1;
+  var isArticle   = path.indexOf('clanek.html') !== -1;
   var isOProjectu = path.indexOf('o-projektu')     !== -1;
   var isArchiv    = path.indexOf('archiv')           !== -1;
   var isOffHome   = isArticle || isOProjectu || isArchiv;
 
-  var homeUrl    = isOffHome ? 'index.html'                    : '#home';
-  var temaUrl    = isOffHome ? 'index.html#temata'             : '#temata';
+  // Používáme kořenové cesty pro absolutní spolehlivost
+  var root = window.location.origin + '/';
+  var homeUrl    = isOffHome ? 'index.html' : '#home';
+  var temaUrl    = isOffHome ? 'index.html#temata' : '#temata';
   var dataUrl    = isOffHome ? 'index.html#klicove-statistiky' : '#klicove-statistiky';
-  var archivUrl  = isArchiv    ? '#'                                       : 'archiv.html';
-  var projektUrl = isOProjectu ? '#'                                       : 'o-projektu.html';
-  var kontaktUrl = isOProjectu ? '#kontakt'                                : 'o-projektu.html#kontakt';
+  var archivUrl  = 'archiv.html';
+  var projektUrl = 'o-projektu.html';
+  var kontaktUrl = 'o-projektu.html#kontakt';
+  var navActiveOProj  = isOProjectu ? ' class="nav-active"' : '';
+  var navActiveArchiv = isArchiv    ? ' class="nav-active"' : '';
   var navActiveOProj  = isOProjectu ? ' class="nav-active"' : '';
   var navActiveArchiv = isArchiv    ? ' class="nav-active"' : '';
 
@@ -109,7 +143,7 @@
     +   '<li><a href="' + temaUrl + '">T\xe9mata</a></li>'
     +   '<li><a href="' + dataUrl + '">Data</a></li>'
     +   '<li><a href="' + archivUrl + '"'  + navActiveArchiv + '>Archiv</a></li>'
-  +   '<li><a href="' + projektUrl + '"'  + navActiveOProj  + '>O projektu</a></li>'
+    +   '<li><a href="' + projektUrl + '"'  + navActiveOProj  + '>O projektu</a></li>'
     + '</ul></nav>'
     + '<button class="theme-toggle" id="themeToggle" title="P\u0159epnout tmav\xfd re\u017eim" aria-label="P\u0159epnout tmav\xfd re\u017eim">\uD83C\uDF19</button>'
     + '</div>'

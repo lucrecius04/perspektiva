@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Pokud soubor nebo složka existuje, zobraz ji přímo
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Přesměruj /articles/cokoliv na clanek.html
+# Prohlížeč v URL uvidí /articles/nazev-clanku, ale server vykreslí clanek.html
+RewriteRule ^articles/([^/]+)/?$ clanek.html [L,QSA]

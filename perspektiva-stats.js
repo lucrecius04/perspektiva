@@ -10,7 +10,7 @@
         let currentCountry = {code:'WLD',name:'Svět'};
         let currentMetric = 'life';
 
-        document.addEventListener('DOMContentLoaded', () => {
+        (function() {
             setupSearch();
             document.getElementById('countrySearch').value = 'Svět';
             loadCountryData('WLD','Svět');
@@ -37,22 +37,24 @@
             function syncArticleHeight() {
                 const dataSection = document.querySelector('.data-section');
                 const topicsSection = document.querySelector('.topics-section');
+                const latestSection = document.querySelector('.latest-articles-section');
                 const articleList = document.querySelector('.article-list');
-                if (!dataSection || !topicsSection || !articleList) return;
+                if (!dataSection || !topicsSection || !articleList || !latestSection) return;
+                
                 const dataSectionH = dataSection.offsetHeight;
-                // Subtract: topics header + topic-grid + articles-header + margins
                 const topicsHeader = topicsSection.querySelector('.topics-header');
                 const topicGrid = topicsSection.querySelector('.topic-grid');
-                const articlesHeader = topicsSection.querySelector('.articles-header');
+                const articlesHeader = latestSection.querySelector('.articles-header');
+                
                 const usedH = (topicsHeader ? topicsHeader.offsetHeight : 0)
                             + (topicGrid ? topicGrid.offsetHeight : 0)
                             + (articlesHeader ? articlesHeader.offsetHeight : 0)
                             + 60; // gaps and margins
-                articleList.style.maxHeight = Math.max(200, dataSectionH - usedH) + 'px';
+                articleList.style.maxHeight = Math.max(300, dataSectionH - usedH) + 'px';
             }
             setTimeout(syncArticleHeight, 200);
             window.addEventListener('resize', syncArticleHeight);
-        });
+        })();;
 
         function setupSearch() {
             const searchInput = document.getElementById('countrySearch');

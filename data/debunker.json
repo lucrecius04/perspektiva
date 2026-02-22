@@ -1,6 +1,6 @@
 [
   {
-    "myth": "„Do rozpočtu EU posíláme víc, než dostáváme zpátky."",
+    "myth": "„Do rozpočtu EU posíláme víc, než dostáváme zpátky.“",
     "mythSource": "Běžný narativ na sociálních sítích",
     "number": "+1,06 bil.",
     "numberClass": "",
@@ -11,25 +11,25 @@
     "btnTitle": "Mýtus o EU: Platíme víc, než dostáváme?"
   },
   {
-    "myth": "„Reálné mzdy v Česku stagnují nebo klesají."",
+    "myth": "„Reálné mzdy v Česku stagnují nebo klesají.“",
     "mythSource": "Opakující se tvrzení v komentářích a diskusích",
     "number": "+4,1 %",
     "numberClass": "",
     "desc": "Růst reálných mezd v ČR v roce 2024 po očištění o inflaci. Nejvyšší za 5 let.",
     "source": "📁 ČSÚ — Mzdy a náklady práce",
     "context": "Po inflačním propadu v letech 2021–2023 se reálné mzdy v ČR v roce 2024 výrazně zotavily. Průměrná hrubá mzda překonala 45 000 Kč.",
-    "link": "#",
+    "link": "articles/mzdy-v-cr",
     "btnTitle": "Česko a mzdy: Chudneme, nebo rosteme?"
   },
   {
-    "myth": "„Migrace do Evropy je zcela mimo kontrolu a neustále roste."",
+    "myth": "„Migrace do Evropy je zcela mimo kontrolu a neustále roste.“",
     "mythSource": "Sociální sítě, politická rétorika",
     "number": "−38 %",
     "numberClass": "negative",
     "desc": "Pokles nelegálních přechodů na vnějších hranicích EU v roce 2024 oproti roku 2023.",
     "source": "📁 Frontex — Risk Analysis 2024",
     "context": "Počet detekovaných nelegálních přechodů hranic EU v roce 2024 výrazně klesl. Frontex zaznamenal nejnižší čísla od roku 2021.",
-    "link": "#",
+    "link": "articles/migrace-v-evrope",
     "btnTitle": "Migrace v Evropě: Co říkají skutečná čísla?"
   }
 ]
