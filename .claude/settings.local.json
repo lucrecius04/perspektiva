@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node:*)",
+      "Bash(powershell:*)",
+      "WebSearch",
+      "WebFetch(domain:cs.wikipedia.org)",
+      "WebFetch(domain:polit.fss.muni.cz)",
+      "WebFetch(domain:sreview.soc.cas.cz)",
+      "WebFetch(domain:mares.blog.respekt.cz)",
+      "WebFetch(domain:www.irozhlas.cz)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:is.muni.cz)",
+      "WebFetch(domain:www.e-polis.cz)",
+      "WebFetch(domain:dspace.cuni.cz)",
+      "WebFetch(domain:journals.muni.cz)",
+      "WebFetch(domain:www.humanart.cz)",
+      "WebFetch(domain:www.brainscape.com)"
+    ]
+  }
+}
