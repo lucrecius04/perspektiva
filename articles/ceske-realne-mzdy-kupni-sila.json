@@ -1,0 +1,82 @@
+{
+  "slug": "ceske-realne-mzdy-kupni-sila",
+  "title": "České mzdy 2014–2024: co data říkají o kupní síle",
+  "title_short": "Mzdy a kupní síla: 10 let dat",
+  "perex": "Inflace let 2022–2023 zasáhla česká domácnosti výraznou ztrátou kupní síly. Tato analýza mapuje, co se s průměrnými reálnými mzdami stalo v horizontu deseti let — od roku 2014 do roku 2024 — kde populárně uváděná čísla přehání a kde data hovoří jasně.",
+  "topics": [
+    "ekonomika",
+    "česko"
+  ],
+  "date": "2026-02-23",
+  "dateStr": "23. 2. 2026",
+  "status": "published",
+  "breadcrumb_topic": "Ekonomika",
+  "key_stats": [
+    {
+      "value": "+4,5 %",
+      "label": "reálný růst mezd v roce 2024",
+      "color": "good"
+    },
+    {
+      "value": "~+19 %",
+      "label": "reálná kupní síla za 10 let",
+      "color": "good"
+    },
+    {
+      "value": "46 800 Kč",
+      "label": "prům. hrubá mzda Q3 2024",
+      "color": "blue"
+    }
+  ],
+  "content": "<h2>Vymezení tématu: co a jak měříme</h2><p>Tato analýza pracuje s průměrnou hrubou mzdou zaměstnanců v národním hospodářství dle dat Českého statistického úřadu (ČSÚ) a s indexem spotřebitelských cen (CPI) vydávaným toutéž institucí. Sledovaný horizont jsou roky 2014 až 2024. Data za rok 2024 vycházejí z výsledků za třetí čtvrtletí zveřejněných v prosinci 2024 — celoroční průměr bude upřesněn v průběhu roku 2025 a může se mírně lišit.</p><div class=\"highlight-box hb-blue\"><strong>Důležité rozlišení:</strong> Průměrná mzda a medián mzdy jsou různé ukazatele. Průměr je citlivý na vysoké příjmy a systematicky leží nad mediánem — v roce 2023 byl medián hrubé mzdy v Česku přibližně o 20 % nižší než průměr. Polovina zaměstnanců tedy vydělávala méně, než průměrné číslo naznačuje. Veškerá data v tomto článku se vztahují k průměru, nikoliv k mediánu.</div><h2>Chronologie 2014–2024: od stability přes krizi k obnově</h2><p>Toto desetiletí lze rozdělit do tří fází: období mírného a následně silného reálného růstu (přibližně 2014–2021), inflační krize s reálným poklesem kupní síly (2022–2023) a návrat k reálnému růstu (2024).</p><div class=\"data-table-wrap\"><table><thead><tr><th>Rok</th><th>Průměrná hrubá mzda</th><th>Inflace (rok)</th><th>Reálná změna</th></tr></thead><tbody><tr><td class=\"td-num\">2014</td><td class=\"td-num\">25 686 Kč</td><td class=\"td-num\">+0,4 %</td><td class=\"td-good\">+2,4 %</td></tr><tr><td class=\"td-num\">2018</td><td class=\"td-num\">31 516 Kč</td><td class=\"td-num\">+2,1 %</td><td class=\"td-good\">+5,8 %</td></tr><tr><td class=\"td-num\">2022</td><td class=\"td-num\">40 324 Kč</td><td class=\"td-num\">+15,1 %</td><td class=\"td-bad\">−8,8 %</td></tr><tr><td class=\"td-num\">2023</td><td class=\"td-num\">43 341 Kč</td><td class=\"td-num\">+10,7 %</td><td class=\"td-bad\">−3,2 %</td></tr><tr><td class=\"td-num\">2024 *</td><td class=\"td-num\">~46 800 Kč</td><td class=\"td-num\">+2,4 %</td><td class=\"td-good\">+4,5 %</td></tr></tbody></table></div><p style=\"font-size:0.82rem;color:#555;margin-top:-0.8rem;margin-bottom:1.5rem;\">* Rok 2024: data za třetí čtvrtletí (ČSÚ, prosinec 2024). Celoroční průměr bude zveřejněn v roce 2025.</p><div class=\"highlight-box hb-blue\"><strong>Kumulativní bilance dekády:</strong> Průměrná hrubá mzda vzrostla od roku 2014 nominálně přibližně o 82 % (z 25 686 Kč na ~46 800 Kč). Kumulativní inflace za stejné období dosáhla přibližně 53 % — nikoliv 40 %, jak se někdy uvádí. Reálná kupní síla proto vzrostla za toto desetiletí přibližně o 19 %, nikoliv o 28 %. I tak jde o výrazný posun, ale je důležité pracovat se správnými čísly.</div><h2>Reálná roční změna mezd: přehled</h2><div class=\"data-table-wrap\"><table><thead><tr><th>Rok</th><th>Reálná změna</th><th>Hodnocení</th></tr></thead><tbody><tr><td class=\"td-num\">2014</td><td class=\"td-good\">+2,4 %</td><td class=\"td-good\" style=\"color:#059669;\">▲ reálný růst</td></tr><tr><td class=\"td-num\">2018</td><td class=\"td-good\">+5,8 %</td><td class=\"td-good\" style=\"color:#059669;\">▲ reálný růst</td></tr><tr><td class=\"td-num\">2022</td><td class=\"td-bad\">−8,8 %</td><td class=\"td-bad\" style=\"color:#dc2626;\">▼ reálný pokles</td></tr><tr><td class=\"td-num\">2023</td><td class=\"td-bad\">−3,2 %</td><td class=\"td-bad\" style=\"color:#dc2626;\">▼ reálný pokles</td></tr><tr><td class=\"td-num\">2024 *</td><td class=\"td-good\">+4,5 %</td><td class=\"td-good\" style=\"color:#059669;\">▲ reálný růst</td></tr></tbody></table></div><p style=\"font-size:0.82rem;color:#555;margin-top:-0.8rem;margin-bottom:1.5rem;\">* Odhad za Q3 2024. Celoroční průměr bude upřesněn v roce 2025.</p><p>Rozložení dat odhaluje výraznou asymetrii: roky silného reálného růstu (zejm. 2018: +5,8 %) byly taženy kombinací nízké inflace, přehřátého trhu práce a mzdové konvergence Česka vůči zemím EU. Inflační šok v roce 2022 s poklesem reálné mzdy o 8,8 % pak tento zisk z velké části smazal. Roky 2023 a 2024 představují postupné dohánění ztracené kupní síly.</p><h2>Proč bolela i dobrá čísla: psychologie ztráty</h2><p>Ekonomická psychologie popisuje asymetrii, na níž upozornil Daniel Kahneman: ztráty vnímáme přibližně dvakrát intenzivněji než srovnatelně velké zisky. Dva roky reálného poklesu (2022–2023) zanechaly v domácnostech výrazný otisk, který přetrvává i po návratu k růstu. K tomu přistupuje fenomén cenové paměti — ceny potravin a energií sice rostou pomaleji, ale na úrovně z roku 2020 se nevrátí. Vyšší nominální mzda tak subjektivně nestačí, i když objektivně reálnou ztrátu z inflačních let v delším horizontu pokrývá.</p><div class=\"highlight-box hb-blue\"><strong>Perspektiva:</strong> Inflační epizoda 2022–2023 byla reálně bolestivá — data to jednoznačně potvrzují. Kumulativní bilance celého desetiletí 2014–2024 je přesto kladná: průměrná reálná kupní síla vzrostla přibližně o 19 %. Obě věci jsou pravda a jsou vzájemně slučitelné.</div><h2>Limity průměru: kdo za čísly stojí</h2><p>Průměrná hrubá mzda je syntetický ukazatel, který zakrývá výrazné rozdíly. Za prvé: medián hrubé mzdy je v Česku systematicky nižší než průměr — přibližně o 20 %. Za druhé: regionální disparity jsou značné. Praha a Brno mají průměrné mzdy výrazně nad celostátním průměrem, zatímco Ústecký nebo Karlovarský kraj leží pod ním. Za třetí: domácnosti s nižšími příjmy vydávají větší podíl svého příjmu na potraviny, energie a bydlení. V inflačních rocích 2022–2023, kdy právě tyto kategorie zdražovaly nejrychleji, zasáhla inflace nízkopříjmové skupiny strukturálně silněji, než celostátní průměr naznačuje.</p><h2>Závěr: faktická bilance bez přehánění</h2><p>Data za roky 2014–2024 ukazují, že průměrná reálná kupní síla zaměstnanců v Česku za toto desetiletí vzrostla přibližně o 19 % — výrazně méně, než se obvykle uvádí, ale stále nezanedbatelný posun. Rok 2022 přinesl největší jednorázový propad reálné mzdy z posledních dekád, rok 2024 naopak silné zotavení. Průměrná mzda ale nevypovídá o dostupnosti bydlení, distribuci příjmů ani o životní úrovni v dolní části příjmového spektra — to jsou témata pro samostatné analýzy.</p>",
+  "sources": [
+    {
+      "label": "Český statistický úřad (ČSÚ) — Průměrné hrubé mzdy zaměstnanců, čtvrtletní data 2014–2024. Primární zdroj pro data o nominálních mzdách (25 686 Kč v roce 2014, ~46 800 Kč ve 3. čtvrtletí 2024).",
+      "url": "https://www.czso.cz/csu/czso/prace_a_mzdy_prace"
+    },
+    {
+      "label": "Český statistický úřad (ČSÚ) — Index spotřebitelských cen (CPI), míra inflace 2014–2024. Primární zdroj pro roční inflaci a kumulativní inflaci použitou k výpočtu reálné kupní síly (~53 % za dekádu 2014–2024).",
+      "url": "https://www.czso.cz/csu/czso/mira-inflace"
+    },
+    {
+      "label": "Česká národní banka (ČNB) — Zprávy o inflaci 2022–2024. Analýza příčin inflační vlny, prognózy vývoje a cíle měnové politiky.",
+      "url": "https://www.cnb.cz/cs/menova-politika/zpravy-o-inflaci/"
+    },
+    {
+      "label": "Eurostat — Statistiky odměňování zaměstnanců, databáze earn_mw_cur. Srovnávací data pro mzdový vývoj v zemích EU a kontext pro českou mzdovou konvergenci.",
+      "url": "https://ec.europa.eu/eurostat/databrowser/view/earn_mw_cur"
+    },
+    {
+      "label": "Ministerstvo práce a sociálních věcí (MPSV) — Minimální mzda v ČR 2014–2025. Vývoj dolní hranice mezd jako kontext pro posouzení mzdového prostoru.",
+      "url": "https://www.mpsv.cz/minimalni-mzda"
+    }
+  ],
+  "share_card": {
+    "type": "data_kontext",
+    "headline_text": "Česká kupní síla: 10 let dat",
+    "headline_sub": "Co se stalo s reálnými mzdami od roku 2014 do roku 2024?",
+    "quote_text": "Reálná kupní síla vzrostla za dekádu o ~19 %, nikoliv o 28 %, jak se uvádělo.",
+    "quote_source": "— Svět v perspektivě, analýza 2026",
+    "download_filename": "svet-v-perspektive-ceske-realne-mzdy-kupni-sila.png",
+    "stats": [
+      {
+        "value": "+4,5 %",
+        "label": "reálný nárůst průměrné mzdy v roce 2024 po odečtení inflace",
+        "source_text": "Zdroj: ČSÚ, Q3 2024",
+        "color": "green"
+      },
+      {
+        "value": "~+19 %",
+        "label": "reálná kupní síla vzrostla za celou dekádu 2014–2024",
+        "source_text": "Zdroj: ČSÚ, výpočet redakce",
+        "color": "green"
+      },
+      {
+        "value": "46 800 Kč",
+        "label": "průměrná hrubá mzda ve 3. čtvrtletí 2024",
+        "source_text": "Zdroj: ČSÚ, Q3 2024",
+        "color": "blue"
+      }
+    ]
+  }
+}
