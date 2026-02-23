@@ -1,0 +1,86 @@
+{
+  "slug": "internet-6-miliard-digitalni-propast",
+  "title": "Z nuly na 6 miliard: Internet připojil tři čtvrtiny světa. Ale pokrok začíná váznout",
+  "perex": "Žádná technologie v dějinách se nerozšířila tak rychle. Internet, který v roce 1993 využívalo přibližně 14 milionů akademiků a nadšenců, dnes propojuje 6 miliard lidí — přibližně 75 % světové populace. Nejnovější zpráva ITU Facts and Figures 2025 ale přichází s důležitým upřesněním: tempo růstu se zpomaluje a zbývající offline populace je strukturálně nejtěžší k připojení. Zároveň se proměňuje samotná podstata digitální propasti — rozdělovníkem už není jen otázka „mít nebo nemít internet“, ale kvalita připojení a reálná schopnost ho využívat.",
+  "topics": [
+    "inovace",
+    "svět"
+  ],
+  "date": "2026-02-23",
+  "dateStr": "23. 2. 2026",
+  "status": "published",
+  "breadcrumb_topic": "Inovace",
+  "key_stats": [
+    {
+      "value": "6 miliard",
+      "label": "lidí online — 75 % světové populace",
+      "color": "good"
+    },
+    {
+      "value": "2,2 miliardy",
+      "label": "lidí zůstává zcela offline — 96 % z nich žije v zemích s nízkými a středními příjmy, přibližně 1,5 miliardy v odlehlých venkovských oblastech. Jde o populaci strukturálně nejtěžší k připojení (ITU Facts and Figures 2025)",
+      "color": "bad"
+    },
+    {
+      "value": "84 % vs. 4 %",
+      "label": "podíl obyvatel s přístupem k 5G sítím ve vysokopříjmových vs. nízkopříjmových zemích. Typický uživatel v bohaté zemi spotřebuje měsíčně osmkrát více mobilních dat než uživatel v chudé zemi (ITU 2025)",
+      "color": "blue"
+    }
+  ],
+  "content": "<h2>Nejrychlejší adopce v dějinách — s důležitou výhradou</h2><p>V roce 1993, kdy byl spuštěn prohlížeč Mosaic a komerční internet se teprve rodil, využívalo World Wide Web přibližně 14 milionů lidí, převážně akademiků a technologických nadšenců v USA a Evropě. O necelých třicet let později je toto číslo 6 miliard. Žádná jiná technologie v zaznamenaných ekonomických dějinách se nerozšířila srovnatelnou rychlostí.</p><p>Tento dramatický skok nebyl tažen pokládáním optických kabelů do každé domácnosti. Revoluce, která připojila Asii a Afriku, byla primárně mobilní. Dostupnost levných chytrých telefonů a masivní výstavba 3G/4G sítí umožnily rozvojovým zemím přeskočit celou technologickou fázi — namísto drahé infrastruktury pevných linek přešly mnohé africké a asijské státy rovnou do éry mobilního internetu. Výsledkem jsou reálné ekonomické změny: od mobilního bankovnictví (keňský systém M-Pesa obsluhuje desítky milionů uživatelů bez bankovního účtu) po digitální tržiště pro malé zemědělce.</p><p>ITU Facts and Figures 2025 ale k tomuto obrazu přidávají klíčový kontext: <strong>pokrok se zpomaluje</strong>. Meziroční tempo růstu uživatelů internetu kleslo na 3,3 % — přibližně polovinu tempa z poloviny předchozí dekády. Zbývající offline populace je strukturálně nejtěžší k připojení: jde o nejodlehlejší venkovské oblasti, nejchudší komunity a regiony s nejslabší infrastrukturou.</p><div style=\"background:#f8f9fa; border-radius:8px; padding:1.2rem 1.5rem; margin:1.5rem 0; border:1px solid #e9ecef;\"><p style=\"font-weight:700; font-size:0.87rem; margin:0 0 1rem 0; color:#333; letter-spacing:0.02em;\">INTERNETOVÁ PENETRACE DLE REGIONŮ A PŘÍJMOVÉ SKUPINY — 2025 (%)</p><div style=\"display:flex; align-items:center; margin-bottom:0.5rem;\"><div style=\"width:155px; font-size:0.82rem; text-align:right; padding-right:10px; color:#27ae60; flex-shrink:0; font-weight:700;\">Vysokopříjmové země</div><div style=\"flex:1; background:#dee2e6; border-radius:4px; height:24px; overflow:hidden;\"><div style=\"width:94%; background:#27ae60; height:100%; display:flex; align-items:center; padding-left:8px; box-sizing:border-box;\"><span style=\"color:white; font-size:0.8rem; font-weight:700;\">94 %</span></div></div></div><div style=\"display:flex; align-items:center; margin-bottom:0.5rem;\"><div style=\"width:155px; font-size:0.82rem; text-align:right; padding-right:10px; color:#2980b9; flex-shrink:0;\">Evropa</div><div style=\"flex:1; background:#dee2e6; border-radius:4px; height:24px; overflow:hidden;\"><div style=\"width:89%; background:#2980b9; height:100%; display:flex; align-items:center; padding-left:8px; box-sizing:border-box;\"><span style=\"color:white; font-size:0.8rem; font-weight:700;\">~89 %</span></div></div></div><div style=\"display:flex; align-items:center; margin-bottom:0.5rem;\"><div style=\"width:155px; font-size:0.82rem; text-align:right; padding-right:10px; color:#e67e22; flex-shrink:0;\">Asie a Tichomoří</div><div style=\"flex:1; background:#dee2e6; border-radius:4px; height:24px; overflow:hidden;\"><div style=\"width:72%; background:#e67e22; height:100%; display:flex; align-items:center; padding-left:8px; box-sizing:border-box;\"><span style=\"color:white; font-size:0.8rem; font-weight:700;\">~72 %</span></div></div></div><div style=\"display:flex; align-items:center; margin-bottom:0.5rem;\"><div style=\"width:155px; font-size:0.82rem; text-align:right; padding-right:10px; color:#e74c3c; flex-shrink:0;\">Nízkopříjmové země</div><div style=\"flex:1; background:#dee2e6; border-radius:4px; height:24px; overflow:hidden;\"><div style=\"width:23%; background:#e74c3c; height:100%; display:flex; align-items:center; padding-left:8px; box-sizing:border-box;\"><span style=\"color:white; font-size:0.8rem; font-weight:700;\">23 %</span></div></div></div><div style=\"display:flex; align-items:center;\"><div style=\"width:155px; font-size:0.82rem; text-align:right; padding-right:10px; color:#c0392b; flex-shrink:0; font-weight:700;\">Afrika</div><div style=\"flex:1; background:#dee2e6; border-radius:4px; height:24px; overflow:hidden;\"><div style=\"width:36%; background:#c0392b; height:100%; display:flex; align-items:center; padding-left:8px; box-sizing:border-box;\"><span style=\"color:white; font-size:0.8rem; font-weight:700;\">36 %</span></div></div></div><p style=\"font-size:0.76rem; color:#888; margin:0.8rem 0 0 0;\">Zdroj: ITU Facts and Figures 2025. Data jsou přibližná regionální průměry; hodnoty pro Evropu a Asii jsou výpočty z dostupných regionálních dat ITU.</p></div><h2>2,2 miliardy offline: kdo jsou a kde žijí</h2><p>Za souhrnným číslem 2,2 miliardy offline se skrývá konkrétní geografická a demografická realita. Plných <strong>96 %</strong> offline populace žije v zemích s nízkými a středními příjmy. Přibližně <strong>1,5 miliardy</strong> z nich žije ve venkovských a odlehlých oblastech, kam se telekomunikačním firmám za běžných tržních podmínek nevyplatí investovat do infrastruktury. Genderová propast přetrvává i v digitálním světě: globálně je online 77 % mužů, ale jen 71 % žen — rozdíl, který je v subsaharské Africe výrazně větší.</p><div class=\"highlight-box hb-orange\"><strong>Problém dostupnosti, ne jen pokrytí:</strong> V 9 z 10 nízkopříjmových ekonomik stojí datový balíček 5 GB více než 10 % průměrného měsíčního příjmu. Broadband Commission (ITU a UNESCO) si stanovila cíl dostat tuto cenu pod 2 % průměrného příjmu. Pětinásobná vzdálenost od cíle ukazuje, že problémem není jen technické pokrytí signálem, ale cenová dostupnost pro nejchudší domácnosti.</div><h2>Konec kvantity, nástup „smysluplného připojení“</h2><p>Makrostatistika 6 miliard uživatelů zahrnuje i člověka, který se připojí jednou za měsíc přes zapůjčený telefon. Mezinárodní telekomunikační unie proto přechází na přísnější metriku: <em>smysluplné připojení</em> (meaningful connectivity) — každodenní přístup na vlastním zařízení s dostatečnou rychlostí pro vzdělávání, práci nebo telemedicínu.</p><p>Právě zde se propast nejzřetelněji projevuje. Typický uživatel ve vysokopříjmové zemi spotřebuje měsíčně <strong>osmkrát více mobilních dat</strong> než průměrný uživatel v nízkopříjmovém regionu — a to za relativně výrazně příznivější ceny. Totéž platí pro síťovou infrastrukturu: ve vysokopříjmových zemích má přístup k 5G sítím <strong>84 % obyvatel</strong>, v nízkopříjmových zemích jsou to pouhá <strong>4 %</strong>.</p><div style=\"background:#f8f9fa;border-radius:8px;padding:1.2rem 1.5rem;margin:1.5rem 0;border:1px solid #e9ecef;\"><p style=\"font-weight:700;margin-bottom:0.2rem;color:#333;font-size:0.95rem;\">Dostupnost 5G sítí — 2025</p><p style=\"font-size:0.78rem;color:#555;margin-bottom:1.25rem;\">Podíl populace s přístupem k 5G &middot; Zdroj: ITU Facts and Figures 2025</p><div style=\"margin-bottom:0.7rem;\"><div style=\"display:flex;align-items:center;gap:0.75rem;\"><span style=\"font-size:0.82rem;color:#555;width:195px;flex-shrink:0;\">Vysokopříjmové země</span><div style=\"flex:1;background:#dee2e6;border-radius:4px;height:22px;overflow:hidden;\"><div style=\"background:#27ae60;height:100%;width:84%;border-radius:4px;\"></div></div><span style=\"font-size:0.85rem;font-weight:700;color:#333;width:44px;text-align:right;\">84 %</span></div></div><div style=\"margin-bottom:0.7rem;\"><div style=\"display:flex;align-items:center;gap:0.75rem;\"><span style=\"font-size:0.82rem;color:#555;width:195px;flex-shrink:0;\">Nízkopříjmové země</span><div style=\"flex:1;background:#dee2e6;border-radius:4px;height:22px;overflow:hidden;\"><div style=\"background:#e74c3c;height:100%;width:4%;border-radius:4px;\"></div></div><span style=\"font-size:0.85rem;font-weight:700;color:#333;width:44px;text-align:right;\">4 %</span></div></div></div><h2>Technologická odpověď: satelity na nízké oběžné dráze</h2><p>Zbývající offline miliarda a půl venkovské populace se koncentruje v místech, kam se klasická pozemní infrastruktura nevyplatí. Technologickou odpovědí jsou konstelace satelitů na nízké oběžné dráze (LEO) — zejména SpaceX Starlink (provozní od 2021, dostupný v desítkách zemí) a budovaný Amazon Kuiper. Tyto systémy dokáží dodat rychlý internet s nízkou latencí prakticky kamkoliv na Zemi bez nutnosti pozemní infrastruktury.</p><p>Ekonomická bariéra ale zůstává: cena přijímacích terminálů, přestože postupně klesá, je stále mimo dosah nejchudších domácností v nízkopříjmových zemích. Satelitní internet jako cesta k plné globální konektivitě funguje — otázka je, za jakých podmínek a pro koho bude cenově dostupný a na jakých regulatorních podmínkách.</p><h2>Závěr: kvantita je splněna, kvalita je výzva</h2><p>Připojení tří čtvrtin lidstva k internetu za necelé tři dekády je reálný technologický a ekonomický úspěch. ITU 2025 nicméně ukazuje, že snadná část je hotová — zbývající populace je strukturálně nejtěžší k dosažení a pokrok se zpomaluje přesně ve chvíli, kdy by měl zrychlit. Souběžně se mění podstata problému: digitální propast dnes nevymezuje jen přítomnost nebo nepřítomnost signálu, ale kvalita připojení, cenová dostupnost dat a digitální gramotnost. Zatímco vyspělé ekonomiky integrují průmyslovou umělou inteligenci provozovanou na 5G sítích, stovky milionů lidí na globálním Jihu zvažují každý megabyte dat.</p>",
+  "sources": [
+    {
+      "label": "ITU — Facts and Figures 2025: Internet use (17. 11. 2025). Primární zdroj: 6 mld. uživatelů, 2,2 mld. offline, 96 % v nízkopříjmových zemích, ~1,5 mld. venkovských, 5G 84 % vs. 4 %, 8× více dat, Afrika 36 %, tempo růstu 3,3 %.",
+      "url": "https://www.itu.int/itu-d/reports/statistics/2025/11/17/ff25-internet-use/"
+    },
+    {
+      "label": "ITU — Facts and Figures 2025: Affordability (17. 11. 2025). 9 z 10 nízkopříjmových ekonomik přesahuje 10% práh ceny dat; cíl Broadband Commission 2 %.",
+      "url": "https://www.itu.int/itu-d/reports/statistics/2025/11/17/ff25-affordability/"
+    },
+    {
+      "label": "ITU — Facts and Figures 2024. Historické srovnání: offline populace 2,6 miliardy (2024) → 2,2 miliardy (2025).",
+      "url": "https://www.itu.int/itu-d/reports/statistics/2024/"
+    },
+    {
+      "label": "ITU / UNESCO — Broadband Commission: State of Broadband Report. Cíl 2 % příjmu za 5GB data; metodický rámec meaningful connectivity.",
+      "url": "https://broadbandcommission.org/reports/"
+    },
+    {
+      "label": "World Bank — World Development Report 2021: Data for Better Lives. Ekonomický dopad mobilního internetu, leapfrogging, M-Pesa.",
+      "url": "https://www.worldbank.org/en/publication/wdr2021"
+    },
+    {
+      "label": "GSMA Intelligence — The Mobile Economy 2025. Mobilní penetrace, 5G výstavba, regionální trendy v Africe a Asii.",
+      "url": "https://www.gsma.com/solutions-and-impact/connectivity/mobile-economy/"
+    }
+  ],
+  "share_card": {
+    "type": "data_kontext",
+    "headline_text": "Z nuly na 6 miliard: Internet připojil tři čtvrtiny světa",
+    "headline_sub": "Pokrok ale zpomaluje. A propast v kvalitě se prohlubuje.",
+    "quote_text": "Pokrok je pomalejší, než by bylo potřeba. Zbývající offline populace je strukturálně nejtěžší k připojení.",
+    "quote_source": "— ITU Facts and Figures 2025",
+    "download_filename": "svet-v-perspektive-internet-6-miliard.png",
+    "stats": [
+      {
+        "value": "6 miliard",
+        "label": "lidí online v roce 2025 — 75 % světové populace. Tempo růstu zpomaluje na 3,3 % ročně",
+        "source_text": "Zdroj: ITU Facts and Figures 2025",
+        "color": "green"
+      },
+      {
+        "value": "2,2 mld.",
+        "label": "lidí zůstává offline — 96 % z nich v nízkopříjmových zemích",
+        "source_text": "Zdroj: ITU Facts and Figures 2025",
+        "color": "red"
+      },
+      {
+        "value": "84 %",
+        "label": "pokrytí 5G ve vysokopříjmových zemích — vs. 4 % v nízkopříjmových (ITU 2025)",
+        "source_text": "Zdroj: ITU Facts and Figures 2025",
+        "color": "blue"
+      }
+    ]
+  },
+  "title_short": "Internet připojil 6 miliard lidí — pokrok ale zpomaluje"
+}

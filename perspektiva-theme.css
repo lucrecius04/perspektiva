@@ -304,6 +304,13 @@ html.dark .highlight-box.hb-orange {
 }
 html.dark .highlight-box.hb-orange strong { color: #fbbf24 !important; }
 
+html.dark .highlight-box.hb-red {
+  background: #2d0d0d !important;
+  border-color: #f87171 !important;
+  color: #c9d1d9 !important;
+}
+html.dark .highlight-box.hb-red strong { color: #fca5a5 !important; }
+
 /* ── Tabulka v článku ── */
 html.dark table th {
   background: #21262d;
