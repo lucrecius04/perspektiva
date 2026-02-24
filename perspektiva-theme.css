@@ -267,6 +267,7 @@ html.dark .highlight-box {
   color: #c9d1d9 !important;
 }
 html.dark .highlight-box strong { color: #e2e8f0 !important; }
+html.dark .highlight-box a { color: var(--color-primary) !important; }
 
 /* ── Source box v článku ── */
 html.dark .article-source {

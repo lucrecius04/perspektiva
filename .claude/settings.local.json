@@ -16,7 +16,8 @@
       "WebFetch(domain:journals.muni.cz)",
       "WebFetch(domain:www.humanart.cz)",
       "WebFetch(domain:www.brainscape.com)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(grep:*)"
     ]
   }
 }
