@@ -66,9 +66,9 @@
     html.dark .article-body p[style*="color:#1a1a1a"] { color: var(--color-text) !important; }
     
     /* Stat boxes in content - Dark Mode */
-    html.dark .article-body div[style*="background:#f0f9ff"] { background: #0f172a !important; border-color: #0ea5e9 !important; }
-    html.dark .article-body div[style*="background:#fff7ed"] { background: #261a10 !important; border-color: #ea580c !important; }
-    html.dark .article-body div[style*="background:#f0fdf4"] { background: #0a1f14 !important; border-color: #059669 !important; }
+    html.dark .article-body div[style*="background:#f0f9ff"] { background: rgba(15, 23, 42, 0.8) !important; border-color: #0ea5e9 !important; }
+    html.dark .article-body div[style*="background:#fff7ed"] { background: rgba(38, 26, 16, 0.8) !important; border-color: #ea580c !important; }
+    html.dark .article-body div[style*="background:#f0fdf4"] { background: rgba(10, 31, 20, 0.8) !important; border-color: #059669 !important; }
     
     /* Text colors in stat boxes - Dark Mode */
     html.dark .article-body div[style*="color:#334155"] { color: #9ca3af !important; }
@@ -87,18 +87,16 @@
 
     html.dark .article-body div[style*="background:#f8f9fa"] {
       background: var(--color-surface) !important;
-      border-color: var(--color-border) !important;
-    }
-      background: var(--color-surface) !important;
-      border-color: var(--color-border) !important;
+      border-color: #30363d !important;
     }
     html.dark .article-body p[style*="color:#333"] { color: var(--color-text) !important; }
     html.dark .article-body p[style*="color:#555"] { color: var(--color-text-muted) !important; }
     html.dark .article-body div[style*="color:#555"] { color: var(--color-text-muted) !important; }
     html.dark .article-body span[style*="color:#555"] { color: var(--color-text-muted) !important; }
     html.dark .article-body span[style*="color:#333"] { color: var(--color-text) !important; }
-    html.dark .article-body div[style*="background:white"] {
-      background: #161b22 !important;
+    html.dark .article-body div[style*="background:white"],
+    html.dark .article-body div[style*="background:#ffffff"] {
+      background: var(--color-surface) !important;
       border-color: #30363d !important;
       color: var(--color-text-muted) !important;
     }

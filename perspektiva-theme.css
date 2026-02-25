@@ -322,32 +322,46 @@ html.dark .vs-circle {
 
 /* ── Highlight boxy v článcích – odlišené barvy ── */
 html.dark .highlight-box.hb-blue {
-  background: #0d1f35 !important;
-  border-color: var(--color-primary) !important;
-  color: #c9d1d9 !important;
+  background: rgba(13, 31, 53, 0.7) !important;
+  border-color: #38bdf8 !important;
+  color: #e2e8f0 !important;
 }
 html.dark .highlight-box.hb-blue strong { color: #7dd3fc !important; }
 
 html.dark .highlight-box.hb-green {
-  background: #0d2318 !important;
-  border-color: #059669 !important;
-  color: #c9d1d9 !important;
+  background: rgba(13, 35, 24, 0.7) !important;
+  border-color: #10b981 !important;
+  color: #e2e8f0 !important;
 }
 html.dark .highlight-box.hb-green strong { color: #6ee7b7 !important; }
 
 html.dark .highlight-box.hb-orange {
-  background: #2d1d05 !important;
-  border-color: #b45309 !important;
-  color: #c9d1d9 !important;
+  background: rgba(45, 29, 5, 0.7) !important;
+  border-color: #f59e0b !important;
+  color: #e2e8f0 !important;
 }
 html.dark .highlight-box.hb-orange strong { color: #fbbf24 !important; }
 
 html.dark .highlight-box.hb-red {
-  background: #2d0d0d !important;
+  background: rgba(45, 13, 13, 0.7) !important;
   border-color: #f87171 !important;
-  color: #c9d1d9 !important;
+  color: #e2e8f0 !important;
 }
 html.dark .highlight-box.hb-red strong { color: #fca5a5 !important; }
+
+/* ── Factcheck boxy v dark mode ── */
+html.dark .claim-box {
+  background: #2d0d0d !important;
+  border-color: #dc2626 !important;
+  color: #fca5a5 !important;
+}
+html.dark .claim-box strong { color: #ef4444 !important; }
+html.dark .verdict-box {
+  background: #161b22 !important;
+  border-color: #30363d !important;
+  color: #e2e8f0 !important;
+}
+html.dark .verdict-label { color: #94a3b8 !important; }
 
 /* ── Tabulka v článku ── */
 html.dark table th {
