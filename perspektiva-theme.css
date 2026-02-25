@@ -230,6 +230,43 @@ html.dark .data-section {
   background: linear-gradient(135deg, #0d1f35 0%, #0a1929 100%);
 }
 
+/* ── Státy v datech – range tlačítka a compare controls ── */
+html.dark .range-btn {
+  background: #1c2128;
+  border-color: #3a424d;
+  color: #94a3b8;
+}
+html.dark .range-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: #1c2128;
+}
+html.dark .range-btn.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+html.dark #compareCountrySelect,
+html.dark #compareCountrySelect2 {
+  background: #0d1117;
+  border-color: #3a424d;
+  color: #c9d1d9;
+}
+html.dark #compareCountrySelect:hover,
+html.dark #compareCountrySelect2:hover {
+  border-color: var(--color-primary);
+}
+html.dark .compare-reset-btn {
+  background: #0d1117;
+  border-color: #3a424d;
+  color: #8b949e;
+}
+html.dark .chart-legend {
+  background: #0d1117;
+  border-color: #30363d;
+  color: #c9d1d9;
+}
+
 /* ── Brand sekce (logo uprostřed) ── */
 html.dark .brand-section {
   background: #0d1117;

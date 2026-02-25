@@ -177,18 +177,60 @@
             font-weight: 500;
         }
 
-        /* MAIN CONTENT - Articles LEFT, Data RIGHT */
-        /* main-content removed — now separate full-width sections */
-        .topics-fullwidth {
+        /* ── BOTTOM TWO-COLUMN LAYOUT (Témata + Státy v datech) ── */
+        .bottom-two-col {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 2rem 2rem 1rem;
-            border-bottom: 1px solid var(--color-border);
+            padding: 2.5rem 2rem 4rem;
+            display: grid;
+            grid-template-columns: 65fr 35fr;
+            gap: 3rem;
+            align-items: start;
+            border-top: 1px solid var(--color-border);
         }
-        .data-fullwidth {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 2rem 2rem 0; /* Vynulován spodní padding */
+        .bottom-col-right {
+            position: sticky;
+            top: 100px;
+        }
+        .about-panel {
+            margin-top: 1.25rem;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 0.6rem;
+            padding: 1.25rem 1.5rem;
+            box-shadow: 0 1px 4px rgba(14,165,233,0.08);
+        }
+        .about-panel-title {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text-muted);
+            margin-bottom: 0.6rem;
+        }
+        .about-panel-text {
+            font-size: 0.88rem;
+            line-height: 1.65;
+            color: var(--color-text-muted);
+            margin-bottom: 1rem;
+        }
+        .archiv-cta {
+            display: block;
+            background: var(--color-primary);
+            color: white;
+            text-align: center;
+            padding: 0.7rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s, box-shadow 0.15s;
+            box-shadow: 0 2px 8px rgba(14,165,233,0.25);
+        }
+        .archiv-cta:hover {
+            background: var(--color-primary-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(14,165,233,0.38);
         }
 
         /* Fix scroll offset for sticky header */
@@ -252,8 +294,8 @@
 
         .topic-grid {
             display: grid;
-            grid-template-columns: repeat(8, 1fr) 2rem 1fr 1fr;
-            gap: 0.25rem;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0.5rem;
             align-items: stretch;
             background: var(--color-surface);
             border: 1px solid var(--color-border);
@@ -261,10 +303,6 @@
             padding: 0.5rem;
             box-shadow: 0 1px 4px rgba(14,165,233,0.08);
         }
-
-        /* Česko skočí až za mezeru do 10. sloupce */
-        .topic-grid a:nth-child(9) { grid-column: 10; }
-        .topic-grid a:nth-child(10) { grid-column: 11; }
         .topic-card.featured {
             border-radius: 50%;
             aspect-ratio: 1;
@@ -296,10 +334,20 @@
 
         a.topic-card { text-decoration: none; }
         /* Geo karty (Česko, Svět) — pill tvar, odlišné od obdélníků */
+        /* Regulérní témata: 2 sloupce ze 6 = 33 %, 3 za řádek */
+        .topic-card:not(.topic-geo) { grid-column: span 2; }
+
+        /* Poslední 2 non-geo (výzvy + mýty): span 3 aby vyplnily řádek */
+        .topic-card:not(.topic-geo):nth-last-child(3),
+        .topic-card:not(.topic-geo):nth-last-child(4) { grid-column: span 3; }
+
+        /* Geo karty (Česko, Svět): 3 sloupce ze 6 = 50 %, 2 za řádek */
         .topic-card.topic-geo {
             border-radius: 999px;
             padding: 0 1rem;
             font-weight: 700;
+            height: 58px;
+            grid-column: span 3;
         }
  
        /* Prázdná buňka v gridu pro vizuální mezeru */
@@ -321,7 +369,10 @@
             height: 48px;
         }
         
-        @media (max-width: 1000px) { .topic-grid { grid-template-columns: repeat(8, 1fr) 1rem repeat(2, 1fr); } }
+        @media (max-width: 900px) {
+            .bottom-two-col { grid-template-columns: 1fr; gap: 2rem; }
+            .bottom-col-right { position: static; }
+        }
 
         .topic-badge {
             position: absolute;
@@ -667,21 +718,28 @@
             margin: 0.5rem 0;
         }
 
-        /* Stats grid - 2x2 compact */
+        /* Stats grid - 3 columns, all tiles identical */
         .stats-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 0.5rem;
             margin-bottom: 0.75rem;
         }
 
         .stat-box {
             background: var(--color-surface);
-            padding: 0.6rem 0.75rem;
+            padding: 0.5rem 0.75rem;
             border-radius: 0.5rem;
-            border: 1px solid transparent;
+            border: 1px solid var(--color-border);
             cursor: pointer;
             transition: all 0.3s;
+            height: 72px;
+            overflow: hidden;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
         }
 
         .stat-box:hover {
@@ -697,33 +755,39 @@
             transform: scale(1.02);
         }
 
+        .stat-value-row {
+            display: flex;
+            align-items: baseline;
+            gap: 0.3rem;
+        }
+
         .stat-number {
             font-family: var(--font-mono);
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 600;
             color: var(--color-primary);
-            display: block;
-            margin-bottom: 0.1rem;
         }
 
         .stat-box.active .stat-number {
             color: var(--color-primary-hover);
-            font-size: 1.4rem;
-        }
-
-        .stat-label {
-            font-size: 0.72rem;
-            color: var(--color-text-muted);
-            font-weight: 500;
-            line-height: 1.2;
         }
 
         .stat-year {
             font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--color-primary);
-            margin-top: 0.25rem;
-            font-weight: 600;
+            font-size: 0.7rem;
+            color: var(--color-text-muted);
+            font-weight: 400;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            color: var(--color-text-muted);
+            font-weight: 500;
+            line-height: 1.2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-top: 0.1rem;
         }
 
         /* Chart */
@@ -734,16 +798,58 @@
             border: 1px solid var(--color-border);
         }
 
+        /* Legend above chart */
+        .chart-legend {
+            display: none;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 0.6rem;
+            padding: 0.45rem 0.7rem;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 0.4rem;
+            font-size: 0.78rem;
+            color: var(--color-text);
+        }
+
+        .chart-legend.visible {
+            display: flex;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .legend-line-solid   { display: inline-block; width: 18px; height: 3px; border-radius: 2px; flex-shrink: 0; }
+        .legend-line-dashed  { display: inline-block; width: 18px; height: 0; border-top: 2.5px dashed; flex-shrink: 0; }
+        .legend-line-dotted  { display: inline-block; width: 18px; height: 0; border-top: 2.5px dotted; flex-shrink: 0; }
+
         .chart-title {
             font-family: var(--font-serif);
             font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 0.6rem;
         }
 
         #dataChart {
             width: 100%;
-            height: 340px;
+            height: 420px;
+        }
+
+        .chart-subtitle {
+            font-size: 0.78rem;
+            color: var(--color-text-muted);
+            margin-bottom: 0.4rem;
+            line-height: 1.45;
         }
 
         .chart-source {
@@ -751,6 +857,153 @@
             color: var(--color-text-muted);
             margin-top: 0.5rem;
             font-style: italic;
+        }
+
+        /* Chart controls: range buttons + compare */
+        .chart-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .range-btns {
+            display: flex;
+            gap: 0.3rem;
+        }
+
+        .range-btn {
+            background: var(--color-surface);
+            border: 1.5px solid var(--color-border);
+            border-radius: 999px;
+            padding: 0.2rem 0.7rem;
+            font-size: 0.75rem;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            color: var(--color-text-muted);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .range-btn:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        .range-btn.active {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: white;
+        }
+
+        .compare-selector {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: auto;
+        }
+
+        .compare-group {
+            display: flex;
+            align-items: center;
+            gap: 0.15rem;
+        }
+
+        .compare-label {
+            font-size: 0.72rem;
+            color: var(--color-text-muted);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .compare-select-wrapper {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .compare-select-wrapper::after {
+            content: '▾';
+            position: absolute;
+            right: 0.55rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.65rem;
+            color: var(--color-text-muted);
+            pointer-events: none;
+        }
+
+        #compareCountrySelect {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            padding: 0.22rem 1.8rem 0.22rem 0.75rem;
+            border: 1.5px solid var(--color-border);
+            border-radius: 999px;
+            background: var(--color-surface);
+            color: var(--color-text);
+            cursor: pointer;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            min-width: 130px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        #compareCountrySelect:hover {
+            border-color: var(--color-primary);
+        }
+
+        #compareCountrySelect:focus,
+        #compareCountrySelect2:focus {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 2px rgba(14,165,233,0.15);
+        }
+
+        #compareCountrySelect2 {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            padding: 0.22rem 1.8rem 0.22rem 0.75rem;
+            border: 1.5px solid var(--color-border);
+            border-radius: 999px;
+            background: var(--color-surface);
+            color: var(--color-text);
+            cursor: pointer;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            min-width: 130px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        #compareCountrySelect2:hover { border-color: var(--color-primary); }
+
+        .compare-reset-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 17px;
+            height: 17px;
+            border: 1.5px solid var(--color-border);
+            border-radius: 50%;
+            background: var(--color-surface);
+            color: var(--color-text-muted);
+            font-size: 0.65rem;
+            line-height: 1;
+            cursor: pointer;
+            padding: 0;
+            flex-shrink: 0;
+            transition: all 0.18s;
+            visibility: hidden;
+            opacity: 0;
+        }
+        .compare-reset-btn.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        .compare-reset-btn:hover {
+            border-color: #ef4444;
+            color: #ef4444;
+            background: rgba(239,68,68,0.08);
         }
         /* Disclaimer */
         .poverty-disclaimer {
@@ -946,11 +1199,15 @@
             }
 
             .stats-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
             }
 
             .category-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .compare-selector {
+                margin-left: 0;
             }
 
         }
@@ -1244,76 +1501,183 @@
         </div>
     </section>
 
-    <!-- TÉMATA: full-width rozcestník -->
-    <div class="topics-fullwidth" id="temata">
-        <section class="topics-section">
-            <div class="topics-header">
-                <h2>Témata <span class="topics-hint">→ rozcestník do archivu</span></h2>
-            </div>
-            <div class="topic-grid" id="topicGrid">
-                <!-- Načítá se z data/categories.json -->
-            </div>
-        </section>
-    </div>
+    <!-- STÁTY V DATECH + TÉMATA: dvousloupcový layout -->
+    <div class="bottom-two-col" id="temata">
 
-    <!-- STATISTIKY: full-width -->
-    <div class="data-fullwidth">
-<section class="data-section" id="klicove-statistiky">
-            <h2 id="statsTitle">Státy v datech – Svět</h2>
+        <!-- LEVÝ SLOUPEC (3fr): Státy v datech -->
+        <div class="bottom-col-left">
+            <section class="data-section" id="klicove-statistiky">
+                <h2 id="statsTitle">Státy v datech – Svět</h2>
 
-            <div class="country-selector">
-                <label for="countrySearch">Vyberte region:</label>
-                <input 
-                    type="text" 
-                    id="countrySearch" 
-                    placeholder="Svět (vyhledejte zemi...)"
-                    autocomplete="off"
-                />
-                <div class="country-dropdown" id="countryDropdown"></div>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-box active" onclick="showChart('life')" data-metric="life">
-                    <span class="stat-number" id="lifeExpectancy">73.5</span>
-                    <span class="stat-label">Očekávaná délka života (roky)</span>
-                    <span class="stat-year" id="lifeExpYear">Rok: 2023</span>
+                <div class="country-selector">
+                    <label for="countrySearch">Vyberte region:</label>
+                    <input
+                        type="text"
+                        id="countrySearch"
+                        placeholder="Svět (vyhledejte zemi...)"
+                        autocomplete="off"
+                    />
+                    <div class="country-dropdown" id="countryDropdown"></div>
                 </div>
-                <div class="stat-box" onclick="showChart('literacy')" data-metric="literacy">
-                    <span class="stat-number" id="literacy">88%</span>
-                    <span class="stat-label">Gramotnost dospělých</span>
-                    <span class="stat-year" id="literacyYear">Rok: 2023</span>
-                </div>
-                <div class="stat-box" onclick="showChart('electricity')" data-metric="electricity">
-                    <span class="stat-number" id="electricity">92%</span>
-                    <span class="stat-label">Přístup k elektřině</span>
-                    <span class="stat-year" id="electricityYear">Rok: 2023</span>
-                </div>
-                <div class="stat-box" onclick="showChart('infant')" data-metric="infant">
-                    <span class="stat-number" id="infantMortality">26</span>
-                    <span class="stat-label">Kojenecká úmrtnost (na 1000)</span>
-                    <span class="stat-year" id="infantMortYear">Rok: 2023</span>
-                </div>
-            </div>
 
-            <div class="chart-container">
-                <h3 class="chart-title" id="chartTitle">Očekávaná délka života (1960-2023)</h3>
-                <svg id="dataChart" viewBox="0 0 700 340"></svg>
-                <p class="chart-source" id="chartSource">Zdroj: World Bank – World Development Indicators (data.worldbank.org)</p>
-            </div>
-        </section>
-    </div>
+                <div class="stats-grid">
+                    <div class="stat-box active" onclick="showChart('life')" data-metric="life">
+                        <div class="stat-value-row">
+                            <span class="stat-number" id="lifeExpectancy">73.5</span>
+                            <span class="stat-year" id="lifeExpYear"></span>
+                        </div>
+                        <span class="stat-label">Délka života (roky)</span>
+                    </div>
+                    <div class="stat-box" onclick="showChart('infant')" data-metric="infant">
+                        <div class="stat-value-row">
+                            <span class="stat-number" id="infantMortality">26</span>
+                            <span class="stat-year" id="infantMortYear"></span>
+                        </div>
+                        <span class="stat-label">Kojenecká úm. (na 1000)</span>
+                    </div>
+                    <div class="stat-box" onclick="showChart('fertility')" data-metric="fertility">
+                        <div class="stat-value-row">
+                            <span class="stat-number" id="stat-fertility">…</span>
+                            <span class="stat-year" id="stat-fertility-year"></span>
+                        </div>
+                        <span class="stat-label">Porodnost (děti/ženu)</span>
+                    </div>
+                    <div class="stat-box" onclick="showChart('gdp')" data-metric="gdp">
+                        <div class="stat-value-row">
+                            <span class="stat-number" id="stat-gdp">…</span>
+                            <span class="stat-year" id="stat-gdp-year"></span>
+                        </div>
+                        <span class="stat-label">HDP/obyvatele</span>
+                    </div>
+                    <div class="stat-box" onclick="showChart('inflation')" data-metric="inflation">
+                        <div class="stat-value-row">
+                            <span class="stat-number" id="stat-inflation">…</span>
+                            <span class="stat-year" id="stat-inflation-year"></span>
+                        </div>
+                        <span class="stat-label">Inflace</span>
+                    </div>
+                    <div class="stat-box" onclick="showChart('unemployment')" data-metric="unemployment">
+                        <div class="stat-value-row">
+                            <span class="stat-number" id="stat-unemployment">…</span>
+                            <span class="stat-year" id="stat-unemployment-year"></span>
+                        </div>
+                        <span class="stat-label">Nezaměstnanost</span>
+                    </div>
+<div class="stat-box" onclick="showChart('population')" data-metric="population">
+                        <div class="stat-value-row">
+                            <span class="stat-number" id="stat-population">…</span>
+                            <span class="stat-year" id="stat-population-year"></span>
+                        </div>
+                        <span class="stat-label">Populace</span>
+                    </div>
+                    <div class="stat-box" onclick="showChart('density')" data-metric="density">
+                        <div class="stat-value-row">
+                            <span class="stat-number" id="stat-density">…</span>
+                            <span class="stat-year" id="stat-density-year"></span>
+                        </div>
+                        <span class="stat-label">Hustota (os./km²)</span>
+                    </div>
+                    <div class="stat-box" onclick="showChart('hdi')" data-metric="hdi">
+                        <div class="stat-value-row">
+                            <span class="stat-number" id="stat-hdi">…</span>
+                            <span class="stat-year" id="stat-hdi-year"></span>
+                        </div>
+                        <span class="stat-label">Index lidského rozvoje</span>
+                    </div>
+                    <div class="stat-box" onclick="showChart('democracy_eiu')" data-metric="democracy_eiu">
+                        <div class="stat-value-row">
+                            <span class="stat-number" id="stat-democracy_eiu">…</span>
+                            <span class="stat-year" id="stat-democracy_eiu-year"></span>
+                        </div>
+                        <span class="stat-label">Demokracie (EIU)</span>
+                    </div>
+                    <div class="stat-box" onclick="showChart('gini')" data-metric="gini">
+                        <div class="stat-value-row">
+                            <span class="stat-number" id="stat-gini">…</span>
+                            <span class="stat-year" id="stat-gini-year"></span>
+                        </div>
+                        <span class="stat-label">Gini (nerovnost)</span>
+                    </div>
+                    <div class="stat-box" onclick="showChart('urbanization')" data-metric="urbanization">
+                        <div class="stat-value-row">
+                            <span class="stat-number" id="stat-urbanization">…</span>
+                            <span class="stat-year" id="stat-urbanization-year"></span>
+                        </div>
+                        <span class="stat-label">Urbanizace</span>
+                    </div>
+                </div>
 
-    <section class="brand-section-wrap">
-        <div class="brand-section">
-            <div class="brand-content">
-                <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 48 48" class="brand-logo" aria-label="Logo">
-                    <circle cx="24" cy="24" r="21" fill="#0c1a2e"/><line x1="24" y1="29" x2="7"  y2="46" stroke="#60a5fa" stroke-width="1"/><line x1="24" y1="29" x2="15" y2="46" stroke="#60a5fa" stroke-width="1"/><line x1="24" y1="29" x2="24" y2="46" stroke="#60a5fa" stroke-width="1.1"/><line x1="24" y1="29" x2="33" y2="46" stroke="#60a5fa" stroke-width="1"/><line x1="24" y1="29" x2="41" y2="46" stroke="#60a5fa" stroke-width="1"/><circle cx="24" cy="24" r="21" fill="none" stroke="#60a5fa" stroke-width="1.5"/><line x1="3"  y1="29" x2="45" y2="29" stroke="#60a5fa" stroke-width="1.2"/><rect x="8"    y="18" width="4" height="10" rx="1"   fill="#60a5fa"/><rect x="15"   y="13" width="4" height="15" rx="1"   fill="#60a5fa"/><rect x="21.5" y="8"  width="5" height="20" rx="1.5" fill="#ffffff"/><rect x="29"   y="15" width="4" height="13" rx="1"   fill="#60a5fa"/><rect x="36"   y="20" width="4" height="8"  rx="1"   fill="#60a5fa"/>
-                </svg>
-                <h2 class="brand-title">Svět v perspektivě</h2>
-                <p class="brand-subtitle">Data &nbsp;·&nbsp; Kontext &nbsp;·&nbsp; Souvislosti</p>
-            </div>
+                <div class="chart-container">
+                    <div class="chart-controls">
+                        <div class="range-btns">
+                            <button class="range-btn active" data-range="null" onclick="setRange(null)">Vše</button>
+                            <button class="range-btn" data-range="1980" onclick="setRange(1980)">1980→</button>
+                            <button class="range-btn" data-range="1990" onclick="setRange(1990)">1990→</button>
+                            <button class="range-btn" data-range="2000" onclick="setRange(2000)">2000→</button>
+                            <button class="range-btn" data-range="2010" onclick="setRange(2010)">2010→</button>
+                        </div>
+                        <div class="compare-selector">
+                            <span class="compare-label">Porovnat:</span>
+                            <div class="compare-group">
+                                <div class="compare-select-wrapper">
+                                    <select id="compareCountrySelect" onchange="setCompareCountry(this.value)">
+                                        <option value="">— žádná</option>
+                                    </select>
+                                </div>
+                                <button class="compare-reset-btn" id="compareReset1" onclick="resetCompare(1)">×</button>
+                            </div>
+                            <div class="compare-group">
+                                <div class="compare-select-wrapper">
+                                    <select id="compareCountrySelect2" onchange="setCompareCountry2(this.value)">
+                                        <option value="">— žádná</option>
+                                    </select>
+                                </div>
+                                <button class="compare-reset-btn" id="compareReset2" onclick="resetCompare(2)">×</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="chartLegend" class="chart-legend">
+                        <div class="legend-item">
+                            <span class="legend-line-solid" id="legendPrimaryLine"></span>
+                            <span id="legendPrimaryName"></span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-line-dashed" id="legendCompareLine"></span>
+                            <span id="legendCompareName"></span>
+                        </div>
+                        <div class="legend-item" id="legendThirdItem" style="display:none">
+                            <span class="legend-line-dotted" id="legendThirdLine"></span>
+                            <span id="legendThirdName"></span>
+                        </div>
+                    </div>
+                    <h3 class="chart-title" id="chartTitle">Očekávaná délka života (1960–2023)</h3>
+                    <p class="chart-subtitle" id="chartSubtitle"></p>
+                    <svg id="dataChart" viewBox="0 0 900 420"></svg>
+                    <p class="chart-source" id="chartSource">Zdroj: World Bank – World Development Indicators (data.worldbank.org)</p>
+                </div>
+            </section>
         </div>
-    </section>
+
+        <!-- PRAVÝ SLOUPEC (2fr, sticky): Témata -->
+        <div class="bottom-col-right">
+            <section class="topics-section">
+                <div class="topics-header">
+                    <h2>Témata <span class="topics-hint">→ rozcestník do archivu</span></h2>
+                </div>
+                <div class="topic-grid" id="topicGrid">
+                    <!-- Načítá se z data/categories.json -->
+                </div>
+            </section>
+
+            <div class="about-panel">
+                <div class="about-panel-title">O projektu</div>
+                <p class="about-panel-text">Svět v perspektivě je nezávislý datový web. Každý článek staví na primárních zdrojích — statistikách, vědeckých studiích a vládních datech. Bez zkratek, bez senzace.</p>
+                <a href="archiv.html" class="archiv-cta" id="archiveCta">Archiv článků →</a>
+            </div>
+
+        </div>
+
+    </div>
 
     <script>
     /* ── DEBUNKER ── */
@@ -1568,6 +1932,10 @@
           
           renderLatestArticles(articles.slice(0, 6), catData);
           renderTopics(catData.topics || [], articles);
+          var n = articles.length;
+          var w = n === 1 ? 'článek' : (n >= 2 && n <= 4) ? 'články' : 'článků';
+          var cta = document.getElementById('archiveCta');
+          if (cta) cta.textContent = 'Archiv — ' + n + ' ' + w + ' →';
         });
 
       }).catch(function(err) {

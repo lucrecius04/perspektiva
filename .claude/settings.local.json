@@ -18,7 +18,9 @@
       "WebFetch(domain:www.brainscape.com)",
       "Bash(python3:*)",
       "Bash(grep:*)",
-      "Bash(claude update:*)"
+      "Bash(claude update:*)",
+      "Bash(head:*)",
+      "WebFetch(domain:ourworldindata.org)"
     ]
   }
 }
