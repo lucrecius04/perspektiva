@@ -50,6 +50,7 @@
     .key-stat-number.blue{color:var(--color-primary);}
     .key-stat-number.purple{color:#7c3aed;}
     .key-stat-number.bad{color:#dc2626;}
+    .key-stat-number.warning, .key-stat-number.orange{color:#ea580c;}
     .key-stat-label{font-size:0.78rem;color:var(--color-text-muted);line-height:1.3;}
 
     /* ARTICLE BODY */
@@ -57,8 +58,37 @@
     .article-body h2{font-family:var(--font-serif);font-size:1.5rem;font-weight:700;margin:2rem 0 0.75rem;}
     .article-body p{margin-bottom:1.2rem;}
     
-    /* DARK MODE FOR INLINE CHARTS */
+    /* DARK MODE FOR INLINE CHARTS AND BOXES */
+    html.dark .article-body div[style*="background:#fef2f2"] { 
+        background: #2a1212 !important; 
+        border-color: #991b1b !important; 
+    }
+    html.dark .article-body p[style*="color:#1a1a1a"] { color: var(--color-text) !important; }
+    
+    /* Stat boxes in content - Dark Mode */
+    html.dark .article-body div[style*="background:#f0f9ff"] { background: #0f172a !important; border-color: #0ea5e9 !important; }
+    html.dark .article-body div[style*="background:#fff7ed"] { background: #261a10 !important; border-color: #ea580c !important; }
+    html.dark .article-body div[style*="background:#f0fdf4"] { background: #0a1f14 !important; border-color: #059669 !important; }
+    
+    /* Text colors in stat boxes - Dark Mode */
+    html.dark .article-body div[style*="color:#334155"] { color: #9ca3af !important; }
+    html.dark .article-body div[style*="color:#0ea5e9"] { color: #38bdf8 !important; }
+    html.dark .article-body div[style*="color:#ea580c"] { color: #fb923c !important; }
+    html.dark .article-body div[style*="color:#059669"] { color: #34d399 !important; }
+
+    /* Table Dark Mode - Higher Contrast */
+    html.dark .data-table-wrap { border-color: #30363d; background: #0d1117; }
+    html.dark table thead tr { background: #1f2937 !important; color: #f9fafb !important; border-bottom: 2px solid #374151; }
+    html.dark table td { border-bottom-color: #2d333b !important; color: #adbac7 !important; }
+    html.dark table tr:nth-child(even) td { background: #161b22 !important; }
+    html.dark table tr:nth-child(odd) td { background: #0d1117 !important; }
+    
+    html.dark .article-body h2 { color: var(--color-text-strong); border-bottom: 1px solid #30363d; padding-bottom: 0.5rem; }
+
     html.dark .article-body div[style*="background:#f8f9fa"] {
+      background: var(--color-surface) !important;
+      border-color: var(--color-border) !important;
+    }
       background: var(--color-surface) !important;
       border-color: var(--color-border) !important;
     }
@@ -85,6 +115,9 @@
     html.dark .td-good { background: rgba(5,150,105,0.28) !important; }
     html.dark .td-bad  { background: rgba(220,38,38,0.28) !important; }
 
+    html.dark .article-body a { color: var(--color-primary); }
+    html.dark .article-body a:hover { color: var(--color-primary-hover); text-decoration: underline; }
+
     html.dark .article-body div[style*="background:#c0392b"],
     html.dark .article-body div[style*="background:#e74c3c"],
     html.dark .article-body div[style*="background:#e67e22"],
@@ -96,7 +129,7 @@
       opacity: 0.8;
     }
 
-    .highlight-box{border-left:4px solid;border-radius:0 0.5rem 0.5rem 0;padding:1.1rem 1.4rem;margin:1.5rem 0;font-size:0.98rem;line-height:1.6;}
+    .highlight-box{border-left:4px solid;border-radius:0 0.5rem 0.5rem 0;padding:0.8rem 1.2rem;margin:1.5rem 0;font-size:0.98rem;line-height:1.6;}
     .hb-blue{background:var(--color-hero-start);border-color:var(--color-primary);}
     .hb-blue strong{color:#1d4ed8;}
     .hb-green{background:#dcfce7;border-color:#059669;}
@@ -114,7 +147,7 @@
     tr:nth-child(even) td{background:#f8fafc;}
     .td-good{color:#059669;font-weight:600;font-family:var(--font-mono);background:rgba(5,150,105,0.10) !important;}
     .td-bad{color:#dc2626;font-weight:600;font-family:var(--font-mono);background:rgba(220,38,38,0.10) !important;}
-    .td-num{font-family:var(--font-mono);}
+    .td-num{font-family:var(--font-mono); text-align: right;}
 
     /* SOURCES */
     .article-source{margin-top:2.5rem;padding:1.25rem 1.5rem;border:1px solid var(--color-border);border-top:2px solid var(--color-primary);background:var(--color-surface);border-radius:0.5rem;font-size:0.8rem;color:var(--color-text-muted);}
@@ -195,15 +228,30 @@
     .sc-mvp-myth{background:linear-gradient(135deg,#fff1f2,#ffe4e6);border:2px solid #fca5a5;border-radius:16px;padding:2rem;}
     .sc-mvp-myth-label{font-size:0.9rem;font-weight:700;color:#dc2626;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;}
     .sc-mvp-myth-label::before{content:'●';font-size:0.7rem;}
-    .sc-mvp-myth-quote{font-family:'IBM Plex Serif',serif;font-size:1.9rem;font-weight:700;line-height:1.3;color:#1e293b;font-style:italic;}
+    .sc-mvp-myth-quote{font-family:'IBM Plex Serif',serif;font-size:1.8rem;font-weight:700;line-height:1.3;color:#1e293b;font-style:italic;}
     .sc-mvp-myth-attr{font-size:0.95rem;color:#64748b;margin-top:0.8rem;}
-    .sc-mvp-data{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid #86efac;border-radius:16px;padding:2rem; flex: 1;}
+
+    .sc-mvp-verdict {
+      margin: 0.2rem 0;
+      padding: 1.2rem;
+      border-radius: 16px;
+      text-align: center;
+      font-family: 'IBM Plex Serif', serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .sc-mvp-data{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid #86efac;border-radius:16px;padding:1.8rem; flex: 1;}
     .sc-mvp-data-label{font-size:0.9rem;font-weight:700;color:#059669;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.5rem;}
     .sc-mvp-data-label::before{content:'●';font-size:0.7rem;}
-    .sc-mvp-stat{padding:1rem 0;border-bottom:1px solid rgba(5,150,105,0.2);}
+    .sc-mvp-stat{padding:1rem 0;border-bottom:1px solid rgba(5,150,105,0.2); display: flex; align-items: center; gap: 1.5rem;}
     .sc-mvp-stat:last-child{border-bottom:none;padding-bottom:0;}
-    .sc-mvp-stat-num{font-family:'IBM Plex Mono',monospace;font-size:2.6rem;font-weight:700;color:#059669;line-height:1;}
-    .sc-mvp-stat-label{font-size:1.15rem;color:#1e293b;font-weight:600;margin-top:0.25rem;}
+    .sc-mvp-stat-num{font-family:'IBM Plex Mono',monospace;font-size:2.4rem;font-weight:700;color:#059669;line-height:1; min-width: 160px;}
+    .sc-mvp-stat-label{font-size:1.1rem;color:#1e293b;font-weight:600; line-height: 1.25;}
     .sc-mvp-stat-source{font-size:0.85rem;color:#64748b;font-style:italic;margin-top:0.15rem;}
 
     @media(max-width:768px){
@@ -314,14 +362,28 @@ function renderArticle(article) {
     </span>`;
 
   document.getElementById('articleTitle').textContent = article.title;
-  document.getElementById('articleLead').textContent = article.perex;
+  
+  // Hide lead and automatic key stats for factchecks (they are in the content)
+  const isFactcheck = article.article_type === 'factcheck';
 
-  const statsHTML = article.key_stats.map(s => `
-    <div class="key-stat">
-      <span class="key-stat-number ${s.color || ''}">${s.value}</span>
-      <span class="key-stat-label">${s.label}</span>
-    </div>`).join('');
-  document.getElementById('keyStats').innerHTML = statsHTML;
+  if (article.perex && !isFactcheck) {
+    document.getElementById('articleLead').textContent = article.perex;
+    document.getElementById('articleLead').style.display = 'block';
+  } else {
+    document.getElementById('articleLead').style.display = 'none';
+  }
+
+  if (article.key_stats && article.key_stats.length > 0 && !isFactcheck) {
+    const statsHTML = article.key_stats.map(s => `
+      <div class="key-stat">
+        <span class="key-stat-number ${s.color || ''}">${s.value}</span>
+        <span class="key-stat-label">${s.label}</span>
+      </div>`).join('');
+    document.getElementById('keyStats').innerHTML = statsHTML;
+    document.getElementById('keyStats').style.display = 'grid';
+  } else {
+    document.getElementById('keyStats').style.display = 'none';
+  }
 
   document.getElementById('articleBody').innerHTML = article.content;
 
@@ -376,15 +438,33 @@ function renderShareCard(article) {
     card.innerHTML = `${brandStrip}<div class="sc-dk-hero"><div class="sc-dk-label">DATA &amp; KONTEXT</div><div class="sc-dk-headline">${sc.headline_text}</div><div class="sc-dk-sub">${sc.headline_sub}</div></div><div class="sc-dk-data"><div class="sc-dk-data-label">CO ŘÍKAJÍ DATA</div>${statsHTML}</div>${sc.quote_text ? `<div class="sc-dk-quote"><div class="sc-dk-quote-text">${sc.quote_text}</div><div class="sc-dk-quote-source">${sc.quote_source}</div></div>` : ''}${footer}`;
 
   } else if (sc.type === 'mytus_vs_pravda') {
-    const statsHTML = sc.stats.map(s => `
+    const statsHTML = sc.stats.map(s => {
+      const color = s.color === 'red' ? '#dc2626' : (s.color === 'blue' ? '#0ea5e9' : '#059669');
+      return `
       <div class="sc-mvp-stat">
-        <div class="sc-mvp-stat-num">${s.value}</div>
-        <div class="sc-mvp-stat-label">${s.label}</div>
-        <div class="sc-mvp-stat-source">${s.source_text}</div>
-      </div>`).join('');
+        <div class="sc-mvp-stat-num" style="color:${color}">${s.value}</div>
+        <div>
+          <div class="sc-mvp-stat-label">${s.label}</div>
+          <div class="sc-mvp-stat-source">${s.source_text}</div>
+        </div>
+      </div>`;
+    }).join('');
+
+    const verdictColor = sc.verdict === 'PRAVDA' ? '#059669' : (sc.verdict === 'NEPRAVDA' ? '#dc2626' : '#d97706');
 
     card.className = 'share-card sc-mvp';
-    card.innerHTML = `${brandStrip}<div class="sc-mvp-body"><div class="sc-mvp-myth"><div class="sc-mvp-myth-label">TVRZENÍ K OVĚŘENÍ</div><div class="sc-mvp-myth-quote">${sc.myth_quote}</div><div class="sc-mvp-myth-attr">${sc.myth_attribution}</div></div><div class="sc-mvp-data"><div class="sc-mvp-data-label">CO ŘÍKAJÍ DATA</div>${statsHTML}</div></div>${footer}`;
+    card.innerHTML = `${brandStrip}<div class="sc-mvp-body">
+      <div class="sc-mvp-myth">
+        <div class="sc-mvp-myth-label">TVRZENÍ K OVĚŘENÍ</div>
+        <div class="sc-mvp-myth-quote">${sc.myth_quote}</div>
+        <div class="sc-mvp-myth-attr">${sc.myth_attribution}</div>
+      </div>
+      <div class="sc-mvp-verdict" style="background:${verdictColor}">VERDIKT: ${sc.verdict}</div>
+      <div class="sc-mvp-data">
+        <div class="sc-mvp-data-label">CO ŘÍKAJÍ DATA</div>
+        ${statsHTML}
+      </div>
+    </div>${footer}`;
   }
 }
 

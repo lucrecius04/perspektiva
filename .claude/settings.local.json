@@ -17,7 +17,8 @@
       "WebFetch(domain:www.humanart.cz)",
       "WebFetch(domain:www.brainscape.com)",
       "Bash(python3:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(claude update:*)"
     ]
   }
 }

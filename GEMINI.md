@@ -83,3 +83,13 @@ Tento soubor slouží jako hlavní kontext pro AI asistenty (Gemini CLI) při pr
 *   **Proces přidání:**
     1.  Vytvořit JSON v `articles/`.
     2.  Přidat `slug` (název souboru bez přípony) do `data/manifest.json`.
+
+### 6. Standard pro Factcheck články
+*   **Šablona:** Používat strukturu z `articles/factcheck-brusel-80-procent.json`.
+*   **Vizuální pravidla:**
+    *   `perex`: Musí být prázdný řetězec (`""`), aby se v detailu článku nezobrazoval duplicitní úvod.
+    *   `key_stats`: Musí být prázdné pole (`[]`), protože statistiky jsou součástí pole `content`.
+    *   `content`: Musí začínat hned boxem s tvrzením (Claim Box) a verdiktem (Verdict Box) pro čistý design přímo pod nadpisem/datem.
+    *   **Barevné zvýraznění:** Čísla v červeném boxu tvrzení barvit pomocí `<strong style="color:#dc2626">`.
+*   **Debunker:** U mýtů v levé horní bublině ("Objevuje se v médiích") je text fixní, dynamicky se mění pouze zdroj pod citátem (`mythSource`).
+

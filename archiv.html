@@ -459,7 +459,9 @@ function makeThumbnail(article) {
   
   if (article.topics.includes('mýty') && (article.url.includes('rozpocet') || num === '❌')) {
       num = '❌ NEPRAVDA';
-      fontSize = '1.9rem'; // Zvětšeno z 1.6rem
+      fontSize = '1.9rem';
+  } else if (article.sentiment === 'warning' && article.topics.includes('mýty')) {
+      fontSize = '1.4rem';
   }
 
   const r = parseInt(c.slice(1,3),16);
@@ -626,12 +628,16 @@ document.getElementById('sortSelect').addEventListener('change', e => {
         
         let displayStat = s0 ? s0.value + ' ' + s0.label : '';
         let displayStatNum = s0 ? s0.value : '';
-        let sentiment = s0 ? (s0.color === 'good' ? 'good' : s0.color === 'bad' ? 'bad' : 'neutral') : 'neutral';
+        let sentiment = s0 ? (s0.color === 'good' ? 'good' : s0.color === 'bad' ? 'bad' : s0.color === 'warning' ? 'warning' : 'neutral') : 'neutral';
 
         if (isMyth && (a.slug === 'cr-a-eu-rozpocet' || displayStat.includes('mld'))) {
             displayStat = '❌ NEPRAVDA';
             displayStatNum = '❌';
             sentiment = 'bad';
+        } else if (isMyth && s0 && s0.color === 'warning') {
+            displayStat = 'Zavádějící';
+            displayStatNum = '⚠️ Zavádějící';
+            sentiment = 'warning';
         }
 
         return {

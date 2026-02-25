@@ -1,35 +1,38 @@
 [
   {
-    "myth": "„Do rozpočtu EU posíláme víc, než dostáváme zpátky.“",
-    "mythSource": "Běžný narativ na sociálních sítích",
-    "number": "+1,06 bil.",
+    "myth": "„Až 80 % našich zákonů už nevzniká v Praze, ale diktuje nám je Brusel.“",
+    "mythSource": "Častý narativ euroskeptických stran",
+    "isMyth": true,
+    "number": "20–25 %",
     "numberClass": "",
-    "desc": "Čistý zisk ČR z EU od roku 2004 do dnes — v korunách. Jsme čistý příjemce.",
-    "source": "📁 Ministerstvo financí ČR",
-    "context": "ČR od vstupu do EU v roce 2004 čerpala z fondů EU výrazně více, než kolik odváděla do společného rozpočtu. Podrobná čísla jsou dostupná ve Zprávě o výsledcích hospodaření ČR v EU.",
-    "link": "clanek.html?slug=cr-a-eu-rozpocet",
-    "btnTitle": "Mýtus o EU: Platíme víc, než dostáváme?"
+    "desc": "Skutečný podíl české legislativy s EU původem (podle studií).",
+    "source": "Zdroj: Bertoncini / Institut Jacques Delors",
+    "context": "Číslo 80 % pochází z roku 1988 a akademické studie ho vyvracejí. EU má vliv v ekologii či trhu, ale v celku tvoří jen čtvrtinu práva.",
+    "link": "clanek.html?slug=factcheck-brusel-80-procent",
+    "btnTitle": "Diktuje nám Brusel 80 % zákonů?"
   },
   {
-    "myth": "„Reálné mzdy v Česku stagnují nebo klesají.“",
-    "mythSource": "Opakující se tvrzení v komentářích a diskusích",
-    "number": "+4,1 %",
-    "numberClass": "",
-    "desc": "Růst reálných mezd v ČR v roce 2024 po očištění o inflaci. Nejvyšší za 5 let.",
-    "source": "📁 ČSÚ — Mzdy a náklady práce",
-    "context": "Po inflačním propadu v letech 2021–2023 se reálné mzdy v ČR v roce 2024 výrazně zotavily. Průměrná hrubá mzda překonala 45 000 Kč.",
-    "link": "articles/mzdy-v-cr",
-    "btnTitle": "Česko a mzdy: Chudneme, nebo rosteme?"
-  },
-  {
-    "myth": "„Migrace do Evropy je zcela mimo kontrolu a neustále roste.“",
-    "mythSource": "Sociální sítě, politická rétorika",
-    "number": "−38 %",
+    "myth": "„Jaderná energie je jediná levná cesta, obnovitelné zdroje se nevyplatí.“",
+    "mythSource": "Častý argument v energetické debatě",
+    "isMyth": false,
+    "number": "−70 %",
     "numberClass": "negative",
-    "desc": "Pokles nelegálních přechodů na vnějších hranicích EU v roce 2024 oproti roku 2023.",
-    "source": "📁 Frontex — Risk Analysis 2024",
-    "context": "Počet detekovaných nelegálních přechodů hranic EU v roce 2024 výrazně klesl. Frontex zaznamenal nejnižší čísla od roku 2021.",
-    "link": "articles/migrace-v-evrope",
-    "btnTitle": "Migrace v Evropě: Co říkají skutečná čísla?"
+    "desc": "Pokles sdružených nákladů (LCOE) větrné energie od roku 2010. Jádro naopak zdražuje.",
+    "source": "Zdroj: IRENA 2025 / ČEZ",
+    "context": "Zatímco náklady na OZE (LCOE = náklady na 1 MWh po dobu životnosti) drasticky klesly, evropské jaderné projekty jako Olkiluoto 3 trojnásobně překročily rozpočet (~11 mld. EUR).",
+    "link": "clanek.html?slug=cena-ceske-cesty-jadro-vs-oze",
+    "btnTitle": "Jádro vs. OZE: Kolik stojí energie?"
+  },
+  {
+    "myth": "„Většina Čechů důvěřuje médiím a zprávám, které sleduje.“",
+    "mythSource": "Předpoklad o mediální krajině",
+    "isMyth": false,
+    "number": "31 %",
+    "numberClass": "",
+    "desc": "Podíl Čechů, kteří věří zprávám. Od roku 2015 jde o pokles o 8 procentních bodů.",
+    "source": "Zdroj: Reuters Institute DNR 2024",
+    "context": "Důvěra v média v ČR setrvale klesá. Česko se v mezinárodním srovnání řadí pod průměr Polska či Německa. Nejnižší důvěru mají televize a tisk.",
+    "link": "clanek.html?slug=informacni-bubliny-a-duvera-v-media",
+    "btnTitle": "Důvěra v média: Co říkají data?"
   }
 ]

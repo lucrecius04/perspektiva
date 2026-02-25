@@ -1,0 +1,93 @@
+{
+  "slug": "factcheck-brusel-80-procent",
+  "title": "\"Brusel nám diktuje 80 % zákonů\" — co říkají data?",
+  "title_short": "Diktuje nám Brusel 80 % zákonů?",
+  "perex": "Tvrzení o 80 % zákonů z Bruselu pochází z politického výroku Jacquese Delorse z roku 1988 — nikoli z měření. Akademické studie opakovaně docházejí k podílu 20–25 % celkové legislativy.",
+  "topics": ["mýty", "česko"],
+  "date": "2026-02-24",
+  "dateStr": "24. 2. 2026",
+  "status": "published",
+  "breadcrumb_topic": "Mýty vs. pravda",
+  "article_type": "factcheck",
+  "claim": {
+    "text": "Až 80 % našich zákonů už nevzniká v Praze, ale diktuje nám je Brusel.",
+    "source": "Opakovaně používaná rétorika eurosceptických stran (SPD, v obměnách ANO a Motoristé sobě)",
+    "verdict": "zavadejici",
+    "verdict_color": "#d97706"
+  },
+  "key_stats": [
+    {
+      "value": "⚠️ Zavádějící",
+      "label": "Verdikt analýzy o podílu EU legislativy",
+      "color": "warning"
+    },
+    {
+      "value": "20–25 %",
+      "label": "Skutečný podíl legislativy s EU původem",
+      "color": "blue"
+    },
+    {
+      "value": "~80 %",
+      "label": "Podíl EU legislativy pouze v životním prostředí",
+      "color": "blue"
+    }
+  ],
+  "content": "<!-- CLAIM BOX -->\n<div style=\"background:#fef2f2;border:3px solid #dc2626;border-radius:0.5rem;padding:2rem;margin:2rem 0;text-align:center;\">\n<div style=\"font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:#991b1b;font-weight:700;margin-bottom:0.75rem;\">🔴 TVRZENÍ K OVĚŘENÍ</div>\n<p style=\"font-family:'IBM Plex Serif',serif;font-size:1.5rem;font-weight:700;line-height:1.4;color:#1a1a1a;font-style:italic;margin-bottom:1rem;\">„Až 80 % našich zákonů už nevzniká v Praze, ale diktuje nám je Brusel.\"</p>\n<p style=\"font-size:0.85rem;color:#64748b;\">— Opakovaně používaná rétorika eurosceptických stran (SPD, v obměnách ANO a Motoristé sobě)</p>\n</div>\n\n<!-- VERDICT BOX -->\n<div style=\"background:#d97706;color:white;padding:1.25rem 2rem;border-radius:0.5rem;margin:2rem 0;text-align:center;\">\n<div style=\"font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;opacity:0.9;margin-bottom:0.5rem;\">⚖️ VERDIKT</div>\n<div style=\"font-family:'IBM Plex Serif',serif;font-size:2rem;font-weight:700;letter-spacing:-0.02em;\">ZAVÁDĚJÍCÍ</div>\n</div>\n\n<!-- PEREX -->\n<p>Číslo 80 % nepochází z žádného měření. Vzniklo jako politická předpověď Jacquese Delorse v roce 1988 a akademickým konsenzem je od té doby opakovaně vyvraceno — skutečný podíl legislativy s EU původem se pohybuje kolem 20–25 %. Tvrzení ale není zcela vymyšlené: v konkrétních sektorech jako životní prostředí nebo vnitřní trh EU vliv skutečně dominuje. Problém spočívá v zobecnění sektorového čísla na celý právní řád — a v ignorování faktu, že Česká republika na tvorbě těchto norem sama spolupracuje.</p>\n\n<!-- KEY STATS -->\n<h2>Klíčové statistiky</h2>\n<div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin:2rem 0;\">\n<div style=\"background:#f0f9ff;border-radius:0.75rem;padding:1.5rem;text-align:center;border-top:4px solid #0ea5e9;\">\n<div style=\"font-family:'IBM Plex Serif',serif;font-size:2.25rem;font-weight:700;color:#0ea5e9;\">20–25 %</div>\n<div style=\"font-size:0.9rem;color:#334155;margin-top:0.5rem;\">Skutečný podíl zákonů s EU původem v průměrném členském státě</div>\n<div style=\"font-size:0.75rem;color:#94a3b8;margin-top:0.5rem;\">Zdroj: Bertoncini, Institut Jacques Delors 2009</div>\n</div>\n<div style=\"background:#fff7ed;border-radius:0.75rem;padding:1.5rem;text-align:center;border-top:4px solid #ea580c;\">\n<div style=\"font-family:'IBM Plex Serif',serif;font-size:2.25rem;font-weight:700;color:#ea580c;\">~80 %</div>\n<div style=\"font-size:0.9rem;color:#334155;margin-top:0.5rem;\">Podíl EU legislativy v sektoru životního prostředí</div>\n<div style=\"font-size:0.75rem;color:#94a3b8;margin-top:0.5rem;\">Zdroj: European Commission, Environmental Implementation Review 2019</div>\n</div>\n<div style=\"background:#f0fdf4;border-radius:0.75rem;padding:1.5rem;text-align:center;border-top:4px solid #059669;\">\n<div style=\"font-family:'IBM Plex Serif',serif;font-size:2.25rem;font-weight:700;color:#059669;\">3–39 %</div>\n<div style=\"font-size:0.9rem;color:#334155;margin-top:0.5rem;\">Rozpětí odhadů napříč zeměmi — podle metodologie měření</div>\n<div style=\"font-size:0.75rem;color:#94a3b8;margin-top:0.5rem;\">Zdroj: Töller, FernUniversität Hagen 2012</div>\n</div>\n</div>\n\n<!-- ORIGIN OF THE 80% CLAIM -->\n<h2>Odkud pochází číslo 80 %</h2>\n\n<p>V červenci 1988 předseda Evropské komise Jacques Delors v projevu před Evropským parlamentem předpověděl, že do deseti let bude 80 % <em>hospodářské</em> legislativy členských států evropského původu. Nešlo o měření existujícího stavu, ale o politickou projekci. Tato předpověď se nenaplnila ani v úzce ekonomické oblasti.</p>\n\n<p>Přesto se číslo uchytilo. Britský Výzkumný útvar Dolní sněmovny (House of Commons Library) v roce 2010 detailně zdokumentoval, jak se z jedné řečnické figury stala „zombí statistika\" — citát, který přežívá desítky let bez ohledu na empirická data. Původní výrok se přitom týkal pouze hospodářské legislativy, nikoli zákonů jako celku. V české debatě se tento kontext zcela ztratil.</p>\n\n<!-- ACADEMIC STUDIES -->\n<h2>Co říkají data z akademických studií</h2>\n\n<p>Nejcitovanější studii k tématu publikoval Yves Bertoncini z Institutu Jacquese Delorse v roce 2009. Analyzoval legislativní produkci šesti členských států a dospěl k závěru, že podíl národních zákonů s unijním původem se pohybuje kolem 20–25 % celkového objemu legislativy. Studie přímo vyvrací paušální tvrzení o 80 %.</p>\n\n<p>Annette Elisabeth Töller z FernUniversität Hagen v longitudinální studii (data 1990–2012) porovnala sedm členských států. Výsledky ukazují obrovské rozpětí podle použité metodologie: Německo 39 %, Spojené království 15,5 %, Dánsko 14 %, Rakousko 10,6 %, Francie 3–27 %. Číslo 80 % se v žádné zemi a u žádné metodologie neobjevuje ani vzdáleně.</p>\n\n<p>Klíčový poznatek z obou studií: výsledek závisí na tom, <em>co</em> počítáme. Pokud zahrneme přímá nařízení EU (které není třeba transponovat), počet aktů je vyšší — ale většinou jde o technické mikronormy (celní kódy, specifikace přídavných látek). Pokud počítáme zákony s reálným dopadem na občany, EU vliv je proporčně vyšší než u mikronorem, ale stále se nepřibližuje 80 %.</p>\n\n<!-- SECTOR DATA -->\n<h2>Co říkají data ze sektorových analýz</h2>\n\n<p>Tvrzení o 80 % není zcela vymyšlené — je to pravda vytržená z kontextu. V některých politických oblastech EU vliv skutečně dominuje:</p>\n\n<p><strong>Životní prostředí:</strong> Podle Environmental Implementation Review Evropské komise (2019) pochází přibližně 80 % environmentální legislativy členských zemí z unijních direktiv a nařízení. V tomto sektoru je číslo relevantní.</p>\n\n<p><strong>Vnitřní trh:</strong> V oblasti obchodu, konkurence a volného pohybu zboží se podíl EU práva pohybuje kolem 70–80 % národních zákonů. Jde o jádro evropské integrace od samého počátku.</p>\n\n<p><strong>Zemědělství:</strong> Společná zemědělská politika patří k nejkomplexnějším unijním agendám a v regulaci zemědělství je EU vliv dominantní.</p>\n\n<p>Jenže tyto sektory dohromady představují jen zlomek celkového právního řádu. Zdravotnictví, vzdělávání, sociální politika, bezpečnost, daňový systém, rodinné právo, trestní právo — to vše zůstává převážně v národní kompetenci. Průměr přes všechny sektory pak vychází na 20–25 %, ale skrývá extrémní sektorovou heterogenitu.</p>\n\n<!-- COMPARISON TABLE -->\n<h2>Srovnání zemí</h2>\n\n<table>\n<thead>\n<tr>\n<th style=\"text-align:left;\">Země</th>\n<th style=\"text-align:right;\">Odhad podílu EU legislativy</th>\n<th style=\"text-align:left;\">Metodologie</th>\n<th style=\"text-align:center;\">Trend</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Německo</td>\n<td style=\"text-align:right;\" class=\"mono\">39,1 %</td>\n<td>Odkazy na EU právo v legislativním textu</td>\n<td style=\"text-align:center;\">↗ mírný růst</td>\n</tr>\n<tr>\n<td>Francie</td>\n<td style=\"text-align:right;\" class=\"mono\">3–27 %</td>\n<td>Analýza Conseil d'État (široké rozmezí dle sektoru)</td>\n<td style=\"text-align:center;\">→ stabilní</td>\n</tr>\n<tr>\n<td>Spojené království</td>\n<td style=\"text-align:right;\" class=\"mono\">9–15 %</td>\n<td>House of Commons Library (před Brexitem)</td>\n<td style=\"text-align:center;\">↗ mírný</td>\n</tr>\n<tr>\n<td>Dánsko</td>\n<td style=\"text-align:right;\" class=\"mono\">14 %</td>\n<td>Formální transpozice do národních zákonů</td>\n<td style=\"text-align:center;\">→ stabilní</td>\n</tr>\n<tr>\n<td>Rakousko</td>\n<td style=\"text-align:right;\" class=\"mono\">10,6 %</td>\n<td>Počet zákonů citujících EU direktivy</td>\n<td style=\"text-align:center;\">↗ mírný</td>\n</tr>\n</tbody>\n</table>\n<p style=\"font-size:0.8rem;color:#64748b;margin-top:-0.5rem;\">Zdroj: Töller (2012), Bertoncini (2009), House of Commons Library RP10-62 (2010). Poznámka: Velké rozpětí výsledků odráží rozdílné metodologické přístupy — co se počítá jako „zákon s EU původem\", zda se zahrnují přímo aplikovatelná nařízení nebo jen transponované direktivy, a zda jde o primární legislativu nebo i delegované akty.</p>\n\n<!-- EXPLANATION -->\n<h2>Proč tvrzení nesedí — a co na něm přesto je</h2>\n\n<div class=\"highlight-box hb-blue\"><strong>Metodologie rozhoduje:</strong> Číslo, ke kterému dojdete, závisí na definicích. Počítáte-li všechny právní akty včetně technických mikronorem (celní sazby, kódy přídavných látek), EU jich produkuje obrovské množství. Většina z nich ale nemá přímý dopad na běžného občana. Počítáte-li zákony podle politického a ekonomického dopadu, EU vliv je proporčně vyšší — ale stále ne 80 %. Žádná seriózní metodologie nedospěla k číslu blízkému tvrzení.</div>\n\n<p>Klíčový strukturální problém rétoriky o „diktátu z Bruselu\" spočívá v tom, kdo vlastně „Brusel\" je. Radu EU, která spolurozhoduje o direktivách, tvoří ministři vlád členských států. Česká republika v ní hlasuje — a v naprosté většině případů hlasuje spolu s většinou. Normy, které přicházejí „z Bruselu\", jsou zpravidla spoluvytvořeny i Prahou.</p>\n\n<p>Případ ETS 2 to ilustruje názorně. Rozšíření systému obchodování s emisními povolenkami na budovy a dopravu bylo schváleno v legislativním procesu, kterého se ČR účastnila. Legislativní balíček „Fit for 55\" prošel Radou v roce 2023. Dnešní česká vláda Andreje Babiše ETS 2 kritizuje a odmítá ho implementovat — to je politicky legitimní postoj, ale prezentace systému jako „diktátu\" zastírá fakt, že ČR byla součástí rozhodovacího procesu.</p>\n\n<h3>Gold-plating: papežštější než papež</h3>\n\n<p>Česká republika pravidelně transponuje EU direktivy přísněji, než je unijní minimum. Richard Král z Právnické fakulty UK v systematické studii (2015, aktualizace 2022) zdokumentoval, že záměrný gold-plating je v ČR kodifikovaným jevem. Příklad: EU směrnice o zadávání veřejných zakázek povolovala vícepráce až do 50 % hodnoty zakázky — česká transpozice tuto hranici snížila na 30 %. Výsledná regulační zátěž je pak národního původu, ale veřejná debata ji přičítá Bruselu.</p>\n\n<div class=\"highlight-box hb-orange\"><strong>Proč je narativ tak silný?</strong> Asymetrie viditelnosti. Když EU norma způsobí komplikaci — zdraží auta, zakáže typ žárovky, zavede nové povinnosti pro firmy —, je to viditelné a přičítáno Bruselu. Když EU otevře trh a sníží ceny zboží, přivede strukturální fondy do regionů nebo umožní volný pohyb pracovníků, není to přičítáno EU, ale „ekonomice\" nebo „vlastní zásluze\". Tato kognitivní asymetrie je strukturálním důvodem, proč mýtus přežívá navzdory datům. ČR je přitom čistým příjemcem EU fondů a exportně závislá ekonomika s kritickou vazbou na vnitřní trh.</div>\n\n<p>Data o veřejném mínění tuto asymetrii potvrzují. Jarní Eurobarometr 2025 zaznamenal důvěru v EU na 52 % — nejvyšší hodnotu za 18 let. Česká republika se ale opakovaně řadí k zemím s nižší důvěrou v EU. V otázce rozšíření EU je ČR s 43% podporou třetí nejméně nadšenou zemí EU. Vnímání EU jako externího regulátora je v české veřejnosti nadprůměrně silné.</p>\n\n<!-- SECTOR DISTINCTION -->\n<h2>Sektorový rozdíl: kde EU dominuje a kde ne</h2>\n\n<p>Tvrzení o 80 % dává smysl pouze tehdy, omezíme-li pohled na konkrétní sektory. Rozdíl je zásadní:</p>\n\n<p><strong>Vysoký vliv EU (60–80 % legislativy):</strong> životní prostředí, vnitřní trh (obchod, konkurence, volný pohyb), zemědělství, finanční regulace, celní unie.</p>\n\n<p><strong>Nízký až minimální vliv EU:</strong> zdravotnictví, vzdělávání, sociální politika, daňový systém (přímé daně), bezpečnostní složky, trestní právo, rodinné právo, územní plánování.</p>\n\n<p>Průměr přes všechny sektory pak vychází na 20–25 %. Ale ten samý průměr skrývá, že v oblasti životního prostředí EU tvoří drtivou většinu pravidel, zatímco v oblasti školství prakticky žádná. Kdo cituje 80 %, vybírá si sektory s nejvyšším vlivem a vydává je za celek.</p>\n\n<div class=\"highlight-box hb-purple\"><strong>Závěr z dat:</strong> Tvrzení „80 % zákonů nám diktuje Brusel\" je zavádějící ve třech rovinách. Za prvé: číslo 80 % nikdy nevzniklo empirickým měřením — pochází z politického výroku z roku 1988. Za druhé: skutečný podíl legislativy s EU původem je podle akademického konsenzu 20–25 %, přičemž v některých sektorech může dosahovat 70–80 % a v jiných je blízký nule. Za třetí: slovo „diktuje\" ignoruje fakt, že ČR je spoluzákonodárcem unijních norem prostřednictvím Rady EU — a část regulační zátěže nad rámec EU požadavků si přidává sama (gold-plating).</div>\n\n<!-- CROSS REFERENCES -->\n<h2>Další čtení</h2>\n<p>→ <a href=\"clanek.html?slug=cr-a-eu-rozpocet\">Kolik peněz proudí z EU do České republiky? Bilance příjemce</a></p>\n<p>→ <a href=\"index.html#temata\">Jak se tvoří EU legislativa: role Rady, Parlamentu a Komise</a></p>",
+  "sources": [
+    {
+      "label": "Bertoncini, Y. (2009) — „National Laws of Community Origin: Dispelling the 80% Myth\". Institut Jacques Delors. Klíčová studie: podíl EU legislativy 20–25 %.",
+      "url": "https://institutdelors.eu/en/publications/national-laws-of-community-origin-dispelling-the-80-myth/"
+    },
+    {
+      "label": "Töller, A. E. (2012) — „Europeanization of Public Policies\". FernUniversität Hagen / LSE. Srovnání 7 zemí: rozpětí 3–39 %.",
+      "url": "https://blogs.lse.ac.uk/europpblog/2012/06/13/europeanization-of-public-policy/"
+    },
+    {
+      "label": "House of Commons Library, Research Paper RP10-62 (2010). Původ Delorsova výroku z 1988 a metodologické problémy měření.",
+      "url": "https://researchbriefings.files.parliament.uk/documents/RP10-62/RP10-62.pdf"
+    },
+    {
+      "label": "Král, R. (2015, akt. 2022) — „On the Gold-Plating in the Czech Transposition Context\". The Lawyer Quarterly / Sciendo. Systematická studie českého gold-platingu.",
+      "url": "https://tlq.ilaw.cas.cz/index.php/tlq/article/view/170"
+    },
+    {
+      "label": "European Commission — Environmental Implementation Review (2019). Sektorová data: ~80 % environmentální legislativy pochází z EU.",
+      "url": "https://ec.europa.eu/environment/eir/index_en.htm"
+    },
+    {
+      "label": "Standard Eurobarometer 103, jaro 2025. Důvěra v EU na 52 %, nejvyšší za 18 let.",
+      "url": "https://europa.eu/eurobarometer/surveys/detail/3372"
+    },
+    {
+      "label": "European Data Journalism Network (2024) — „To what extent EU lawmaking matters for citizens' life\". Aktuální sektorový přehled.",
+      "url": "https://www.europeandatajournalism.eu/cp_data_news/to-what-extent-eu-lawmaking-matters-for-citizens-life-facts-and-figures/"
+    }
+  ],
+  "share_card": {
+    "type": "mytus_vs_pravda",
+    "myth_quote": "„Až <strong style='color:#dc2626'>80 %</strong> našich zákonů nám diktuje Brusel.\"",
+    "myth_attribution": "Eurosceptické strany (SPD, ANO, Motoristé sobě)",
+    "verdict": "ZAVÁDĚJÍCÍ",
+    "download_filename": "svet-v-perspektive-factcheck-brusel-nam-diktuje-80-procent-zakonu.png",
+    "stats": [
+      {
+        "value": "20–25 %",
+        "label": "Skutečný podíl legislativy s EU původem",
+        "source_text": "Zdroj: Bertoncini, 2009",
+        "color": "blue"
+      },
+      {
+        "value": "~80 %",
+        "label": "Podíl EU vlivu v ekologii",
+        "source_text": "Zdroj: European Commission",
+        "color": "blue"
+      },
+      {
+        "value": "1988",
+        "label": "Rok vzniku mýtu o 80 % zákonů",
+        "source_text": "Zdroj: House of Commons",
+        "color": "blue"
+      }
+    ]
+  }
+}
