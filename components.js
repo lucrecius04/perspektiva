@@ -90,9 +90,111 @@
     .footer-links a { color: #9ca3af; text-decoration: none; font-size: 0.95rem; transition: color 0.2s; }
     .footer-links a:hover { color: white; }
     .footer-bottom { max-width: 1400px; margin: 2rem auto 0; padding: 2rem 2rem 0; border-top: 1px solid #374151; text-align: center; font-size: 0.875rem; }
+    /* ── HAMBURGER TLAČÍTKO ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+    .nav-hamburger:hover { background: rgba(255,255,255,0.1); }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #e2e8f0;
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+      transform-origin: center;
+    }
+    header.nav-open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    header.nav-open .nav-hamburger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    header.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── MOBILNÍ NAV PANEL ── */
+    .mobile-nav-panel {
+      display: none;
+      position: fixed;
+      left: 0; right: 0;
+      top: 84px;
+      background: #1e293b;
+      border-bottom: 1px solid #334155;
+      z-index: 99;
+      padding: 0.5rem 0 1rem;
+      transform: translateY(-8px);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    }
+    .mobile-nav-panel ul {
+      list-style: none; margin: 0; padding: 0;
+      display: flex; flex-direction: column;
+    }
+    .mobile-nav-panel ul li {
+      border-bottom: 1px solid rgba(51,65,85,0.7);
+    }
+    .mobile-nav-panel ul li:last-child { border-bottom: none; }
+    .mobile-nav-panel ul a {
+      display: block;
+      color: #e2e8f0;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.9rem 1.5rem;
+      transition: color 0.2s, background 0.2s;
+    }
+    .mobile-nav-panel ul a:hover { color: #60a5fa; background: rgba(255,255,255,0.04); }
+    .mobile-nav-panel ul a.nav-active { color: #60a5fa; }
+
+    header.nav-open .mobile-nav-panel {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* ── OVERLAY pro zavření menu kliknutím mimo ── */
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 98;
+    }
+    header.nav-open ~ .mobile-nav-overlay,
+    body.nav-open .mobile-nav-overlay { display: block; }
+
+    /* ── FOOTER ── */
     @media (max-width: 1024px) { .footer-content { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 768px) { nav ul { gap: 1.25rem; } }
-    @media (max-width: 600px) { .logo-text { display: none; } nav ul { gap: 1rem; } }
+
+    /* ── MOBILNÍ HEADER ── */
+    @media (max-width: 768px) {
+      nav { display: none; }             /* skryj desktop nav */
+      .nav-hamburger { display: flex; }  /* zobraz hamburger */
+      header { height: 64px; }
+      .logo-icon { height: 56px !important; width: 56px !important; }
+      .logo-title { font-size: 1.45rem !important; }
+      .logo-subtitle { margin-top: 6px !important; }
+      .mobile-nav-panel { display: block; top: 64px; }
+    }
+    @media (max-width: 480px) {
+      .logo-text { display: none; }
+      .header-content { padding: 0 1rem; }
+    }
+    @media (max-width: 600px) {
+      .footer-content { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-bottom { margin-top: 1.5rem; }
+    }
   `;
 
   /* --- URL detekce stránky --- */
@@ -146,8 +248,21 @@
     +   '<li><a href="' + projektUrl + '"'  + navActiveOProj  + '>O projektu</a></li>'
     + '</ul></nav>'
     + '<button class="theme-toggle" id="themeToggle" title="P\u0159epnout tmav\xfd re\u017eim" aria-label="P\u0159epnout tmav\xfd re\u017eim">\uD83C\uDF19</button>'
+    + '<button class="nav-hamburger" id="navHamburger" aria-label="Otev\u0159\xedt menu" aria-expanded="false">'
+    +   '<span></span><span></span><span></span>'
+    + '</button>'
     + '</div>'
-    + '</div>';
+    + '</div>'
+    + '<nav class="mobile-nav-panel" id="mobileNavPanel">'
+    + '<ul>'
+    +   '<li><a href="' + homeUrl + '">Dom\u016f</a></li>'
+    +   '<li><a href="' + temaUrl + '">T\xe9mata</a></li>'
+    +   '<li><a href="' + dataUrl + '">Data</a></li>'
+    +   '<li><a href="' + archivUrl + '"'  + navActiveArchiv + '>Archiv</a></li>'
+    +   '<li><a href="' + projektUrl + '"'  + navActiveOProj  + '>O projektu</a></li>'
+    + '</ul>'
+    + '</nav>'
+    + '<div class="mobile-nav-overlay" id="navOverlay"></div>';
 
   var footerHTML = '<div class="footer-content">'
     + '<div>'
@@ -233,6 +348,44 @@
         applyTheme(next);
       });
     }
+
+    /* ── HAMBURGER MENU ── */
+    var hamburger = document.getElementById('navHamburger');
+    var overlay   = document.getElementById('navOverlay');
+    var headerEl  = document.querySelector('header');
+
+    function openNav() {
+      if (!headerEl) return;
+      headerEl.classList.add('nav-open');
+      if (hamburger) hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNav() {
+      if (!headerEl) return;
+      headerEl.classList.remove('nav-open');
+      if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    function toggleNav() {
+      if (headerEl && headerEl.classList.contains('nav-open')) closeNav();
+      else openNav();
+    }
+
+    if (hamburger) hamburger.addEventListener('click', toggleNav);
+    if (overlay)   overlay.addEventListener('click', closeNav);
+
+    /* Zavři menu při kliku na nav odkaz */
+    var mobilePanel = document.getElementById('mobileNavPanel');
+    if (mobilePanel) {
+      mobilePanel.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A') closeNav();
+      });
+    }
+
+    /* Zavři menu při resize nad 768px */
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) closeNav();
+    });
   });
 
 })();
