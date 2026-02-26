@@ -126,35 +126,35 @@
       display: none;
       position: fixed;
       left: 0; right: 0;
-      top: 84px;
+      top: 64px;
       background: #1e293b;
       border-bottom: 1px solid #334155;
       z-index: 99;
-      padding: 0.5rem 0 1rem;
-      transform: translateY(-8px);
+      transform: translateY(-6px);
       opacity: 0;
       pointer-events: none;
-      transition: transform 0.25s ease, opacity 0.25s ease;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      transition: transform 0.22s ease, opacity 0.22s ease;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
     }
     .mobile-nav-panel ul {
-      list-style: none; margin: 0; padding: 0;
+      list-style: none; margin: 0; padding: 0.25rem 0;
       display: flex; flex-direction: column;
     }
     .mobile-nav-panel ul li {
-      border-bottom: 1px solid rgba(51,65,85,0.7);
+      border-bottom: 1px solid rgba(51,65,85,0.5);
     }
     .mobile-nav-panel ul li:last-child { border-bottom: none; }
     .mobile-nav-panel ul a {
       display: block;
-      color: #e2e8f0;
+      color: #cbd5e1;
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-weight: 500;
-      padding: 0.9rem 1.5rem;
-      transition: color 0.2s, background 0.2s;
+      padding: 0.65rem 1.25rem;
+      transition: color 0.15s, background 0.15s;
+      letter-spacing: 0.01em;
     }
-    .mobile-nav-panel ul a:hover { color: #60a5fa; background: rgba(255,255,255,0.04); }
+    .mobile-nav-panel ul a:hover { color: #60a5fa; background: rgba(255,255,255,0.05); }
     .mobile-nav-panel ul a.nav-active { color: #60a5fa; }
 
     header.nav-open .mobile-nav-panel {
@@ -168,11 +168,12 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.4);
+      background: rgba(0,0,0,0.45);
       z-index: 98;
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
     }
-    header.nav-open ~ .mobile-nav-overlay,
-    body.nav-open .mobile-nav-overlay { display: block; }
+    header.nav-open ~ .mobile-nav-overlay { display: block; }
 
     /* ── FOOTER ── */
     @media (max-width: 1024px) { .footer-content { grid-template-columns: 1fr 1fr; } }
@@ -362,15 +363,25 @@
 
     function openNav() {
       if (!headerEl) return;
+      // Ulož aktuální scroll pozici a zamkni body
+      var scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = '-' + scrollY + 'px';
+      document.body.style.width = '100%';
+      document.body.dataset.scrollY = scrollY;
       headerEl.classList.add('nav-open');
       if (hamburger) hamburger.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
     }
     function closeNav() {
       if (!headerEl) return;
+      // Obnov scroll pozici
+      var scrollY = parseInt(document.body.dataset.scrollY || '0');
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, scrollY);
       headerEl.classList.remove('nav-open');
       if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
     }
     function toggleNav() {
       if (headerEl && headerEl.classList.contains('nav-open')) closeNav();
