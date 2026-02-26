@@ -191,17 +191,18 @@
     @media (max-width: 768px) {
       nav { display: none; }
       .nav-hamburger { display: flex; }
-      header { height: 60px; }
+      header { height: 68px; }
       .header-content { padding: 0 1rem; }
-      .logo { gap: 0.55rem; }
-      .logo-icon { height: 36px !important; width: 36px !important; }
-      .logo-title { font-size: 0.97rem !important; line-height: 1.15; }
-      .logo-subtitle { font-size: 0.62rem !important; margin-top: 3px !important; letter-spacing: 0.03em !important; display: block !important; }
+      .logo { gap: 0.6rem; }
+      .logo-icon { height: 48px !important; width: 48px !important; }
+      .logo-title { font-size: 1.05rem !important; line-height: 1.1; }
+      .logo-subtitle { font-size: 0.63rem !important; margin-top: 4px !important; letter-spacing: 0.03em !important; display: block !important; color: #64748b !important; }
       .logo-text { display: flex !important; }
-      .mobile-nav-panel { display: block; top: 60px; }
+      .mobile-nav-panel { display: block; top: 68px; }
     }
-    @media (max-width: 360px) {
-      .logo-title { font-size: 0.88rem !important; }
+    @media (max-width: 380px) {
+      .logo-icon { height: 40px !important; width: 40px !important; }
+      .logo-title { font-size: 0.95rem !important; }
       .logo-subtitle { display: none !important; }
     }
     @media (max-width: 600px) {
@@ -409,6 +410,24 @@
     window.addEventListener('resize', function() {
       if (window.innerWidth > 768) closeNav();
     });
+
+    /* ── COUNTRY DROPDOWN TOGGLE: zavři při druhém kliknutí ── */
+    var csInput = document.getElementById('countrySearch');
+    var csDrop  = document.getElementById('countryDropdown');
+    if (csInput && csDrop) {
+      csInput.addEventListener('mousedown', function(e) {
+        /* Pokud je dropdown viditelný, označ ho před tím než focus handler od stats.js ho otevře */
+        csInput._wasOpen = csDrop.classList.contains('active');
+      });
+      csInput.addEventListener('click', function(e) {
+        if (csInput._wasOpen) {
+          csDrop.classList.remove('active');
+          csInput.blur();
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      }, true);
+    }
   });
 
 })();

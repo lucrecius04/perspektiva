@@ -567,6 +567,7 @@
             margin-top: auto;
             height: 42px;
             flex-shrink: 0;
+            overflow: hidden;
             background: rgba(0,0,0,0.01);
         }
 
@@ -578,10 +579,17 @@
             gap: 0.4rem;
             color: inherit;
             line-height: 1.2;
-            max-height: 3em;
             overflow: hidden;
             flex: 1;
             min-width: 0;
+        }
+
+        .article-stat-text {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-width: 0;
+            flex: 1;
         }
 
         .article-stat-label {
@@ -1571,9 +1579,10 @@
                 gap: 0.25rem;
             }
             .article-stat-text { 
-                white-space: normal;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
                 font-size: 0.82rem;
-                line-height: 1.25;
             }
             .article-stat { max-height: none; }
 
@@ -1812,7 +1821,7 @@
                             <span class="stat-number" id="stat-population">…</span>
                             <span class="stat-year" id="stat-population-year"></span>
                         </div>
-                        <span class="stat-label">Populace</span>
+                        <span class="stat-label">Populace (mil.)</span>
                     </div>
                     <div class="stat-box" onclick="showChart('density')" data-metric="density">
                         <div class="stat-value-row">
