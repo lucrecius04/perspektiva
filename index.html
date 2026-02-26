@@ -1400,13 +1400,23 @@
                 scroll-margin-top: 70px;
             }
 
+            /* ── Základní overflow prevence ── */
+            .hero, .hero-outer, .debunker-inner,
+            .latest-articles-section, .bottom-two-col,
+            .data-section, .stats-grid, .topic-grid {
+                max-width: 100vw;
+                box-sizing: border-box;
+                overflow-x: hidden;
+            }
+
             /* ── Hero: hero-outer stackuje vertikálně ── */
             .hero-outer {
                 flex-direction: column;
-                padding: 1rem 1rem 1.25rem;
-                gap: 0.875rem;
+                padding: 1rem 1rem 1rem;
+                gap: 0.6rem;
             }
-            /* Číslo týdne: plná šířka, vodorovně */
+
+            /* ── Číslo týdne: velmi kompaktní proužek ── */
             .cislo-panel {
                 width: 100%;
                 padding-top: 0;
@@ -1417,49 +1427,54 @@
                 flex-direction: row;
                 align-items: center;
                 text-align: left;
-                gap: 1rem;
-                padding: 0.75rem 1rem;
-                border-radius: 12px;
+                gap: 0.75rem;
+                padding: 0.5rem 0.875rem;
+                border-radius: 10px;
+                border-width: 1px;
+                justify-content: flex-start;
+            }
+            /* Skryj podrobný popis, nech jen číslo + krátký label */
+            .cislo-panel-card > div:nth-child(3),
+            .cislo-panel-source { display: none !important; }
+            .cislo-number { font-size: 1.5rem !important; }
+            /* cislo-desc zkrátit — jen první řádek */
+            .cislo-panel-card .cislo-desc:first-of-type {
+                font-size: 0.75rem !important;
+                line-height: 1.2 !important;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 200px;
             }
 
             /* ── Debunker karty: stack vertikálně ── */
             .debunker-cards {
                 grid-template-columns: 1fr;
                 min-height: auto;
-                gap: 0;
             }
             .card-myth {
                 margin-right: 0;
-                padding-right: 1.4rem;
+                padding-right: 1.2rem;
                 height: auto;
-                min-height: 100px;
+                min-height: 90px;
                 border-radius: 14px 14px 0 0;
             }
             .card-data {
                 margin-left: 0;
-                padding-left: 1.4rem;
+                padding-left: 1.2rem;
                 height: auto;
-                min-height: 100px;
+                min-height: 90px;
                 border-radius: 0 0 14px 14px;
             }
             .card-vs {
                 width: 100%;
-                height: 28px;
+                height: 24px;
                 z-index: 3;
             }
-            .vs-circle {
-                width: 36px;
-                height: 36px;
-                font-size: 0.65rem;
-            }
-            .myth-quote {
-                font-size: 1.05rem;
-                line-height: 1.3;
-            }
-            .data-number {
-                font-size: 1.9rem;
-            }
-            .data-desc { font-size: 0.8rem; }
+            .vs-circle { width: 34px; height: 34px; font-size: 0.6rem; }
+            .myth-quote { font-size: 1rem; line-height: 1.3; }
+            .data-number { font-size: 1.75rem; }
+            .data-desc { font-size: 0.79rem; }
 
             /* ── Debunker footer: wrap ── */
             .debunker-footer {
@@ -1470,6 +1485,22 @@
             .analysis-btn { width: 100%; justify-content: flex-start; }
             .carousel-nav { align-self: center; }
 
+            /* ── Article cards: auto výška, stats nepřekrývat ── */
+            .article-card { height: auto; min-height: 0; }
+            .article-stats {
+                height: auto;
+                min-height: 42px;
+                padding: 0.4rem 1rem;
+                flex-wrap: wrap;
+                gap: 0.25rem;
+            }
+            .article-stat-text { 
+                white-space: normal;
+                font-size: 0.82rem;
+                line-height: 1.25;
+            }
+            .article-stat { max-height: none; }
+
             /* ── Nejnovější články: menší padding ── */
             .latest-articles-section { padding: 1.5rem 1rem 2rem; }
 
@@ -1478,16 +1509,27 @@
             .topic-card:not(.topic-geo) { grid-column: span 1 !important; }
             .topic-card.topic-geo { grid-column: span 3 !important; border-radius: 12px; }
 
-            /* ── Spodní dvousloupcový layout ── */
-            .bottom-two-col { padding: 1.5rem 1rem 3rem; }
+            /* ── Spodní layout: 1 sloupec, správný padding ── */
+            .bottom-two-col {
+                padding: 1.5rem 1rem 3rem;
+                width: 100%;
+                box-sizing: border-box;
+            }
 
-            /* ── Číslo týdne karta: menší číslo ── */
-            .cislo-number { font-size: 2rem !important; }
+            /* ── Stats grid: 2 sloupce, bez overflow ── */
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                width: 100%;
+            }
+            .stat-box { min-width: 0; overflow: hidden; }
+            .stat-number { font-size: 1.1rem; }
+            .stat-label { white-space: normal; font-size: 0.65rem; }
 
-            /* ── Stats grid: 2 sloupce ── */
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            /* ── Graf: plná šířka ── */
+            .chart-container { width: 100%; overflow-x: hidden; }
+            #dataChart { height: 280px; }
 
-            /* ── Porovnání zemí: wrap ── */
+            /* ── Porovnání: wrap ── */
             .chart-controls { flex-wrap: wrap; gap: 0.5rem; }
             .compare-selector { margin-left: 0; flex-wrap: wrap; }
 
@@ -1497,15 +1539,11 @@
         }
 
         @media (max-width: 480px) {
-            .hero-outer { padding: 0.875rem 0.875rem 1rem; }
-            /* Topic grid: 2 sloupce na velmi malých telefonech */
+            .hero-outer { padding: 0.75rem 0.875rem 0.875rem; }
             .topic-grid { grid-template-columns: repeat(2, 1fr); }
             .topic-card.topic-geo { grid-column: span 2 !important; }
-            /* Stat boxes: 1 sloupec */
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            /* Article cards na mobilu: auto výška */
-            .article-card { height: auto; min-height: 180px; }
-            /* Padding sekcí */
+            .article-card { height: auto; min-height: 0; }
             .latest-articles-section { padding: 1.25rem 0.875rem 1.75rem; }
             .bottom-two-col { padding: 1.25rem 0.875rem 2.5rem; }
         }

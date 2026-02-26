@@ -253,28 +253,52 @@
     .sc-mvp-stat-source{font-size:0.85rem;color:#64748b;font-style:italic;margin-top:0.15rem;}
 
     @media(max-width:768px){
-      .key-stat-row{grid-template-columns:repeat(2,1fr);}
-      h1{font-size:1.75rem; letter-spacing:-0.01em;}
-      .article-lead{font-size:1rem; line-height:1.65;}
-      .article-wrapper{padding:1.25rem 1rem 3rem;}
-      .article-body{font-size:0.97rem;}
-      .article-body h2{font-size:1.3rem;}
-      .breadcrumb{font-size:0.78rem;}
-      /* Sdílet tlačítka přesuň na nový řádek */
-      .article-meta{ flex-wrap: wrap; }
-      .article-meta > span[style]{margin-left:0 !important; width:100%; margin-top:0.25rem;}
-      /* Highlight boxy */
-      .highlight-box{padding:0.65rem 0.9rem; font-size:0.93rem;}
-      /* Tabulka: horizontální scroll */
-      .data-table-wrap{overflow-x:auto; -webkit-overflow-scrolling:touch;}
-      /* Zdrojový box */
-      .article-source{padding:1rem 1.1rem;}
+      /* ── Základní overflow prevence ── */
+      html, body { overflow-x: hidden; }
+      .article-wrapper { overflow-x: hidden; }
+
+      /* ── Veškerý obsah článku nemůže přetékat ── */
+      .article-body * {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      /* Inline divové boxy (grafy, stat boxy) — horizontální scroll pokud musí */
+      .article-body div[style] {
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+      }
+      /* Tabulky */
+      .data-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      table { min-width: 0; }
+
+      /* ── Typografie ── */
+      h1 { font-size: 1.75rem; letter-spacing: -0.01em; line-height: 1.2; }
+      .article-lead { font-size: 1rem; line-height: 1.65; }
+      .article-wrapper { padding: 1.25rem 1rem 3rem; }
+      .article-body { font-size: 0.97rem; }
+      .article-body h2 { font-size: 1.3rem; }
+      .breadcrumb { font-size: 0.78rem; }
+
+      /* ── Key stats: 2 sloupce ── */
+      .key-stat-row { grid-template-columns: repeat(2, 1fr); }
+
+      /* ── Sdílet tlačítka na nový řádek ── */
+      .article-meta { flex-wrap: wrap; }
+      .article-meta > span[style] { margin-left: 0 !important; width: 100%; margin-top: 0.25rem; }
+
+      /* ── Highlight boxy ── */
+      .highlight-box { padding: 0.65rem 0.9rem; font-size: 0.93rem; }
+
+      /* ── Zdrojový box ── */
+      .article-source { padding: 1rem 1.1rem; }
     }
     @media(max-width:480px){
-      h1{font-size:1.45rem;}
-      .key-stat-row{grid-template-columns:1fr;}
-      .article-wrapper{padding:1rem 0.875rem 2.5rem;}
-      .article-lead{font-size:0.97rem;}
+      h1 { font-size: 1.45rem; }
+      .key-stat-row { grid-template-columns: 1fr; }
+      .article-wrapper { padding: 1rem 0.875rem 2.5rem; }
+      .article-lead { font-size: 0.97rem; }
+      .key-stat-number { font-size: 1.5rem; }
     }
   </style>
 </head>

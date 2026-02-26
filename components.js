@@ -177,10 +177,16 @@
     /* ── FOOTER ── */
     @media (max-width: 1024px) { .footer-content { grid-template-columns: 1fr 1fr; } }
 
+    /* ── GLOBÁLNÍ OVERFLOW FIX ── */
+    @media (max-width: 768px) {
+      html { overflow-x: hidden; }
+      body { overflow-x: hidden; max-width: 100vw; }
+    }
+
     /* ── MOBILNÍ HEADER ── */
     @media (max-width: 768px) {
-      nav { display: none; }             /* skryj desktop nav */
-      .nav-hamburger { display: flex; }  /* zobraz hamburger */
+      nav { display: none; }
+      .nav-hamburger { display: flex; }
       header { height: 64px; }
       .logo-icon { height: 56px !important; width: 56px !important; }
       .logo-title { font-size: 1.45rem !important; }

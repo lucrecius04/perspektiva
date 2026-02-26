@@ -374,11 +374,57 @@
     html.dark .arc-stat { border-color: #21262d; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 900px) { .article-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 580px) {
+    @media (max-width: 900px) {
+      .article-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      html, body { overflow-x: hidden; }
+
+      /* Sticky controls bar — posun kvůli nižšímu mobilnímu headeru */
+      .controls-bar { top: 64px; }
+
+      /* Page hero */
+      .page-hero { padding: 1.75rem 1rem 1.25rem; }
+      .page-hero h1 { font-size: 1.7rem; }
+      .page-hero p { font-size: 0.9rem; }
+
+      /* Controls row — menší padding + zalamování */
+      .controls-row { padding: 0 1rem; gap: 0.6rem; }
+      .controls-top { padding-top: 0.6rem; padding-bottom: 0.55rem; }
+      .controls-chips { padding-top: 0.5rem; padding-bottom: 0.55rem; }
+
+      /* Vyhledávání: plná šířka */
+      .search-wrap { max-width: none; flex: 1; }
+
+      /* ── KLÍČOVÁ OPRAVA: Témata/chips se zalamují ── */
+      .filter-chips {
+        flex-wrap: wrap;
+        gap: 0.35rem;
+      }
+      /* Divider mezi tématy a geo tagy — celá šířka jako oddělovač */
+      .chip-divider {
+        width: 100%;
+        height: 1px;
+        margin: 0.1rem 0;
+        align-self: auto;
+      }
+
+      /* Article grid */
+      .article-grid { grid-template-columns: repeat(2, 1fr); gap: 0.875rem; }
+
+      /* Page body padding */
+      .page-body { padding: 1.5rem 1rem 3rem; }
+    }
+
+    @media (max-width: 520px) {
+      /* Na velmi malých telefonech: 1 sloupec */
       .article-grid { grid-template-columns: 1fr; }
-      .controls-inner { gap: 0.75rem; }
-      .page-hero h1 { font-size: 1.75rem; }
+      /* Controls top: search + sort na vlastních řádcích */
+      .controls-top { flex-wrap: wrap; gap: 0.5rem; }
+      .search-wrap { min-width: 0; }
+      .controls-right { margin-left: 0; }
+      .page-hero h1 { font-size: 1.5rem; }
     }
   </style>
 </head>
