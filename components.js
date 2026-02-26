@@ -191,16 +191,17 @@
     @media (max-width: 768px) {
       nav { display: none; }
       .nav-hamburger { display: flex; }
-      header { height: 64px; }
-      .logo-icon { height: 44px !important; width: 44px !important; }
-      .logo-title { font-size: 1rem !important; }
-      .logo-subtitle { display: none; }
+      header { height: 56px; }
+      .header-content { padding: 0 1rem; }
+      .logo { gap: 0.6rem; }
+      .logo-icon { height: 38px !important; width: 38px !important; }
+      .logo-title { font-size: 0.95rem !important; line-height: 1.2; }
+      .logo-subtitle { display: none !important; }
       .logo-text { display: flex !important; }
-      .mobile-nav-panel { display: block; top: 64px; }
+      .mobile-nav-panel { display: block; top: 56px; }
     }
-    @media (max-width: 480px) {
-      .logo-title { font-size: 0.92rem !important; }
-      .header-content { padding: 0 0.875rem; }
+    @media (max-width: 360px) {
+      .logo-title { font-size: 0.85rem !important; }
     }
     @media (max-width: 600px) {
       .footer-content { grid-template-columns: 1fr; gap: 1.5rem; }
