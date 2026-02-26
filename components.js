@@ -48,12 +48,12 @@
     .logo-text { display: flex; flex-direction: column; gap: 0; }
     .logo-title {
       font-family: 'IBM Plex Serif', serif;
-      font-size: 1.85rem; font-weight: 700; color: #ffffff; line-height: 1;
+      font-size: 2rem; font-weight: 700; color: #ffffff; line-height: 1;
     }
     .logo-subtitle {
       font-family: 'IBM Plex Sans', sans-serif;
-      font-size: 0.75rem; font-weight: 400; color: #64748b;
-      line-height: 1; letter-spacing: 0.06em; margin-top: 9px;
+      font-size: 0.78rem; font-weight: 400; color: #94a3b8;
+      line-height: 1; letter-spacing: 0.04em; margin-top: 7px;
     }
     .header-right { display: flex; align-items: center; gap: 2rem; }
     nav ul { display: flex; gap: 2.5rem; list-style: none; margin: 0; padding: 0; }
@@ -191,17 +191,18 @@
     @media (max-width: 768px) {
       nav { display: none; }
       .nav-hamburger { display: flex; }
-      header { height: 56px; }
+      header { height: 60px; }
       .header-content { padding: 0 1rem; }
-      .logo { gap: 0.6rem; }
-      .logo-icon { height: 38px !important; width: 38px !important; }
-      .logo-title { font-size: 0.95rem !important; line-height: 1.2; }
-      .logo-subtitle { display: none !important; }
+      .logo { gap: 0.55rem; }
+      .logo-icon { height: 36px !important; width: 36px !important; }
+      .logo-title { font-size: 0.97rem !important; line-height: 1.15; }
+      .logo-subtitle { font-size: 0.62rem !important; margin-top: 3px !important; letter-spacing: 0.03em !important; display: block !important; }
       .logo-text { display: flex !important; }
-      .mobile-nav-panel { display: block; top: 56px; }
+      .mobile-nav-panel { display: block; top: 60px; }
     }
     @media (max-width: 360px) {
-      .logo-title { font-size: 0.85rem !important; }
+      .logo-title { font-size: 0.88rem !important; }
+      .logo-subtitle { display: none !important; }
     }
     @media (max-width: 600px) {
       .footer-content { grid-template-columns: 1fr; gap: 1.5rem; }
