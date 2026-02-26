@@ -96,30 +96,33 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 5px;
-      width: 40px;
-      height: 40px;
-      padding: 8px;
-      background: none;
-      border: none;
+      gap: 4px;
+      width: 34px;
+      height: 34px;
+      padding: 0;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
       cursor: pointer;
       border-radius: 8px;
-      transition: background 0.2s;
+      transition: background 0.2s, border-color 0.2s;
       flex-shrink: 0;
     }
-    .nav-hamburger:hover { background: rgba(255,255,255,0.1); }
+    .nav-hamburger:hover {
+      background: rgba(255,255,255,0.13);
+      border-color: rgba(96,165,250,0.4);
+    }
     .nav-hamburger span {
       display: block;
-      width: 22px;
-      height: 2px;
-      background: #e2e8f0;
+      width: 16px;
+      height: 1.5px;
+      background: #cbd5e1;
       border-radius: 2px;
-      transition: transform 0.3s, opacity 0.3s;
+      transition: transform 0.28s ease, opacity 0.28s ease, width 0.28s ease;
       transform-origin: center;
     }
-    header.nav-open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    header.nav-open .nav-hamburger span:nth-child(1) { transform: translateY(5.5px) rotate(45deg); width: 18px; }
     header.nav-open .nav-hamburger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    header.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    header.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); width: 18px; }
 
     /* ── MOBILNÍ NAV PANEL ── */
     .mobile-nav-panel {
@@ -128,33 +131,33 @@
       left: 0; right: 0;
       top: 64px;
       background: #1e293b;
-      border-bottom: 1px solid #334155;
+      border-bottom: 1px solid rgba(51,65,85,0.8);
       z-index: 99;
-      transform: translateY(-6px);
+      transform: translateY(-4px);
       opacity: 0;
       pointer-events: none;
-      transition: transform 0.22s ease, opacity 0.22s ease;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.35);
     }
     .mobile-nav-panel ul {
-      list-style: none; margin: 0; padding: 0.25rem 0;
+      list-style: none; margin: 0; padding: 0.2rem 0 0.3rem;
       display: flex; flex-direction: column;
     }
     .mobile-nav-panel ul li {
-      border-bottom: 1px solid rgba(51,65,85,0.5);
+      border-bottom: 1px solid rgba(51,65,85,0.4);
     }
     .mobile-nav-panel ul li:last-child { border-bottom: none; }
     .mobile-nav-panel ul a {
       display: block;
-      color: #cbd5e1;
+      color: #94a3b8;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 500;
-      padding: 0.65rem 1.25rem;
+      padding: 0.55rem 1.25rem;
       transition: color 0.15s, background 0.15s;
-      letter-spacing: 0.01em;
+      letter-spacing: 0.02em;
     }
-    .mobile-nav-panel ul a:hover { color: #60a5fa; background: rgba(255,255,255,0.05); }
+    .mobile-nav-panel ul a:hover { color: #e2e8f0; background: rgba(255,255,255,0.04); }
     .mobile-nav-panel ul a.nav-active { color: #60a5fa; }
 
     header.nav-open .mobile-nav-panel {
