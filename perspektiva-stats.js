@@ -81,28 +81,6 @@ async function loadWBSeries(metric) {
             document.getElementById('heroLifeExp').textContent = wldLife.value.toFixed(1);
         }
     }, 100);
-
-    // Sync article list height with data section
-    function syncArticleHeight() {
-        const dataSection    = document.querySelector('.data-section');
-        const topicsSection  = document.querySelector('.topics-section');
-        const latestSection  = document.querySelector('.latest-articles-section');
-        const articleList    = document.querySelector('.article-list');
-        if (!dataSection || !topicsSection || !articleList || !latestSection) return;
-
-        const dataSectionH   = dataSection.offsetHeight;
-        const topicsHeader   = topicsSection.querySelector('.topics-header');
-        const topicGrid      = topicsSection.querySelector('.topic-grid');
-        const articlesHeader = latestSection.querySelector('.articles-header');
-
-        const usedH = (topicsHeader   ? topicsHeader.offsetHeight   : 0)
-                    + (topicGrid      ? topicGrid.offsetHeight       : 0)
-                    + (articlesHeader ? articlesHeader.offsetHeight  : 0)
-                    + 60;
-        articleList.style.maxHeight = Math.max(300, dataSectionH - usedH) + 'px';
-    }
-    setTimeout(syncArticleHeight, 200);
-    window.addEventListener('resize', syncArticleHeight);
 })();
 
 // ── SEARCH ───────────────────────────────────────────────────────

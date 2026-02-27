@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 48 48%27%3E%3Ccircle cx=%2724%22 cy=%2224%22 r=%2224%22 fill=%22%230c1a2e%22/%3E%3Ccircle cx=%2724%22 cy=%2224%22 r=%2221%22 fill=%22none%22 stroke=%22%2360a5fa%22 stroke-width=%221.5%22/%3E%3Cline x1=%223%22 y1=%2229%22 x2=%2245%22 y2=%2229%22 stroke=%22%2360a5fa%22 stroke-width=%221.2%22/%3E%3Crect x=%228%22 y=%2218%22 width=%224%22 height=%2210%22 rx=%221%22 fill=%22%2360a5fa%22/%3E%3Crect x=%2215%22 y=%2213%22 width=%224%22 height=%2215%22 rx=%221%22 fill=%22%2360a5fa%22/%3E%3Crect x=%2221.5%22 y=%228%22 width=%225%22 height=%2220%22 rx=%221.5%22 fill=%22%23ffffff%22/%3E%3Crect x=%2229%22 y=%2215%22 width=%224%22 height=%2213%22 rx=%221%22 fill=%22%2360a5fa%22/%3E%3Crect x=%2236%22 y=%2220%22 width=%224%22 height=%228%22 rx=%221%22 fill=%22%2360a5fa%22/%3E%3C/svg%3E">
+    <title>Státy v datech – Svět v perspektivě</title>
+    <link rel="stylesheet" href="perspektiva-theme.css">
+    <script>
+        (function(){
+            var t = localStorage.getItem('svp-theme');
+            var dark = t === 'dark' || (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            if (dark) document.documentElement.classList.add('dark');
+        })();
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { overflow-x: hidden; }
+        body { font-family: var(--font-sans); background: var(--color-bg); color: var(--color-text); display: flex; flex-direction: column; min-height: 100vh; -webkit-font-smoothing: antialiased; }
+
+        .data-page { max-width: 1200px; margin: 0 auto; padding: 2.5rem 2rem 5rem; width: 100%; flex: 1; }
+
+        .data-page-header { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--color-border); }
+        .data-page-header h1 { font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .data-page-header p { font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.6; max-width: 700px; }
+
+        /* DATA SECTION */
+        .data-section { background: linear-gradient(135deg, var(--color-hero-start) 0%, var(--color-border-input) 100%); padding: 1.25rem; border-radius: 1rem; }
+        .data-section h2 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem; }
+
+        /* COUNTRY SELECTOR */
+        .country-selector { background: var(--color-surface); padding: 1rem 1.25rem; border-radius: 0.5rem; border: 2px solid var(--color-border); box-shadow: var(--shadow-sm); margin-bottom: 0.75rem; position: relative; }
+        .country-selector label { display: block; font-size: 0.75rem; font-weight: 600; color: var(--color-text-muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .country-selector-wrap { position: relative; }
+        .country-selector-wrap::after { content: '▾'; position: absolute; right: 0.875rem; top: 50%; transform: translateY(-50%); font-size: 0.85rem; color: var(--color-text-muted); pointer-events: none; }
+        #countrySearch { font-family: var(--font-sans); font-size: 0.95rem; padding: 0.625rem 2.2rem 0.625rem 0.875rem; border: 2px solid var(--color-border); border-radius: 0.5rem; width: 100%; outline: none; background: var(--color-surface); color: var(--color-text); user-select: none; -webkit-user-select: none; cursor: pointer; caret-color: transparent; }
+        #countrySearch:focus, #countrySearch:hover { border-color: var(--color-primary); }
+        .country-dropdown { display: none; position: absolute; top: 100%; left: 0; right: 0; max-height: 300px; overflow-y: auto; background: var(--color-surface); border: 2px solid var(--color-primary); border-radius: 0.5rem; margin-top: 0.5rem; box-shadow: var(--shadow-lg); z-index: 1000; }
+        .country-dropdown.active { display: block; }
+        .country-option { padding: 0.625rem 0.875rem; cursor: pointer; transition: background 0.2s; font-size: 0.9rem; color: var(--color-text); }
+        .country-option:hover { background: rgba(14,165,233,0.08); }
+        .country-option.selected { background: var(--color-primary); color: white; }
+        .country-flag { margin-right: 0.5rem; }
+        .country-divider { border-top: 1px solid var(--color-border); margin: 0.5rem 0; }
+
+        /* STATS GRID */
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 0.75rem; }
+        .stat-box { background: var(--color-surface); padding: 0.5rem 0.75rem; border-radius: 0.5rem; border: 1px solid var(--color-border); cursor: pointer; transition: all 0.3s; height: 72px; overflow: hidden; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+        .stat-box:hover { border-color: rgba(14,165,233,0.3); box-shadow: var(--shadow-sm); }
+        .stat-box.active { border-color: var(--color-primary); border-width: 2px; background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-hero-start) 100%); box-shadow: 0 6px 16px rgba(14,165,233,0.3); transform: scale(1.02); }
+        .stat-value-row { display: flex; align-items: baseline; gap: 0.3rem; }
+        .stat-number { font-family: var(--font-mono); font-size: 1.15rem; font-weight: 600; color: var(--color-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .stat-box.active .stat-number { color: var(--color-primary-hover); }
+        .stat-year { font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-text-muted); }
+        .stat-label { font-size: 0.65rem; color: var(--color-text-muted); font-weight: 500; line-height: 1.2; white-space: normal; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; margin-top: 0.1rem; }
+
+        /* CHART */
+        .chart-container { background: var(--color-surface); padding: 0.75rem; border-radius: 0.5rem; border: 1px solid var(--color-border); }
+        .chart-controls { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.6rem; flex-wrap: wrap; }
+        .range-btns { display: flex; gap: 0.3rem; }
+        .range-btn { background: var(--color-surface); border: 1.5px solid var(--color-border); border-radius: 999px; padding: 0.2rem 0.7rem; font-size: 0.75rem; font-family: var(--font-mono); font-weight: 600; color: var(--color-text-muted); cursor: pointer; transition: all 0.2s; }
+        .range-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+        .range-btn.active { background: var(--color-primary); border-color: var(--color-primary); color: white; }
+        .compare-selector { display: flex; align-items: center; gap: 0.5rem; margin-left: auto; }
+        .compare-group { display: flex; align-items: center; gap: 0.15rem; }
+        .compare-label { font-size: 0.72rem; color: var(--color-text-muted); font-weight: 600; white-space: nowrap; }
+        .compare-select-wrapper { position: relative; display: inline-flex; align-items: center; }
+        .compare-select-wrapper::after { content: '▾'; position: absolute; right: 0.55rem; top: 50%; transform: translateY(-50%); font-size: 0.65rem; color: var(--color-text-muted); pointer-events: none; }
+        #compareCountrySelect, #compareCountrySelect2 { font-family: var(--font-sans); font-size: 0.75rem; padding: 0.22rem 1.8rem 0.22rem 0.75rem; border: 1.5px solid var(--color-border); border-radius: 999px; background: var(--color-surface); color: var(--color-text); cursor: pointer; outline: none; appearance: none; -webkit-appearance: none; min-width: 0; max-width: 200px; transition: border-color 0.2s; }
+        #compareCountrySelect:hover, #compareCountrySelect2:hover { border-color: var(--color-primary); }
+        #compareCountrySelect:focus, #compareCountrySelect2:focus { border-color: var(--color-primary); box-shadow: 0 0 0 2px rgba(14,165,233,0.15); }
+        .compare-reset-btn { display: flex; align-items: center; justify-content: center; width: 17px; height: 17px; border: 1.5px solid var(--color-border); border-radius: 50%; background: var(--color-surface); color: var(--color-text-muted); font-size: 0.65rem; cursor: pointer; padding: 0; flex-shrink: 0; transition: all 0.18s; visibility: hidden; opacity: 0; }
+        .compare-reset-btn.active { visibility: visible; opacity: 1; }
+        .compare-reset-btn:hover { border-color: #ef4444; color: #ef4444; }
+        .chart-legend { display: none; align-items: center; flex-wrap: wrap; gap: 0.6rem 1.25rem; margin-bottom: 0.6rem; padding: 0.45rem 0.7rem; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 0.4rem; font-size: 0.78rem; }
+        .chart-legend.visible { display: flex; }
+        .legend-item { display: flex; align-items: center; gap: 0.45rem; white-space: nowrap; }
+        .legend-line-solid  { display: inline-block; width: 18px; height: 3px; border-radius: 2px; flex-shrink: 0; }
+        .legend-line-dashed { display: inline-block; width: 18px; height: 0; border-top: 2.5px dashed; flex-shrink: 0; }
+        .legend-line-dotted { display: inline-block; width: 18px; height: 0; border-top: 2.5px dotted; flex-shrink: 0; }
+        .chart-title { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.6rem; }
+        .chart-subtitle { font-size: 0.78rem; color: var(--color-text-muted); margin-bottom: 0.4rem; line-height: 1.45; }
+        #dataChart { width: 100%; height: 460px; display: block; }
+        .chart-source { font-size: 0.72rem; color: var(--color-text-muted); margin-top: 0.5rem; font-style: italic; }
+
+        /* MOBILNÍ */
+        @media (max-width: 900px) {
+            .data-page { padding: 1.5rem 1rem 3rem; }
+            .data-page-header h1 { font-size: 1.6rem; }
+            .stats-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            #dataChart { height: 300px; }
+            .compare-selector { margin-left: 0; width: 100%; flex-wrap: wrap; }
+            .compare-group { width: 100%; }
+            .compare-select-wrapper { flex: 1; }
+            #compareCountrySelect, #compareCountrySelect2 { max-width: 100%; width: 100%; }
+            .range-btns { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+
+    <div class="data-page">
+        <div class="data-page-header">
+            <h1>Státy v datech</h1>
+            <p>Porovnejte klíčové ukazatele zemí světa — délku života, HDP, emise CO₂, demokracii a další. Data z World Bank, UNDP a EIU.</p>
+        </div>
+
+        <section class="data-section" id="klicove-statistiky">
+            <h2 id="statsTitle">Státy v datech – Svět</h2>
+
+            <div class="country-selector">
+                <label for="countrySearch">Vyberte zemi nebo region:</label>
+                <div class="country-selector-wrap">
+                    <input type="text" id="countrySearch" placeholder="Svět (vyhledejte zemi...)" autocomplete="off" readonly />
+                </div>
+                <div class="country-dropdown" id="countryDropdown"></div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-box active" onclick="showChart('life')" data-metric="life">
+                    <div class="stat-value-row"><span class="stat-number" id="lifeExpectancy">73.5</span><span class="stat-year" id="lifeExpYear"></span></div>
+                    <span class="stat-label">Délka života (roky)</span>
+                </div>
+                <div class="stat-box" onclick="showChart('infant')" data-metric="infant">
+                    <div class="stat-value-row"><span class="stat-number" id="infantMortality">26</span><span class="stat-year" id="infantMortYear"></span></div>
+                    <span class="stat-label">Kojenecká úm. (na 1000)</span>
+                </div>
+                <div class="stat-box" onclick="showChart('fertility')" data-metric="fertility">
+                    <div class="stat-value-row"><span class="stat-number" id="stat-fertility">…</span><span class="stat-year" id="stat-fertility-year"></span></div>
+                    <span class="stat-label">Porodnost (děti/ženu)</span>
+                </div>
+                <div class="stat-box" onclick="showChart('gdp')" data-metric="gdp">
+                    <div class="stat-value-row"><span class="stat-number" id="stat-gdp">…</span><span class="stat-year" id="stat-gdp-year"></span></div>
+                    <span class="stat-label">HDP/obyvatele</span>
+                </div>
+                <div class="stat-box" onclick="showChart('inflation')" data-metric="inflation">
+                    <div class="stat-value-row"><span class="stat-number" id="stat-inflation">…</span><span class="stat-year" id="stat-inflation-year"></span></div>
+                    <span class="stat-label">Inflace</span>
+                </div>
+                <div class="stat-box" onclick="showChart('unemployment')" data-metric="unemployment">
+                    <div class="stat-value-row"><span class="stat-number" id="stat-unemployment">…</span><span class="stat-year" id="stat-unemployment-year"></span></div>
+                    <span class="stat-label">Nezaměstnanost</span>
+                </div>
+                <div class="stat-box" onclick="showChart('population')" data-metric="population">
+                    <div class="stat-value-row"><span class="stat-number" id="stat-population">…</span><span class="stat-year" id="stat-population-year"></span></div>
+                    <span class="stat-label">Populace (mil.)</span>
+                </div>
+                <div class="stat-box" onclick="showChart('density')" data-metric="density">
+                    <div class="stat-value-row"><span class="stat-number" id="stat-density">…</span><span class="stat-year" id="stat-density-year"></span></div>
+                    <span class="stat-label">Hustota (os./km²)</span>
+                </div>
+                <div class="stat-box" onclick="showChart('hdi')" data-metric="hdi">
+                    <div class="stat-value-row"><span class="stat-number" id="stat-hdi">…</span><span class="stat-year" id="stat-hdi-year"></span></div>
+                    <span class="stat-label">Index lidského rozvoje</span>
+                </div>
+                <div class="stat-box" onclick="showChart('democracy_eiu')" data-metric="democracy_eiu">
+                    <div class="stat-value-row"><span class="stat-number" id="stat-democracy_eiu">…</span><span class="stat-year" id="stat-democracy_eiu-year"></span></div>
+                    <span class="stat-label">Demokracie (EIU)</span>
+                </div>
+                <div class="stat-box" onclick="showChart('gini')" data-metric="gini">
+                    <div class="stat-value-row"><span class="stat-number" id="stat-gini">…</span><span class="stat-year" id="stat-gini-year"></span></div>
+                    <span class="stat-label">Gini (nerovnost)</span>
+                </div>
+                <div class="stat-box" onclick="showChart('urbanization')" data-metric="urbanization">
+                    <div class="stat-value-row"><span class="stat-number" id="stat-urbanization">…</span><span class="stat-year" id="stat-urbanization-year"></span></div>
+                    <span class="stat-label">Urbanizace</span>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-controls">
+                    <div class="range-btns">
+                        <button class="range-btn active" data-range="null" onclick="setRange(null)">Vše</button>
+                        <button class="range-btn" data-range="1980" onclick="setRange(1980)">1980→</button>
+                        <button class="range-btn" data-range="1990" onclick="setRange(1990)">1990→</button>
+                        <button class="range-btn" data-range="2000" onclick="setRange(2000)">2000→</button>
+                        <button class="range-btn" data-range="2010" onclick="setRange(2010)">2010→</button>
+                    </div>
+                    <div class="compare-selector">
+                        <span class="compare-label">Porovnat:</span>
+                        <div class="compare-group">
+                            <div class="compare-select-wrapper">
+                                <select id="compareCountrySelect" onchange="setCompareCountry(this.value)"><option value="">— žádná</option></select>
+                            </div>
+                            <button class="compare-reset-btn" id="compareReset1" onclick="resetCompare(1)">×</button>
+                        </div>
+                        <div class="compare-group">
+                            <div class="compare-select-wrapper">
+                                <select id="compareCountrySelect2" onchange="setCompareCountry2(this.value)"><option value="">— žádná</option></select>
+                            </div>
+                            <button class="compare-reset-btn" id="compareReset2" onclick="resetCompare(2)">×</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="chartLegend" class="chart-legend">
+                    <div class="legend-item"><span class="legend-line-solid" id="legendPrimaryLine"></span><span id="legendPrimaryName"></span></div>
+                    <div class="legend-item"><span class="legend-line-dashed" id="legendCompareLine"></span><span id="legendCompareName"></span></div>
+                    <div class="legend-item" id="legendThirdItem" style="display:none"><span class="legend-line-dotted" id="legendThirdLine"></span><span id="legendThirdName"></span></div>
+                </div>
+
+                <h3 class="chart-title" id="chartTitle">Očekávaná délka života (1960–2023)</h3>
+                <p class="chart-subtitle" id="chartSubtitle"></p>
+                <svg id="dataChart" viewBox="0 0 900 460"></svg>
+                <p class="chart-source" id="chartSource">Zdroj: World Bank – World Development Indicators (data.worldbank.org)</p>
+            </div>
+        </section>
+    </div>
+
+    <footer></footer>
+    <script src="perspektiva-data.js"></script>
+    <script src="perspektiva-stats.js"></script>
+    <script src="components.js"></script>
+</body>
+</html>
