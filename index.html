@@ -449,6 +449,7 @@
             margin: 0 auto;
             padding: 2rem 2rem 3rem;
             border-bottom: 1px solid var(--color-border);
+            isolation: isolate;
         }
         .latest-articles-section .articles-header h2 {
             font-size: 1.4rem;
@@ -479,8 +480,9 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 0.75rem;
         }
-        @media (max-width: 1024px) { .article-list { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 900px) { .article-list { grid-template-columns: 1fr; } }
+        @media (max-width: 1024px) {
+            .article-list { grid-template-columns: 1fr; }
+        }
 
         .article-card {
             background: var(--color-surface);
