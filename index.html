@@ -1428,10 +1428,13 @@
 
             /* ── Nejnovější články: žádný scrollbar ── */
             .latest-articles-section {
-                overflow-x: hidden !important;
+                overflow: hidden !important;
+            }
+            .articles-container {
+                overflow: hidden !important;
             }
             .article-list {
-                overflow-x: hidden !important;
+                overflow: hidden !important;
             }
 
             /* ── Graf controls: zmenšit tlačítka a zalomit ── */
@@ -1822,7 +1825,7 @@
                             <span class="stat-number" id="stat-population">…</span>
                             <span class="stat-year" id="stat-population-year"></span>
                         </div>
-                        <span class="stat-label">Populace mil.</span>
+                        <span class="stat-label">Populace (mil.)</span>
                     </div>
                     <div class="stat-box" onclick="showChart('density')" data-metric="density">
                         <div class="stat-value-row">
