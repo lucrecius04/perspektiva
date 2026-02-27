@@ -191,19 +191,20 @@
     @media (max-width: 768px) {
       nav { display: none; }
       .nav-hamburger { display: flex; }
-      header { height: 80px; }
+      header { height: 88px; }
       .header-content { padding: 0 1rem; }
       .logo { gap: 0.75rem; }
-      .logo-icon { height: 68px !important; width: 68px !important; }
-      .logo-title { font-size: 1.35rem !important; line-height: 1.1; }
-      .logo-subtitle { font-size: 0.68rem !important; margin-top: 4px !important; letter-spacing: 0.03em !important; display: block !important; color: #94a3b8 !important; }
-      .logo-text { display: flex !important; }
-      .mobile-nav-panel { display: block; top: 80px; }
+      .logo-icon { height: 72px !important; width: 72px !important; }
+      .logo-title { font-size: 1.5rem !important; line-height: 1.1; }
+      .logo-subtitle { font-size: 0.7rem !important; margin-top: 5px !important; letter-spacing: 0.04em !important; display: block !important; color: #94a3b8 !important; opacity: 1 !important; visibility: visible !important; }
+      .logo-text { display: flex !important; flex-direction: column !important; }
+      .mobile-nav-panel { display: block; top: 88px; }
     }
     @media (max-width: 380px) {
-      .logo-icon { height: 58px !important; width: 58px !important; }
-      .logo-title { font-size: 1.15rem !important; }
-      .logo-subtitle { display: block !important; font-size: 0.62rem !important; color: #94a3b8 !important; }
+      header { height: 80px; }
+      .logo-icon { height: 62px !important; width: 62px !important; }
+      .logo-title { font-size: 1.25rem !important; }
+      .logo-subtitle { display: block !important; font-size: 0.62rem !important; color: #94a3b8 !important; opacity: 1 !important; visibility: visible !important; }
     }
     @media (max-width: 600px) {
       .footer-content { grid-template-columns: 1fr; gap: 1.5rem; }

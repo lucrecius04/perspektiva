@@ -447,7 +447,7 @@
             margin: 0 auto;
             padding: 2rem 2rem 2.5rem;
             border-bottom: 1px solid var(--color-border);
-            overflow: hidden;
+            overflow-x: hidden;
         }
         .latest-articles-section .articles-header h2 {
             font-size: 1.4rem;
@@ -1412,9 +1412,9 @@
            Desktop je beze změn.
            ══════════════════════════════════ */
         @media (max-width: 768px) {
-            /* Scroll offset — mobilní header je 56px */
+            /* Scroll offset — mobilní header je 88px */
             #home, #temata, #klicove-statistiky, #o-nas, #data {
-                scroll-margin-top: 62px;
+                scroll-margin-top: 94px;
             }
 
             /* ── Základní overflow prevence ── */
@@ -1428,13 +1428,16 @@
 
             /* ── Nejnovější články: žádný scrollbar ── */
             .latest-articles-section {
-                overflow: hidden !important;
+                overflow-x: hidden !important;
+                overflow-y: visible !important;
             }
             .articles-container {
-                overflow: hidden !important;
+                overflow-x: hidden !important;
+                overflow-y: visible !important;
             }
             .article-list {
-                overflow: hidden !important;
+                overflow-x: hidden !important;
+                overflow-y: visible !important;
             }
 
             /* ── Graf controls: zmenšit tlačítka a zalomit ── */
@@ -1518,30 +1521,28 @@
             .cislo-desc-long,
             .cislo-panel-source { display: none !important; }
 
-            /* ── Debunker karty: stack vertikálně ── */
+            /* ── Debunker karty: stack vertikálně, plně zakulacené ── */
             .debunker-cards {
                 grid-template-columns: 1fr;
                 min-height: auto;
-                gap: 0;
+                gap: 0.75rem;
                 position: relative;
             }
             .card-myth {
                 margin-right: 0;
                 padding-right: 1.2rem;
-                padding-bottom: 1.6rem;
                 height: auto;
                 min-height: 90px;
-                border-radius: 14px 14px 0 0;
+                border-radius: 14px;
             }
             .card-data {
                 margin-left: 0;
                 padding-left: 1.2rem;
-                padding-top: 1.6rem;
                 height: auto;
                 min-height: 90px;
-                border-radius: 0 0 14px 14px;
+                border-radius: 14px;
             }
-            /* VS — nulová výška, kruh absolutně přes hranici */
+            /* VS — mezi kartami, absolutně pozicovaný */
             .card-vs {
                 width: 100%;
                 height: 0;
@@ -1552,11 +1553,11 @@
                 align-items: center;
             }
             .vs-circle {
-                width: 32px;
-                height: 32px;
+                width: 34px;
+                height: 34px;
                 font-size: 0.54rem;
                 position: absolute;
-                top: -16px;
+                top: -17px;
                 z-index: 10;
                 box-shadow: 0 2px 10px rgba(0,0,0,0.35);
             }
