@@ -482,8 +482,63 @@
         }
         @media (max-width: 1024px) {
             .article-list { grid-template-columns: 1fr; }
-        }
 
+            /* ── Scroll offset ── */
+            #home, #temata, #klicove-statistiky, #o-nas, #data {
+                scroll-margin-top: 80px;
+            }
+
+            /* ── Články: 1 sloupec, auto výška ── */
+            .latest-articles-section {
+                padding: 1.25rem 1rem 1.5rem;
+            }
+            .article-card {
+                height: auto !important;
+                min-height: 0 !important;
+                max-height: none !important;
+            }
+            .article-stats {
+                height: auto;
+                min-height: 40px;
+                padding: 0.4rem 1rem;
+                flex-wrap: wrap;
+                gap: 0.25rem;
+            }
+
+            /* ── Bottom: čistý flex column, bez sticky ── */
+            .bottom-two-col {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 2rem;
+                padding: 1.5rem 1rem 3rem;
+            }
+            .bottom-col-left,
+            .bottom-col-right {
+                width: 100% !important;
+                position: static !important;
+                top: auto !important;
+            }
+
+            /* ── Témata: 3 sloupce ── */
+            .topic-grid { grid-template-columns: repeat(3, 1fr); }
+            .topic-card:not(.topic-geo) { grid-column: span 1 !important; }
+            .topic-card.topic-geo { grid-column: span 3 !important; border-radius: 12px; }
+
+            /* ── Stats grid: 2 sloupce ── */
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .stat-box { min-width: 0; }
+            .stat-number { font-size: 1.1rem; }
+            .stat-label { white-space: normal; font-size: 0.65rem; }
+            #dataChart { height: 260px; }
+            .chart-controls { flex-wrap: wrap; gap: 0.5rem; }
+            .range-btns { flex-wrap: wrap; gap: 0.25rem; }
+            .range-btn { padding: 0.18rem 0.5rem; font-size: 0.68rem; }
+            .compare-selector { margin-left: 0; flex-direction: column; align-items: flex-start; gap: 0.3rem; width: 100%; }
+            .compare-group { width: 100%; gap: 0.4rem; }
+            .compare-select-wrapper { flex: 1; min-width: 0; }
+            #compareCountrySelect, #compareCountrySelect2 { width: 100%; font-size: 0.72rem; padding: 0.22rem 1.6rem 0.22rem 0.65rem; }
+            .compare-label { font-size: 0.7rem; }
+        }
         .article-card {
             background: var(--color-surface);
             border: 1px solid var(--color-border);
@@ -1409,68 +1464,6 @@
         .progress-wrap { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.7rem; }
         .progress-bar { flex: 1; height: 3px; background: var(--color-border); border-radius: 2px; overflow: hidden; }
         .progress-fill { height: 100%; background: var(--color-primary); border-radius: 2px; }
-
-        /* ══════════════════════════════════
-           MOBILNÍ OPTIMALIZACE  (max 900px)
-           ══════════════════════════════════ */
-        @media (max-width: 900px) {
-
-            /* ── Scroll offset ── */
-            #home, #temata, #klicove-statistiky, #o-nas, #data {
-                scroll-margin-top: 80px;
-            }
-
-            /* ── Články: 1 sloupec, auto výška ── */
-            .latest-articles-section {
-                padding: 1.25rem 1rem 1.5rem;
-            }
-            .article-card {
-                height: auto !important;
-                min-height: 0 !important;
-                max-height: none !important;
-            }
-            .article-stats {
-                height: auto;
-                min-height: 40px;
-                padding: 0.4rem 1rem;
-                flex-wrap: wrap;
-                gap: 0.25rem;
-            }
-
-            /* ── Bottom: čistý flex column, bez sticky ── */
-            .bottom-two-col {
-                display: flex !important;
-                flex-direction: column !important;
-                gap: 2rem;
-                padding: 1.5rem 1rem 3rem;
-            }
-            .bottom-col-left,
-            .bottom-col-right {
-                width: 100% !important;
-                position: static !important;
-                top: auto !important;
-            }
-
-            /* ── Témata: 3 sloupce ── */
-            .topic-grid { grid-template-columns: repeat(3, 1fr); }
-            .topic-card:not(.topic-geo) { grid-column: span 1 !important; }
-            .topic-card.topic-geo { grid-column: span 3 !important; border-radius: 12px; }
-
-            /* ── Stats grid: 2 sloupce ── */
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .stat-box { min-width: 0; }
-            .stat-number { font-size: 1.1rem; }
-            .stat-label { white-space: normal; font-size: 0.65rem; }
-            #dataChart { height: 260px; }
-            .chart-controls { flex-wrap: wrap; gap: 0.5rem; }
-            .range-btns { flex-wrap: wrap; gap: 0.25rem; }
-            .range-btn { padding: 0.18rem 0.5rem; font-size: 0.68rem; }
-            .compare-selector { margin-left: 0; flex-direction: column; align-items: flex-start; gap: 0.3rem; width: 100%; }
-            .compare-group { width: 100%; gap: 0.4rem; }
-            .compare-select-wrapper { flex: 1; min-width: 0; }
-            #compareCountrySelect, #compareCountrySelect2 { width: 100%; font-size: 0.72rem; padding: 0.22rem 1.6rem 0.22rem 0.65rem; }
-            .compare-label { font-size: 0.7rem; }
-        }
 
         /* ── Hero + Debunker (max 768px) ── */
         @media (max-width: 768px) {
