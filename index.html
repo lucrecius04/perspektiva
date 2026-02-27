@@ -447,6 +447,7 @@
             margin: 0 auto;
             padding: 2rem 2rem 2.5rem;
             border-bottom: 1px solid var(--color-border);
+            overflow: hidden;
         }
         .latest-articles-section .articles-header h2 {
             font-size: 1.4rem;
@@ -1821,7 +1822,7 @@
                             <span class="stat-number" id="stat-population">…</span>
                             <span class="stat-year" id="stat-population-year"></span>
                         </div>
-                        <span class="stat-label">Populace (mil.)</span>
+                        <span class="stat-label">Populace mil.</span>
                     </div>
                     <div class="stat-box" onclick="showChart('density')" data-metric="density">
                         <div class="stat-value-row">
@@ -2197,6 +2198,19 @@
     })();
     </script>
 
+    <script>
+    /* Odstraní "mil." z čísla u políčka Populace – zobrazí se jen v popisku */
+    (function() {
+      var el = document.getElementById('stat-population');
+      if (!el) return;
+      var observer = new MutationObserver(function() {
+        if (el.textContent.indexOf('mil') !== -1) {
+          el.textContent = el.textContent.replace(/\s*mil\.?/gi, '').trim();
+        }
+      });
+      observer.observe(el, { childList: true, characterData: true, subtree: true });
+    })();
+    </script>
     <footer></footer>
     <script src="perspektiva-data.js"></script>
     <script src="perspektiva-stats.js"></script>

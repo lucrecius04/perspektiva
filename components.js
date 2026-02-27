@@ -25,7 +25,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      height: 84px;
+      height: 96px;
     }
     .header-content {
       max-width: 1400px;
@@ -44,11 +44,11 @@
       text-decoration: none;
       flex-shrink: 0;
     }
-    .logo-icon { height: 78px; width: 78px; flex-shrink: 0; }
+    .logo-icon { height: 90px; width: 90px; flex-shrink: 0; }
     .logo-text { display: flex; flex-direction: column; gap: 0; }
     .logo-title {
       font-family: 'IBM Plex Serif', serif;
-      font-size: 2rem; font-weight: 700; color: #ffffff; line-height: 1;
+      font-size: 2.4rem; font-weight: 700; color: #ffffff; line-height: 1;
     }
     .logo-subtitle {
       font-family: 'IBM Plex Sans', sans-serif;
@@ -233,7 +233,7 @@
 
   var headerHTML = '<div class="header-content">'
     + '<a href="' + homeUrl + '" class="logo">'
-    +   '<svg xmlns="http://www.w3.org/2000/svg" width="78" height="78" viewBox="0 0 48 48" class="logo-icon" aria-label="Logo">'
+    +   '<svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 48 48" class="logo-icon" aria-label="Logo">'
     + '<circle cx="24" cy="24" r="21" fill="#0c1a2e"/>'
     + '<line x1="24" y1="29" x2="7"  y2="46" stroke="#60a5fa" stroke-width="1"/>'
     + '<line x1="24" y1="29" x2="15" y2="46" stroke="#60a5fa" stroke-width="1"/>'
