@@ -1413,7 +1413,7 @@
         @media (max-width: 768px) {
             /* Scroll offset */
             #home, #temata, #klicove-statistiky, #o-nas, #data {
-                scroll-margin-top: 74px;
+                scroll-margin-top: 80px;
             }
 
             /* ── GLOBÁLNÍ: zabránit horizontálnímu scrollu ── */
@@ -1426,10 +1426,12 @@
             }
 
             /* ── ČISTÝ VERTIKÁLNÍ STACK ── */
-            /* 1. Články — 1 sloupec, auto výška */
+            /* 1. Články — 1 sloupec, auto výška, žádné překrývání */
             .latest-articles-section {
                 padding: 1.25rem 1rem 1.5rem;
                 width: 100%;
+                position: relative;
+                z-index: 1;
             }
             .article-list { grid-template-columns: 1fr; }
             .article-card { height: auto; min-height: 0; }
@@ -1439,18 +1441,21 @@
             }
             .article-stat-text { font-size: 0.82rem; }
 
-            /* 2. Bottom — Státy + Témata pod sebou */
+            /* 2. Bottom — zrušit sticky, čistý flex column */
             .bottom-two-col {
-                display: flex;
-                flex-direction: column;
+                display: flex !important;
+                flex-direction: column !important;
                 padding: 1.25rem 1rem 2.5rem;
                 gap: 2rem;
                 width: 100%;
+                position: relative;
+                z-index: 1;
             }
             .bottom-col-left, .bottom-col-right {
-                width: 100%;
-                min-width: 0;
-                position: static;
+                width: 100% !important;
+                min-width: 0 !important;
+                position: static !important;
+                top: auto !important;
             }
             .data-section { width: 100%; padding: 0.9rem; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); }

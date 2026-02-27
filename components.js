@@ -191,16 +191,16 @@
     @media (max-width: 768px) {
       nav { display: none; }
       .nav-hamburger { display: flex; }
-      header { height: 68px; }
+      header { height: 74px; }
       .header-content { padding: 0 0.875rem; gap: 0; }
       .header-right { gap: 0.4rem; flex-shrink: 0; }
       .logo { gap: 0.55rem; flex-shrink: 1; min-width: 0; overflow: hidden; }
-      .logo-icon { height: 48px !important; width: 48px !important; flex-shrink: 0; }
-      .logo-title { font-size: 1.05rem !important; line-height: 1.15; white-space: nowrap; }
-      .logo-subtitle { font-size: 0.6rem !important; margin-top: 3px !important; display: block !important; color: #94a3b8 !important; opacity: 1 !important; white-space: nowrap; }
+      .logo-icon { height: 56px !important; width: 56px !important; flex-shrink: 0; }
+      .logo-title { font-size: 1.15rem !important; line-height: 1.15; white-space: nowrap; }
+      .logo-subtitle { font-size: 0.62rem !important; margin-top: 3px !important; display: block !important; color: #94a3b8 !important; opacity: 1 !important; white-space: nowrap; }
       .logo-text { display: flex !important; flex-direction: column !important; min-width: 0; }
       .theme-toggle { font-size: 1.2rem !important; padding: 0.3rem !important; }
-      .mobile-nav-panel { display: block; top: 68px; }
+      .mobile-nav-panel { display: block; top: 74px; }
     }
     @media (max-width: 380px) {
       header { height: 64px; }
