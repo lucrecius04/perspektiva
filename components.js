@@ -191,23 +191,23 @@
     @media (max-width: 768px) {
       nav { display: none; }
       .nav-hamburger { display: flex; }
-      header { height: 72px; }
-      .header-content { padding: 0 0.875rem; gap: 0.5rem; }
-      .logo { gap: 0.6rem; flex-shrink: 1; min-width: 0; }
-      .logo-icon { height: 52px !important; width: 52px !important; flex-shrink: 0; }
-      .logo-title { font-size: 1.15rem !important; line-height: 1.15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-      .logo-subtitle { font-size: 0.62rem !important; margin-top: 3px !important; letter-spacing: 0.03em !important; display: block !important; color: #94a3b8 !important; opacity: 1 !important; visibility: visible !important; white-space: nowrap; }
-      .logo-text { display: flex !important; flex-direction: column !important; min-width: 0; flex-shrink: 1; }
-      .header-right { gap: 0.5rem; flex-shrink: 0; }
-      .theme-toggle { font-size: 1.15rem !important; padding: 0.35rem !important; flex-shrink: 0; }
-      .mobile-nav-panel { display: block; top: 72px; }
+      header { height: 68px; }
+      .header-content { padding: 0 0.875rem; gap: 0; }
+      .header-right { gap: 0.4rem; flex-shrink: 0; }
+      .logo { gap: 0.55rem; flex-shrink: 1; min-width: 0; overflow: hidden; }
+      .logo-icon { height: 48px !important; width: 48px !important; flex-shrink: 0; }
+      .logo-title { font-size: 1.05rem !important; line-height: 1.15; white-space: nowrap; }
+      .logo-subtitle { font-size: 0.6rem !important; margin-top: 3px !important; display: block !important; color: #94a3b8 !important; opacity: 1 !important; white-space: nowrap; }
+      .logo-text { display: flex !important; flex-direction: column !important; min-width: 0; }
+      .theme-toggle { font-size: 1.2rem !important; padding: 0.3rem !important; }
+      .mobile-nav-panel { display: block; top: 68px; }
     }
     @media (max-width: 380px) {
-      header { height: 68px; }
-      .logo-icon { height: 46px !important; width: 46px !important; }
-      .logo-title { font-size: 1rem !important; }
-      .logo-subtitle { display: block !important; font-size: 0.58rem !important; color: #94a3b8 !important; }
-      .mobile-nav-panel { top: 68px; }
+      header { height: 64px; }
+      .logo-icon { height: 42px !important; width: 42px !important; }
+      .logo-title { font-size: 0.95rem !important; }
+      .logo-subtitle { display: block !important; font-size: 0.55rem !important; }
+      .mobile-nav-panel { top: 64px; }
     }
     @media (max-width: 600px) {
       .footer-content { grid-template-columns: 1fr; gap: 1.5rem; }
