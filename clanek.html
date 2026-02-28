@@ -302,8 +302,8 @@
       .article-body div[style*="padding:2rem"] { padding: 1.25rem !important; }
       .article-body div[style*="padding:1.25rem 2rem"] { padding: 0.85rem 1.1rem !important; }
 
-      /* ── Stat karty v obsahu (inline grid) ── */
-      .article-body div[style*="grid-template-columns"] { gap: 1rem !important; }
+      /* ── Stat karty v obsahu (inline grid) — 1 sloupec na mobilu ── */
+      .article-body div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 0.85rem !important; overflow-x: visible !important; }
 
       /* ── Intro kontext boxy (white/e0f2fe) ── */
       .article-body div[style*="background:white"],
