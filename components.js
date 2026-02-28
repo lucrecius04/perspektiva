@@ -220,18 +220,18 @@
   var isArticle   = path.indexOf('clanek.html') !== -1;
   var isOProjectu = path.indexOf('o-projektu')     !== -1;
   var isArchiv    = path.indexOf('archiv')           !== -1;
-  var isOffHome   = isArticle || isOProjectu || isArchiv;
+  var isData      = path.indexOf('data.html')        !== -1;
+  var isOffHome   = isArticle || isOProjectu || isArchiv || isData;
 
   // Používáme kořenové cesty pro absolutní spolehlivost
   var root = window.location.origin + '/';
   var homeUrl    = isOffHome ? 'index.html' : '#home';
   var temaUrl    = isOffHome ? 'index.html#temata' : '#temata';
-  var dataUrl    = isOffHome ? 'index.html#klicove-statistiky' : '#klicove-statistiky';
+  var dataUrl    = 'data.html';
   var archivUrl  = 'archiv.html';
   var projektUrl = 'o-projektu.html';
   var kontaktUrl = 'o-projektu.html#kontakt';
-  var navActiveOProj  = isOProjectu ? ' class="nav-active"' : '';
-  var navActiveArchiv = isArchiv    ? ' class="nav-active"' : '';
+  var navActiveData   = isData      ? ' class="nav-active"' : '';
   var navActiveOProj  = isOProjectu ? ' class="nav-active"' : '';
   var navActiveArchiv = isArchiv    ? ' class="nav-active"' : '';
 
@@ -261,7 +261,7 @@
     + '<nav><ul>'
     +   '<li><a href="' + homeUrl + '">Dom\u016f</a></li>'
     +   '<li><a href="' + temaUrl + '">T\xe9mata</a></li>'
-    +   '<li><a href="' + dataUrl + '">Data</a></li>'
+    +   '<li><a href="' + dataUrl + '"' + navActiveData + '>Státy v datech</a></li>'
     +   '<li><a href="' + archivUrl + '"'  + navActiveArchiv + '>Archiv</a></li>'
     +   '<li><a href="' + projektUrl + '"'  + navActiveOProj  + '>O projektu</a></li>'
     + '</ul></nav>'
@@ -275,7 +275,7 @@
     + '<ul>'
     +   '<li><a href="' + homeUrl + '">Dom\u016f</a></li>'
     +   '<li><a href="' + temaUrl + '">T\xe9mata</a></li>'
-    +   '<li><a href="' + dataUrl + '">Data</a></li>'
+    +   '<li><a href="' + dataUrl + '"' + navActiveData + '>Státy v datech</a></li>'
     +   '<li><a href="' + archivUrl + '"'  + navActiveArchiv + '>Archiv</a></li>'
     +   '<li><a href="' + projektUrl + '"'  + navActiveOProj  + '>O projektu</a></li>'
     + '</ul>'
@@ -290,7 +290,7 @@
     + '<div class="footer-section"><h4>Navigace</h4><ul class="footer-links">'
     +   '<li><a href="' + homeUrl + '">Dom\u016f</a></li>'
     +   '<li><a href="' + temaUrl + '">T\xe9mata</a></li>'
-    +   '<li><a href="' + dataUrl + '">Data</a></li>'
+    +   '<li><a href="' + dataUrl + '"' + navActiveData + '>Státy v datech</a></li>'
     +   '<li><a href="' + projektUrl + '">O projektu</a></li>'
     + '</ul></div>'
     + '<div class="footer-section"><h4>Zdroje dat</h4><ul class="footer-links">'

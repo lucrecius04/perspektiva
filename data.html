@@ -90,6 +90,12 @@
             .data-page-header h1 { font-size: 1.6rem; }
             .stats-grid { grid-template-columns: repeat(3, 1fr); }
         }
+        @media (max-width: 768px) {
+            .data-page { padding: 1rem 0 2rem; }
+            .data-page-header { padding: 0 1rem 1.25rem; margin-bottom: 1.25rem; }
+            .data-section { border-radius: 0; padding: 1rem; }
+            .chart-container { border-radius: 0; border-left: none; border-right: none; }
+        }
         @media (max-width: 600px) {
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
             #dataChart { height: 300px; }
