@@ -20,7 +20,8 @@
       "Bash(grep:*)",
       "Bash(claude update:*)",
       "Bash(head:*)",
-      "WebFetch(domain:ourworldindata.org)"
+      "WebFetch(domain:ourworldindata.org)",
+      "Bash(do:*)"
     ]
   }
 }

@@ -259,8 +259,11 @@
       .article-wrapper { overflow-x: hidden; }
 
       /* ── Tabulky — horizontální scroll ── */
-      /* display:block vytvoří blokový scroll-kontejner; buňky s max-width:none přetékají → scroll */
-      .data-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      /* data-table-wrap = wrapper scrolluje; tabulka uvnitř zachová přirozené rozměry */
+      .data-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; box-sizing: border-box; }
+      /* Tabulky uvnitř data-table-wrap: přirozená šířka, wrapper scrolluje */
+      .article-body .data-table-wrap table { display: table !important; width: auto !important; max-width: none !important; }
+      /* Tabulky bez wrapperu: fallback — tabulka scrolluje sama */
       .article-body table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
       .article-body table td,
       .article-body table th { max-width: none !important; white-space: nowrap; }
@@ -268,7 +271,8 @@
       /* ── Inline chart kontejnery — ohraničený scroll-kontejner ── */
       /* Vnější obálka grafu: šířka ≤ viewport, vnitřní obsah může přetékat → scroll */
       .article-body div[style*="background:#f8f9fa"],
-      .article-body div[style*="background:var(--color-bg)"] {
+      .article-body div[style*="background:var(--color-bg)"],
+      .article-body div[style*="background:var(--color-surface)"] {
         max-width: 100% !important;
         overflow-x: auto !important;
         -webkit-overflow-scrolling: touch;
@@ -276,8 +280,8 @@
       }
 
       /* ── Vnitřní flex grafy s výškou — přirozená (max-content) šířka ── */
-      /* Díky width:max-content vnitřní flex-div přetéká vnější kontejner → scroll v kontejneru */
-      .article-body div[style*="display:flex"][style*="height:"] {
+      /* Pouze sloupcové grafy (align-items:flex-end) — vnitřní wrapperové divy jsou align-items:center */
+      .article-body div[style*="display:flex"][style*="align-items:flex-end"][style*="height:"] {
         width: max-content !important;
         max-width: none !important;
       }
@@ -287,7 +291,7 @@
 
       /* ── Intro kontext boxy ── */
       .article-body div[style*="background:white"],
-      .article-body div[style*="background:#ffffff"] { padding: 0.85rem 1rem !important; }
+      .article-body div[style*="background:#ffffff"] { padding: 0.85rem 1rem !important; max-width: 100% !important; box-sizing: border-box !important; }
 
       /* ── Typografie ── */
       h1 { font-size: 1.75rem; letter-spacing: -0.01em; line-height: 1.2; }
