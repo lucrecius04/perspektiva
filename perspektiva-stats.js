@@ -650,9 +650,12 @@ function drawChart(data, svgId, secondaryData, tertiaryData) {
     overlay.addEventListener('mousemove', (e) => {
         const rect  = svg.getBoundingClientRect();
         // Respektuje viewBox + preserveAspectRatio="xMidYMid meet":
-        // SVG se škáluje uniformně a centruje — musíme odečíst letterbox offset
-        const scl   = Math.min(rect.width / width, rect.height / height);
-        const xOff  = (rect.width  - width  * scl) / 2;
+        // SVG se škáluje uniformně a centruje — musíme odečíst letterbox offset.
+        // Použijeme skutečný viewBox (ne interní height=420), jinak se škála liší
+        // od viewBox="0 0 900 460" → tooltip se posouvá od středu.
+        const vb    = svg.viewBox.baseVal;
+        const scl   = Math.min(rect.width / vb.width, rect.height / vb.height);
+        const xOff  = (rect.width  - vb.width  * scl) / 2;
         const svgX  = (e.clientX - rect.left - xOff) / scl;
         const yearFloat = minYear + ((svgX - paddingLeft) / chartWidth) * yearRange;
 
